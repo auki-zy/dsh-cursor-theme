@@ -1,0 +1,4 @@
+# pnpm workspace manifest (auto-generated for build-script approval)
+# Allows esbuild's postinstall to fetch its platform binary.
+allowBuilds:
+  esbuild: true
