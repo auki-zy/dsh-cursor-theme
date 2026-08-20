@@ -57,7 +57,7 @@ dsh plugin --profile web add dsh-cursor-theme@^0.1.0
 在 awesome-dsh-plugin 列表（`README.md` 或 `plugins.json` 数据）中添加：
 
 ```markdown
-| [dsh-cursor-theme](https://github.com/<你的用户名>/dsh-cursor-theme) | theme |
+| [dsh-cursor-theme](https://github.com/auki-zy/dsh-cursor-theme) | theme |
 | 在 DSH 中自定义鼠标各种状态的图案：按 UI 状态配置 PNG/CUR 光标、内置素材库、
   预设主题一键套用、热区与尺寸编辑、跟随亮暗主题、主题包导出/导入。 |
 | Customize the PC mouse cursor for every UI state in DSH: per-state PNG/CUR
