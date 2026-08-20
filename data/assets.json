@@ -1,0 +1,355 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-08-20T09:49:55.295Z",
+  "assets": [
+    {
+      "id": "pointer-dark",
+      "name": "pointer (dark)",
+      "states": [
+        "pointer"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 2,
+        "y": 2
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAXUlEQVR4nO3VMQoAIAiFYQ8g3f+2tRRESLb4lHj/6PShgyJspto6AamIBUhD7IAUxAmAIywAFFEWAEPcABCEBwhHvABCEeVPEA6wEOcMivBm0NIflXALlRCMMfZdA7zKcnVvS9WHAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "pointer-light",
+      "name": "pointer (light)",
+      "states": [
+        "pointer"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 2,
+        "y": 2
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAXUlEQVR4nO3VsQoAIAhFUf//ax3aaymIkGzxKfHu6HTQQRE2U22dgFTEAqQhdkAK4gTAERYAiigLgCFuAAjCA4QjXgChiPInCAdYiHMGRXgzaOmPSriFSgjGGPuuASyffnzDq6XyAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "pointer-neon",
+      "name": "pointer (neon)",
+      "states": [
+        "pointer"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 2,
+        "y": 2
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAWklEQVR4nO3VMQ4AIAhDUe5/T8+hE4kxRFxoiekfWXyBQTPljTkF4CIcQEPsAAriBMAREQCKaAuAIW4ACCIDlCNeAKWI9ieAFD1KQ2QzaPSPyrSFTgillPqtBbmGILzbmWMtAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "text-dark",
+      "name": "text (dark)",
+      "states": [
+        "text"
+      ],
+      "fallback": "text",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAPUlEQVR4nO3WwQkAIAwEwRQQ7L9bLUEDSkBm4d6ZZyJ0WOaYlQFcB+xAzw8CAAAAAAAAAAAAtAPa33KAb1v0HbchW9QoZwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "text-light",
+      "name": "text (light)",
+      "states": [
+        "text"
+      ],
+      "fallback": "text",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAPUlEQVR4nO3WsQkAIAxFwew/bQp7HUEDSkDuwa9zZSJ0WOaYlQFcB+xAzw8CAAAAAAAAAAAAtAPa33KAb1tf6mP/Qokp0wAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "text-neon",
+      "name": "text (neon)",
+      "states": [
+        "text"
+      ],
+      "fallback": "text",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAOUlEQVR4nO3WsQkAMAhFQfffM3PoCkkRBbkHv/ZKI3TbyXwawPfaDwIAAAAAAAAAAACMA8bfcoCtFdEVzfDWaH02AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "wait-dark",
+      "name": "wait (dark)",
+      "states": [
+        "wait"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAfElEQVR4nO3UQQrAIAxE0RxAvP9t260rnWQmaYUEshP/A0Gznh5yxphPefC0n4XTIJG4DMHEaYQiHkYo4yGE42L4rDJum+URRPyIaEBF/BeIi5/gBkD+PwAiVgx0Fo47AfC6AGqEO65EhOMKBB1nELK4F5IS3oFKgz3qeQGeh6gev20MhQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "wait-light",
+      "name": "wait (light)",
+      "states": [
+        "wait"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAfElEQVR4nO3UMQoAIQxE0dz/tBb2u62VTjKT7AoJpBP/A0Gznh5yxphPefC0n4XTIJG4DMHEaYQiHkYo4yGE42L4rDJum+URRPyIaEBF/BeIi5/gBkD+PwAiVgx0Fo47AfC6AGqEO65EhOMKBB1nELK4F5IS3oFKgz3qeQHYgEYnU7aWqAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "wait-neon",
+      "name": "wait (neon)",
+      "states": [
+        "wait"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAcUlEQVR4nO2UUQpAIQgEvf89O0fvt6/a3E2f4IB/0gwEmjUNy5gzXniaNPGzEI9cFsHI6QiF3B2hlLsi8IfxXaHcNiOI8MvPER0QIP9FROUvKBAQcAewiDUG270CD8DnmlS5MoImVc5EPCFNvAtqKvMBqsqomZSfzOQAAAAASUVORK5CYII="
+    },
+    {
+      "id": "not-allowed-dark",
+      "name": "not-allowed (dark)",
+      "states": [
+        "not-allowed"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAa0lEQVR4nO3RwQ3AMAhD0QwQZf9t2wmaFGwHDrbE+T+JMTwP3JzruR48nQT2J/yFKYtTEGgcQrDiKQAznkKUAhTxEMKAUoAy3gLR/wUGKBGl8RBAgQjF2YhUnAWB4wiCFo9CJOEd6GrQY+8FI3wA3/RGdvAAAAAASUVORK5CYII="
+    },
+    {
+      "id": "not-allowed-light",
+      "name": "not-allowed (light)",
+      "states": [
+        "not-allowed"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAa0lEQVR4nO3RMQ7AIAxDUe5/Wgb29gSFJrZJBlvK/J+UMTwP3JzruR48nQT2J/yFKYtTEGgcQrDiKQAznkKUAhTxEMKAUoAy3gLR/wUGKBGl8RBAgQjF2YhUnAWB4wiCFo9CJOEd6GrQY+8Fwfixm3PwEkoAAAAASUVORK5CYII="
+    },
+    {
+      "id": "not-allowed-neon",
+      "name": "not-allowed (neon)",
+      "states": [
+        "not-allowed"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYUlEQVR4nO3RwQ0AIAhDUfff0zl0AqNASz20Cef/EsbwvOrmWv3B21FgL+ETRhaHIKrxEgIVTwGQ8RRCCmDEQwgDpABm/AvE/y8wgImQxkMABiI1aRwFgU0aj0Ja1x70wNtKIA2MRQ+26AAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "crosshair-dark",
+      "name": "crosshair (dark)",
+      "states": [
+        "crosshair"
+      ],
+      "fallback": "crosshair",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAUUlEQVR4nO2SQQoAIAgEfYD0/98WQfcFFSyaAW+2jqHZy7iPuQsBBBBAoE0AwM4hloSoUu9SmREB1RNdKvxz6bCMRNtwaOeKA0QAAQT+FqhgAUOWYUqsMcdIAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "crosshair-light",
+      "name": "crosshair (light)",
+      "states": [
+        "crosshair"
+      ],
+      "fallback": "crosshair",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAUUlEQVR4nO2SQQoAIAgE/f9rPXQvgu4LKlg0A95sHUOzl3EfcxcCCCCAQJsAgJ1DLAlRpd6lMiMCqie6VPjn0mEZibbh0M4VB4gAAgj8LVDBAn+0RR+IAgwhAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "crosshair-neon",
+      "name": "crosshair (neon)",
+      "states": [
+        "crosshair"
+      ],
+      "fallback": "crosshair",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAATElEQVR4nGNgGNLg6f//YDzqgFEHjDpg1AGjYBQMKKBKIoSlZnyYkD6KzCTHAYTUkOspskNuwMBoQTSywaBIgKMOGHXAqANGtgOoAACOffVgsKRjoQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "grab-dark",
+      "name": "grab (dark)",
+      "states": [
+        "grab"
+      ],
+      "fallback": "grab",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAWElEQVR4nO3O2wkAIAxDUQco7r+tTiDSNn0oCeT7njE4jnt9InOlB28vjYchNHE4whKHITxxCIKAUgAi3gJhjhPQAuBFuOMeBCxuQcDjGkRY/ARKDXLcd9uUHCGhNJ6jQgAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "grab-light",
+      "name": "grab (light)",
+      "states": [
+        "grab"
+      ],
+      "fallback": "grab",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAWUlEQVR4nO3Ouw0AIAxDQfafNgU9TIBQEucDsiXX78bgOO71icyVHry9NB6G0MThCEschvDEIQgCSgGIeAuEOU5AC4AX4Y57ELC4BQGPaxBh8RMoNchx320DDjnHtSbZrVwAAAAASUVORK5CYII="
+    },
+    {
+      "id": "grab-neon",
+      "name": "grab (neon)",
+      "states": [
+        "grab"
+      ],
+      "fallback": "grab",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAT0lEQVR4nO3O0QkAIAxDwe6/p3PUCURsUqOQB/nORTjnvm9k3j/cTXrehjg5pyMq5zQEck5BGCAFMM6fQEAZIAegCFrS8wqiLen5CuScA5p899p2E6GcXQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "help-dark",
+      "name": "help (dark)",
+      "states": [
+        "help"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQElEQVR4nO3TwQkAMAjAQAcQ99+2nUHQhkICvr2HRpj9UmadzghYg3SxApClAp4sx18Q/3kBAnCA4eE3IMBsqgureYcPzeP6CQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "help-light",
+      "name": "help (light)",
+      "states": [
+        "help"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQElEQVR4nO3TMQoAMAjAQP//Wgf39g2CNhQScPYGjTD7pcw6nRGwBuliBSBLBTxZjr8g/vMCBOAAw8NvQIDZVBc1cMNSjYRvIgAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "help-neon",
+      "name": "help (neon)",
+      "states": [
+        "help"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 16,
+        "y": 16
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAP0lEQVR4nO3TwQkAMAgEQfvvM3WYGoQkR2AWfDsPrZK+aXWPBuAaZIoFiCwFeLI8/oLxnwcAiAMUL34DANKhNstRVLKMbal8AAAAAElFTkSuQmCC"
+    }
+  ],
+  "themes": [
+    {
+      "id": "mono-dark",
+      "name": "Mono Dark",
+      "description": "Monochrome dark cursors for light UIs",
+      "states": {
+        "pointer": "pointer-dark",
+        "text": "text-dark",
+        "wait": "wait-dark",
+        "not-allowed": "not-allowed-dark",
+        "grab": "grab-dark",
+        "help": "help-dark"
+      }
+    },
+    {
+      "id": "mono-light",
+      "name": "Mono Light",
+      "description": "Monochrome light cursors for dark UIs",
+      "states": {
+        "pointer": "pointer-light",
+        "text": "text-light",
+        "wait": "wait-light",
+        "not-allowed": "not-allowed-light",
+        "grab": "grab-light",
+        "help": "help-light"
+      }
+    },
+    {
+      "id": "neon",
+      "name": "Neon",
+      "description": "Cyan neon cursors",
+      "states": {
+        "pointer": "pointer-neon",
+        "text": "text-neon",
+        "wait": "wait-neon",
+        "not-allowed": "not-allowed-neon",
+        "crosshair": "crosshair-neon",
+        "grab": "grab-neon"
+      }
+    },
+    {
+      "id": "high-contrast",
+      "name": "High Contrast",
+      "description": "Bold shapes for accessibility",
+      "states": {
+        "pointer": "pointer-dark",
+        "text": "text-dark",
+        "wait": "wait-dark",
+        "not-allowed": "not-allowed-dark",
+        "crosshair": "crosshair-dark",
+        "grab": "grab-dark",
+        "help": "help-dark"
+      }
+    }
+  ]
+}
