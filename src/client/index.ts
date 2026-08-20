@@ -1,17 +1,20 @@
 /**
- * dsh-cursor-theme client entry — M2: settings section UI.
+ * dsh-cursor-theme client entry — aligned with deepseek-harness-desktop
+ * plugin conventions (see dsh-community-market's client entry).
  *
  * Loaded by the DSH web client through `dsh.client.inject` in package.json;
  * the host wraps this module in `window.__ModuleLoader__.load({ id, factory })`
- * (see scripts/wrap-client.mjs).
+ * (see scripts/build-client.mjs).
  *
- * M2 wiring:
- *   1. Inject the style tag + subscribe to settings (M1 behavior preserved).
- *   2. Register a `settings.section` page (设置 → 插件 → 光标主题) that
- *      edits the `dsh-cursor-theme` settings namespace.
- *   3. settingsScope and slots are injected NESTED where the host provides
- *      them; the bundle still mounts on hosts without those services (style
- *      injection keeps working, the section simply never appears).
+ * Desktop-aligned wiring:
+ *   1. Module-level `inject: ["slots", "locale"]` — the same declaration
+ *      shape as the official in-product market (dsh-community-market).
+ *   2. Style tag + settings-driven rendering (M1 behavior preserved);
+ *      settingsScope and theme are injected NESTED so the bundle still
+ *      mounts on hosts without those services (style injection keeps
+ *      working, the UI simply stays absent there).
+ *   3. Register a `settings.plugins.tab` page (设置 → 插件 → 光标主题),
+ *      matching the canonical plugin-settings surface used by Desktop.
  */
 
 import { applyCursorCss } from './style.js'
@@ -24,16 +27,19 @@ import type { CursorThemeSettings } from './types.js'
 export const name = 'dsh-cursor-theme'
 
 /**
- * Host services this client bundle requires at mount. Empty: the settings
- * UI surface is registered through nested injects below.
+ * Host services this client bundle requires at mount — same shape as the
+ * official dsh-community-market client. slots + locale are guaranteed on
+ * every web composition; settingsScope/theme stay nested (rc.7+).
  */
-export const inject: string[] = []
+export const inject: string[] = ['slots', 'locale']
 
 /** Structural subset of the client-side Cordis context this bundle touches. */
 interface ClientContext {
   effect(callback: () => unknown, label?: string): void
   inject(services: string[], callback: (scoped: unknown) => void): void
   on?(event: string, callback: () => void): () => void
+  slots: SlotsService
+  locale: LocaleService
 }
 
 /** Structural subset of a settings scope (dsh-client-runtime). */
@@ -72,7 +78,7 @@ const NS = 'dsh-cursor-theme'
 export function apply(ctx: ClientContext): void {
   const tagId = 'dsh-cursor-theme'
 
-  // 1) Style tag + settings-driven rendering (M1).
+  // 1) Style tag (dedupe across HMR re-composition).
   let tag: HTMLStyleElement | null = null
   ctx.effect(() => {
     if (typeof document === 'undefined') return
@@ -89,9 +95,10 @@ export function apply(ctx: ClientContext): void {
     tag = created
   }, 'dsh-cursor-theme: style tag')
 
+  // 2) Settings-driven rendering (M1) + light/dark follow (M3d).
+  //    Nested: only runs when the host actually provides settingsScope.
   ctx.inject(['settingsScope'], (scoped) => {
     const scope = (scoped as { settingsScope: SettingsScope }).settingsScope.bind({ namespace: NS })
-    // Track the current color scheme (light/dark) from the theme service.
     let scheme: ColorScheme = 'light'
     let theme: ThemeService | null = null
     const readScheme = (): ColorScheme => {
@@ -108,7 +115,6 @@ export function apply(ctx: ClientContext): void {
     }
     scope.subscribe(render)
     render()
-    // When the host provides the theme service, re-render on scheme change.
     ctx.inject(['theme'], (scopedT) => {
       theme = (scopedT as { theme: ThemeService }).theme
       scheme = readScheme()
@@ -120,23 +126,20 @@ export function apply(ctx: ClientContext): void {
     })
   })
 
-  // 2) Settings section UI (M2). Nested injects: locale + slots must exist
-  //    for the section to render; otherwise it silently stays absent.
-  ctx.inject(['locale', 'slots'], (scoped) => {
-    const host = scoped as { locale: LocaleService; slots: SlotsService }
-    host.locale.register(NS, { zh, en })
-    const t = host.locale.bind(NS)
+  // 3) Settings UI (M2). Official surface: settings.plugins.tab. The locale
+  //    dictionaries ride the guaranteed `locale` service.
+  const t = ctx.locale.bind(NS)
+  ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'dsh-cursor-theme: dictionaries')
 
-    ctx.inject(['settingsScope'], (scoped2) => {
-      const scope = (scoped2 as { settingsScope: SettingsScope }).settingsScope.bind({ namespace: NS })
-      host.slots.inject('settings.section', () => host.slots.register({
-        name: 'settings.section',
-        id: 'cursor-theme',
-        order: 50,
-        label: () => t('nav'),
-        locale: NS,
-        inject: () => ({ scope, t }),
-      }, CursorThemeSection as unknown as (props: Record<string, unknown>) => unknown))
-    })
+  ctx.inject(['settingsScope'], (scoped) => {
+    const scope = (scoped as { settingsScope: SettingsScope }).settingsScope.bind({ namespace: NS })
+    ctx.slots.inject('settings.plugins.tab', () => ctx.slots.register({
+      name: 'settings.plugins.tab',
+      id: 'cursor-theme',
+      order: 30,
+      label: () => t('nav'),
+      locale: NS,
+      inject: () => ({ scope, t }),
+    }, CursorThemeSection as unknown as (props: Record<string, unknown>) => unknown))
   })
 }

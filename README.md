@@ -21,10 +21,14 @@ Customize the PC mouse cursor for every UI state inside DeepSeek Harness — eac
 ## Install
 
 ```sh
+# DSH Desktop (the GUI runs the `desktop` profile)
+dsh plugin --profile desktop add dsh-cursor-theme
+
+# Plain dsh web / browser (optional)
 dsh plugin --profile web add dsh-cursor-theme
 ```
 
-After a restart, open **Settings → Plugins → Cursor Theme**.
+Restart DSH Desktop (or reload `dsh web`), then open **Settings → Plugins → Cursor Theme**.
 
 ## Development
 

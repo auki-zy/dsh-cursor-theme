@@ -2,6 +2,28 @@
 
 > 阶段：V1 发布准备（M0–M3 全部完成，`npm run check` 全绿：23 个单测通过）
 > 日期：2026-08-20
+> 目标宿主：**[anywhere-labs/deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop)（DSH Desktop 2.0.1，内嵌 dsh 0.1.0-rc.7）**
+
+---
+
+## 0. deepseek-harness-desktop 插件规范对照（本插件已符合）
+
+以官方内置市场 `dsh-community-market` 与托管安装文档（`docs/install-and-uninstall.md`）为基准：
+
+| 规范要求 | 本插件 | 状态 |
+|---|---|---|
+| `dsh.bundle.patch` 存在且包内包含 | ✅ `cordis.patch.yml`（`- insert: id: dsh-cursor-theme`） | ✅ |
+| 无 `preinstall`/`install`/`postinstall`/`prepare` 生命周期脚本 | ✅ scripts 仅 typecheck/build/test | ✅ |
+| Node engine 接受内置 Node（官方：`^22.19.0 \|\| >=24.0.0`） | ✅ 已声明同款 engines | ✅ |
+| DSH/Cordis 依赖兼容 rc.7 | ✅ peerDeps 均 rc.7 | ✅ |
+| `exports["./client"]` 提供客户端 bundle | ✅ `./client/client.js` | ✅ |
+| 宿主端模块级 `inject` 声明（官方形态） | ✅ `export const inject = ['settings']` | ✅ |
+| 客户端模块级 `inject` 声明 + 官方集成面 | ✅ `['slots', 'locale']` + `settings.plugins.tab` | ✅ |
+| 安装 profile | **desktop**（GUI 实际使用的 profile；`dsh.cmd` 的 `DSH_DESKTOP_DEFAULT_PROFILE=desktop`） | ✅ 已安装 |
+
+> ⚠️ 重要：DSH Desktop GUI 运行的是 `desktop` profile，不是 `web`。装插件用
+> `dsh plugin --profile desktop add <pkg>`；`--profile web` 只影响 CLI/浏览器跑法。
+> 安装/卸载后必须**重启 DSH Desktop**（client-modules 的包元数据缓存不失效，重启才重扫）。
 
 ---
 
