@@ -39,7 +39,13 @@ const result = buildSync({
 
 const compiled = readFileSync(outFile, 'utf8')
 
+// The host's __ModuleLoader__ only passes `require` into the factory. esbuild's
+// CJS output writes `module.exports`, so we must shim `module`/`exports` locally
+// (same shape as dshmarket / tsdown clientBundle). Without this shim the loader
+// throws ReferenceError: module is not defined at materialization time.
 const banner = `window.__ModuleLoader__.load({ id: ${JSON.stringify(bundleId)}, factory: (require) => {
+  var module = { exports: {} };
+  var exports = module.exports;
 ${compiled}
   return module.exports;
 }});

@@ -21,10 +21,14 @@
 ## 安装
 
 ```sh
+# DSH Desktop（GUI 运行的是 desktop profile）
+dsh plugin --profile desktop add dsh-cursor-theme
+
+# 纯 dsh web / 浏览器（可选）
 dsh plugin --profile web add dsh-cursor-theme
 ```
 
-重启后打开 **设置 → 插件 → 光标主题**。
+重启 DSH Desktop（或刷新 `dsh web`），打开 **设置 → 插件 → 光标主题**。
 
 ## 开发
 

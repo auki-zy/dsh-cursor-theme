@@ -6,6 +6,9 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "license": "MIT",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/auki-zy/dsh-cursor-theme.git"
