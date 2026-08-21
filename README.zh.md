@@ -7,8 +7,9 @@
 ## 功能
 
 - 🎯 按 UI 状态独立配置光标图案（default / pointer / text / wait / not-allowed / grab / …）
-- 🖼️ 内置素材库（21 个基础形状 × 3 色板）+ 上传 PNG/CUR（≤128×128、≤512KB 校验）
-- 🎨 预设主题一键套用（Mono Dark / Mono Light / Neon / High Contrast）
+- 🖼️ 内置素材库（25 个像素形状 × 12 色板 = 300 素材）+ 上传 PNG/CUR（≤128×128、≤512KB 校验）
+- 🎨 预设主题一键套用（13 套：Mono Dark/Light、Neon、Coral Cat、Lemon Dog、Sky Shark、Mint Penguin、Grape Ghost、Alien Neon、Sky Whale、Lemon Bee、Blush Hearts、High Contrast）
+- 🤖 **AI 生成主题**：输入主题想法 → 生成结构化提示词 → 复制或**一键发送到当前会话** → 把 AI 回复的 JSON 粘贴回来即可导入成品主题（形状+配色经内置形状库渲染）
 - 📦 主题包导出/导入 JSON（素材以 base64 内嵌，可跨机器分享；导入有完整校验）
 - 🌗 跟随 DSH 亮暗主题（浅色界面自动用深色光标，深色界面自动用浅色光标）
 - 📍 热区（hotspot）X/Y 编辑，点击精确

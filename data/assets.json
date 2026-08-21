@@ -1,300 +1,4494 @@
 {
   "schema": 1,
-  "generatedAt": "2026-08-20T09:49:55.295Z",
+  "generatedAt": "2026-08-21T02:33:36.725Z",
   "assets": [
     {
-      "id": "pointer-dark",
-      "name": "pointer (dark)",
+      "id": "arrow-dark",
+      "name": "Arrow (dark)",
       "states": [
+        "default",
         "pointer"
       ],
-      "fallback": "pointer",
+      "fallback": "default",
       "hotspot": {
         "x": 2,
         "y": 2
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAXUlEQVR4nO3VMQoAIAiFYQ8g3f+2tRRESLb4lHj/6PShgyJspto6AamIBUhD7IAUxAmAIywAFFEWAEPcABCEBwhHvABCEeVPEA6wEOcMivBm0NIflXALlRCMMfZdA7zKcnVvS9WHAAAAAElFTkSuQmCC"
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nOXWuwkAMAgEUAeQ7L9tQtqATeLnLgoWNscDCxXVMXdLVcEAyiAwAGvuB0iHwALSIPCAcAgNIAxCB3CH0ALcIPSA55xvANd5tIDzlUtfQRnA/XzDALyC+QFRj4eZWw5oXwub9aTRjhVVBAAAAABJRU5ErkJggg=="
     },
     {
-      "id": "pointer-light",
-      "name": "pointer (light)",
+      "id": "arrow-light",
+      "name": "Arrow (light)",
       "states": [
+        "default",
         "pointer"
       ],
-      "fallback": "pointer",
+      "fallback": "default",
       "hotspot": {
         "x": 2,
         "y": 2
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAXUlEQVR4nO3VsQoAIAhFUf//ax3aaymIkGzxKfHu6HTQQRE2U22dgFTEAqQhdkAK4gTAERYAiigLgCFuAAjCA4QjXgChiPInCAdYiHMGRXgzaOmPSriFSgjGGPuuASyffnzDq6XyAAAAAElFTkSuQmCC"
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nOXWvQoAIAgEYN//aR3ai9bApfy5S8HB5fjAQUV1zN1SVTCAMggMwJr7AdIhsIA0CDwgHEIDCIPQAdwhtAA3CD3gOecbwHUeLeB85dJXUAZwP98wAK9gfkDU42HmlgPa1wKPOybPFpOeRgAAAABJRU5ErkJggg=="
     },
     {
-      "id": "pointer-neon",
-      "name": "pointer (neon)",
+      "id": "arrow-neon",
+      "name": "Arrow (neon)",
       "states": [
+        "default",
         "pointer"
       ],
-      "fallback": "pointer",
+      "fallback": "default",
       "hotspot": {
         "x": 2,
         "y": 2
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAWklEQVR4nO3VMQ4AIAhDUe5/T8+hE4kxRFxoiekfWXyBQTPljTkF4CIcQEPsAAriBMAREQCKaAuAIW4ACCIDlCNeAKWI9ieAFD1KQ2QzaPSPyrSFTgillPqtBbmGILzbmWMtAAAAAElFTkSuQmCC"
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZklEQVR4nOXWMQoAMAgDwP7/n32HhY4Fl1ZNUgUHl3DgoGNMs92wogHAIDQAb+4HKIfQAsog9IB0iAwgDSIHCIfIAsIg8oDnnG8A13mygPOVK18BDBB+vmkAUcH6gKzHw82FA7rXAiPzn8AK5HwuAAAAAElFTkSuQmCC"
     },
     {
-      "id": "text-dark",
-      "name": "text (dark)",
+      "id": "arrow-coral",
+      "name": "Arrow (coral)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 2,
+        "y": 2
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaElEQVR4nOXWuwkAMAgEUPdvMkiGNKQN2CR+7qJgYXM8sFDRMXW3VBUMoAwCA7DmfoB0CCwgDQIPCIfQAMIgdAB3CC3ADUIPeM75BnCdRws4X7n0FZQB3M83DMArmB8Q9XiYueWA9rUAAVjPkAr9HKwAAAAASUVORK5CYII="
+    },
+    {
+      "id": "arrow-lemon",
+      "name": "Arrow (lemon)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 2,
+        "y": 2
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nOXWuwkAMAgEUEfM/mQXQ9qATeLnLgoWNscDCxWdQ3dLVcEAyiAwAGvuB0iHwALSIPCAcAgNIAxCB3CH0ALcIPSA55xvANd5tIDzlUtfQRnA/XzDALyC+QFRj4eZWw5oXwvhI8ew6GhK8wAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "arrow-mint",
+      "name": "Arrow (mint)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 2,
+        "y": 2
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaUlEQVR4nOXWuw0AIAgEUEZ0RAdzF42tCY3yuRMSCprLSyhA2uhzt2QVDCANAgPQ5nqAcAgsIAwCD3CH0ADcIHQAcwgtwAxCD3jO+QZwnUcLOF+58BWkAczPNwzAKpgf4PV4qLnpgPK1AInHkkCKK9feAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "arrow-grape",
+      "name": "Arrow (grape)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 2,
+        "y": 2
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nOXWuw0AIAgEUMZ2JpfE2JrQKJ87IaGgubyEAmQO1d1SVTCAMggMwJr7AdIhsIA0CDwgHEIDCIPQAdwhtAA3CD3gOecbwHUeLeB85dJXUAZwP98wAK9gfkDU42HmlgPa1wKlncIQPkv6rAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "arrow-sky",
+      "name": "Arrow (sky)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 2,
+        "y": 2
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nOXWuw0AIAgEUOZ0RJfE2JrQKJ87IaGgubyEAmRM1d1SVTCAMggMwJr7AdIhsIA0CDwgHEIDCIPQAdwhtAA3CD3gOecbwHUeLeB85dJXUAZwP98wAK9gfkDU42HmlgPa1wJ82rEwDTa0RQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "arrow-blush",
+      "name": "Arrow (blush)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 2,
+        "y": 2
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nOXWuw0AIAgEUGZ3MFfD2JrQKJ87IaGgubyEAkTH1N1SVTCAMggMwJr7AdIhsIA0CDwgHEIDCIPQAdwhtAA3CD3gOecbwHUeLeB85dJXUAZwP98wAK9gfkDU42HmlgPa1wL1wNLw0xX+DQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "arrow-peach",
+      "name": "Arrow (peach)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 2,
+        "y": 2
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nOXWuw0AIAgEUCZ2MJfE2JrQKJ87IaGgubyEAkTn0N1SVTCAMggMwJr7AdIhsIA0CDwgHEIDCIPQAdwhtAA3CD3gOecbwHUeLeB85dJXUAZwP98wAK9gfkDU42HmlgPa1wJ9xrxwAN8MSwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "arrow-cocoa",
+      "name": "Arrow (cocoa)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 2,
+        "y": 2
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaUlEQVR4nOXWuw0AIAgEUOZ0CCdxZ42tCY3yuRMSCprLSyhARm9zt2QVDCANAgPQ5nqAcAgsIAwCD3CH0ADcIHQAcwgtwAxCD3jO+QZwnUcLOF+58BWkAczPNwzAKpgf4PV4qLnpgPK1AOPbTsCxfietAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "arrow-mintDark",
+      "name": "Arrow (mintDark)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 2,
+        "y": 2
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaUlEQVR4nOXWuw0AIAgEUMZxJidxe42tCY3yuRMSCprLSyhA2uhzt2QVDCANAgPQ5nqAcAgsIAwCD3CH0ADcIHQAcwgtwAxCD3jO+QZwnUcLOF+58BWkAczPNwzAKpgf4PV4qLnpgPK1ALhSHCBlbMkdAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ibeam-dark",
+      "name": "I-beam (dark)",
       "states": [
         "text"
       ],
       "fallback": "text",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAPUlEQVR4nO3WwQkAIAwEwRQQ7L9bLUEDSkBm4d6ZZyJ0WOaYlQFcB+xAzw8CAAAAAAAAAAAAtAPa33KAb1v0HbchW9QoZwAAAABJRU5ErkJggg=="
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQklEQVR4nO3WwQkAIAhAUQeQ9t+2JiikQ0K8D171HY0oljnmaap7rgNoB+wgzw4DAAAAAAAAAAAAtAPa33KAdsC3LUftrfk1+zOrAAAAAElFTkSuQmCC"
     },
     {
-      "id": "text-light",
-      "name": "text (light)",
+      "id": "ibeam-light",
+      "name": "I-beam (light)",
       "states": [
         "text"
       ],
       "fallback": "text",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAPUlEQVR4nO3WsQkAIAxFwew/bQp7HUEDSkDuwa9zZSJ0WOaYlQFcB+xAzw8CAAAAAAAAAAAAtAPa33KAb1tf6mP/Qokp0wAAAABJRU5ErkJggg=="
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQklEQVR4nO3WMQoAIAhAUe9/Wof2OkEhDQnxPrjqG40oljnmaap7rgNoB+wgzw4DAAAAAAAAAAAAtAPa33KAdsC3Lc52RWe/cICHAAAAAElFTkSuQmCC"
     },
     {
-      "id": "text-neon",
-      "name": "text (neon)",
+      "id": "ibeam-neon",
+      "name": "I-beam (neon)",
       "states": [
         "text"
       ],
       "fallback": "text",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAOUlEQVR4nO3WsQkAMAhFQfffM3PoCkkRBbkHv/ZKI3TbyXwawPfaDwIAAAAAAAAAAACMA8bfcoCtFdEVzfDWaH02AAAAAElFTkSuQmCC"
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAPklEQVR4nO3XsQ0AIAhFQfbf0zlwAo0NavReQn/lJ2K1ljm98gCOA0aQ7QEAAAAAAAAAAABcs4b/+wsAXq0Df9i22HZNT1MAAAAASUVORK5CYII="
     },
     {
-      "id": "wait-dark",
-      "name": "wait (dark)",
+      "id": "ibeam-coral",
+      "name": "I-beam (coral)",
       "states": [
-        "wait"
+        "text"
+      ],
+      "fallback": "text",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQ0lEQVR4nO3WsQ0AIAgAQfZvHMQhcQINsZDE3Ce0cCURxXLMPE11z3UA7YAd5NlhAAAAAAAAAAAAgHZA+1sO0A74tgVlkelQBJpLaAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "ibeam-lemon",
+      "name": "I-beam (lemon)",
+      "states": [
+        "text"
+      ],
+      "fallback": "text",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQklEQVR4nO3WwQkAIAhAUUdsf9rFJiikQ0K8D171HY0olnPkaap7rgNoB+wgzw4DAAAAAAAAAAAAtAPa33KAdsC3LRt44QAemCpBAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ibeam-mint",
+      "name": "I-beam (mint)",
+      "states": [
+        "text"
+      ],
+      "fallback": "text",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAARElEQVR4nO3WwQkAIAhAUUdsxAZrl5qgkA4J8T541Xc0IlkbfZ4mu+c6gHLADvLsMAAAAAAAAAAAAEA5oPwtBygHfNsCVTqomP5mFZAAAAAASUVORK5CYII="
+    },
+    {
+      "id": "ibeam-grape",
+      "name": "I-beam (grape)",
+      "states": [
+        "text"
+      ],
+      "fallback": "text",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQklEQVR4nO3WwQkAIAhAUcduppa0CQrpkBDvg1d9RyOKzZF5muqe6wDaATvIs8MAAAAAAAAAAAAA7YD2txygHfBtC26k2xCrwtGxAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ibeam-sky",
+      "name": "I-beam (sky)",
+      "states": [
+        "text"
+      ],
+      "fallback": "text",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQklEQVR4nO3WwQkAIAhAUedsxJa0CQrpkBDvg1d9RyOKjZl5muqe6wDaATvIs8MAAAAAAAAAAAAA7YD2txygHfBtCwf1yUAmGWADAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ibeam-blush",
+      "name": "I-beam (blush)",
+      "states": [
+        "text"
+      ],
+      "fallback": "text",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQklEQVR4nO3WwQkAIAhAUWdvsFazCQrpkBDvg1d9RyOK5Zh5muqe6wDaATvIs8MAAAAAAAAAAAAA7YD2txygHfBtC/7j7ODoY72rAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ibeam-peach",
+      "name": "I-beam (peach)",
+      "states": [
+        "text"
+      ],
+      "fallback": "text",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQklEQVR4nO3WwQkAIAhAUSdusJa0CQrpkBDvg1d9RyOK5Rx5muqe6wDaATvIs8MAAAAAAAAAAAAA7YD2txygHfBtC+TP1SBsMFF3AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ibeam-cocoa",
+      "name": "I-beam (cocoa)",
+      "states": [
+        "text"
+      ],
+      "fallback": "text",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAARElEQVR4nO3WwQkAIAhAUedsiCZp55qgkA4J8T541Xc0ItnobZ4mu+c6gHLADvLsMAAAAAAAAAAAAEA5oPwtBygHfNsCxZ9hWJf+AqEAAAAASUVORK5CYII="
+    },
+    {
+      "id": "ibeam-mintDark",
+      "name": "I-beam (mintDark)",
+      "states": [
+        "text"
+      ],
+      "fallback": "text",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAARElEQVR4nO3WwQkAIAhAUcdppiZp+5qgkA4J8T541Xc0IlkbfZ4mu+c6gHLADvLsMAAAAAAAAAAAAEA5oPwtBygHfNsC5KMr6OMpJqwAAAAASUVORK5CYII="
+    },
+    {
+      "id": "ring-dark",
+      "name": "Ring (busy) (dark)",
+      "states": [
+        "wait",
+        "progress"
       ],
       "fallback": "wait",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAfElEQVR4nO3UQQrAIAxE0RxAvP9t260rnWQmaYUEshP/A0Gznh5yxphPefC0n4XTIJG4DMHEaYQiHkYo4yGE42L4rDJum+URRPyIaEBF/BeIi5/gBkD+PwAiVgx0Fo47AfC6AGqEO65EhOMKBB1nELK4F5IS3oFKgz3qeQGeh6gev20MhQAAAABJRU5ErkJggg=="
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZElEQVR4nO3XMQ4AIAgDQB9g/P9vdXcwBdGiKYkj5RYTKAWsWltfPTTHXdcB1gHhIBpgN2gbkgZgbozKoQFOfSc4VwABBBBAAAHogGjIe/vA3EhfyWgAb9A/dwE64PjAdIBvawCsGMBJynlFpwAAAABJRU5ErkJggg=="
     },
     {
-      "id": "wait-light",
-      "name": "wait (light)",
+      "id": "ring-light",
+      "name": "Ring (busy) (light)",
       "states": [
-        "wait"
+        "wait",
+        "progress"
       ],
       "fallback": "wait",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAfElEQVR4nO3UMQoAIQxE0dz/tBb2u62VTjKT7AoJpBP/A0Gznh5yxphPefC0n4XTIJG4DMHEaYQiHkYo4yGE42L4rDJum+URRPyIaEBF/BeIi5/gBkD+PwAiVgx0Fo47AfC6AGqEO65EhOMKBB1nELK4F5IS3oFKgz3qeQHYgEYnU7aWqAAAAABJRU5ErkJggg=="
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3XMQ4AIAgDQP//Wgd33R1MQbRoSuJIucUESgGr1tZXD81x13WAdUA4iAbYDdqGpAGYG6NyaIBT3wnOFUAAAQQQQAA6IBry3j4wN9JXMhrAG/TPXYAOOD4wHeDbGv1wgpd5gfuhAAAAAElFTkSuQmCC"
     },
     {
-      "id": "wait-neon",
-      "name": "wait (neon)",
+      "id": "ring-neon",
+      "name": "Ring (busy) (neon)",
       "states": [
-        "wait"
+        "wait",
+        "progress"
       ],
       "fallback": "wait",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAcUlEQVR4nO2UUQpAIQgEvf89O0fvt6/a3E2f4IB/0gwEmjUNy5gzXniaNPGzEI9cFsHI6QiF3B2hlLsi8IfxXaHcNiOI8MvPER0QIP9FROUvKBAQcAewiDUG270CD8DnmlS5MoImVc5EPCFNvAtqKvMBqsqomZSfzOQAAAAASUVORK5CYII="
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAXklEQVR4nO3XMQ4AIAgDQP7/T9+Bu4NBASukTRylt5igiDVDdXvS8xxwWhAOggG8g9yQbwDe1ANkPSfzXAIIIIAAAgiAA6Ih9faB9SJ8JYMBbgf1+RdYC9ILvwN0zQSZE+UI1DZVtgAAAABJRU5ErkJggg=="
     },
     {
-      "id": "not-allowed-dark",
-      "name": "not-allowed (dark)",
+      "id": "ring-coral",
+      "name": "Ring (busy) (coral)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZElEQVR4nO3XMQ4AIAgDQP6/+BAfibuDqYpWSUkcKbeYgBlYXqqPHpqzXNcBswPCQTTAbtA25BnAdGNUDg1w6jvBuQIIIIAAAghAB0RD/tsH+kb6SkYDrAbluQvQAccHPgdIWw1GJhzfE0W8kQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "ring-lemon",
+      "name": "Ring (busy) (lemon)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZElEQVR4nO3XMQ4AIAgDQJ7o/+NfcHcwVdEqKYkj5RYTMAPLa/HRQ3OW6zpgdkA4iAbYDdqGPAOYbozKoQFOfSc4VwABBBBAAAHogGjIf/tA30hfyWiA1aA8dwE64PjA5wBpqwF69ROvmY7jqwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "ring-mint",
+      "name": "Ring (busy) (mint)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZUlEQVR4nO3XMQ4AIAgDQJ/oE32Yf9HdwRRFi6YkjpRbTCAlsHItbfbQnOW6DrAOcAfRALtB25AwAHOjVw4NcOo7wbkCCCCAAAIIQAd4Q97bB8ZG+kpGA6wG/XMXoAOODwwH+LY6kmLVSNn4yncAAAAASUVORK5CYII="
+    },
+    {
+      "id": "ring-grape",
+      "name": "Ring (busy) (grape)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3XMQ4AIAgDQJ7tm/wk7g6mKlolJXGk3GICZmDV4j56aM5yXQfMDggH0QC7QduQZwDTjVE5NMCp7wTnCiCAAAIIIAAdEA35bx/oG+krGQ2wGpTnLkAHHB/4HCBtNV2mDR9nR2bZAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ring-sky",
+      "name": "Ring (busy) (sky)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3XMQ4AIAgDQN7pE/0k7g6mKlolJXGk3GICZmCV6j56aM5yXQfMDggH0QC7QduQZwDTjVE5NMCp7wTnCiCAAAIIIAAdEA35bx/oG+krGQ2wGpTnLkAHHB/4HCBtNdEo+WDslrpHAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ring-blush",
+      "name": "Ring (busy) (blush)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3XMQ4AIAgDQN7uw/wa7g6mKlolJXGk3GICZmB5qT56aM5yXQfMDggH0QC7QduQZwDTjVE5NMCp7wTnCiCAAAIIIAAdEA35bx/oG+krGQ2wGpTnLkAHHB/4HCBtNRgUIM/stxBpAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ring-peach",
+      "name": "Ring (busy) (peach)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3XMQ4AIAgDQF7sw/wk7g6mKlolJXGk3GICZmB5LT56aM5yXQfMDggH0QC7QduQZwDTjVE5NMCp7wTnCiCAAAIIIAAdEA35bx/oG+krGQ2wGpTnLkAHHB/4HCBtNYH2Bo9t+eMLAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ring-cocoa",
+      "name": "Ring (busy) (cocoa)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZUlEQVR4nO3XMQ4AIAgDQN/pI3yJf9bdwRRFi6YkjpRbTCAlsGrJbfbQnOW6DrAOcAfRALtB25AwAHOjVw4NcOo7wbkCCCCAAAIIQAd4Q97bB8ZG+kpGA6wG/XMXoAOODwwH+LY6h+eGiMVFC4wAAAAASUVORK5CYII="
+    },
+    {
+      "id": "ring-mintDark",
+      "name": "Ring (busy) (mintDark)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZUlEQVR4nO3XMQ4AIAgDQJ/jm3yJv9fdwRRFi6YkjpRbTCAlsHItbfbQnOW6DrAOcAfRALtB25AwAHOjVw4NcOo7wbkCCCCAAAIIQAd4Q97bB8ZG+kpGA6wG/XMXoAOODwwH+LY6PmtLeMbufIMAAAAASUVORK5CYII="
+    },
+    {
+      "id": "ban-dark",
+      "name": "Not allowed (dark)",
       "states": [
         "not-allowed"
       ],
       "fallback": "not-allowed",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAa0lEQVR4nO3RwQ3AMAhD0QwQZf9t2wmaFGwHDrbE+T+JMTwP3JzruR48nQT2J/yFKYtTEGgcQrDiKQAznkKUAhTxEMKAUoAy3gLR/wUGKBGl8RBAgQjF2YhUnAWB4wiCFo9CJOEd6GrQY+8FI3wA3/RGdvAAAAAASUVORK5CYII="
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3VUQrAIAwDUA8gu/9t578waho1i1jolxifqFhKULU+L9JRHlzbAWwgDZIBVp3hcO4FyADL3u/oOjaAWc/TD/A1jkL8AFmYPwC9lOcB0KLB9oA+B77UcsBsSDr3AuSAfgL77aY3JAdEgVHTC/4OcHw1iiPypRgXbcEAAAAASUVORK5CYII="
     },
     {
-      "id": "not-allowed-light",
-      "name": "not-allowed (light)",
+      "id": "ban-light",
+      "name": "Not allowed (light)",
       "states": [
         "not-allowed"
       ],
       "fallback": "not-allowed",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAa0lEQVR4nO3RMQ7AIAxDUe5/Wgb29gSFJrZJBlvK/J+UMTwP3JzruR48nQT2J/yFKYtTEGgcQrDiKQAznkKUAhTxEMKAUoAy3gLR/wUGKBGl8RBAgQjF2YhUnAWB4wiCFo9CJOEd6GrQY+8Fwfixm3PwEkoAAAAASUVORK5CYII="
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3VwQ4AERADUP//tQ57X3fJZnSKbsUkcxL1BFFKULU+L9JRHlzbAWwgDZIBVp3hcO4FyADL3u/oOjaAWc/TD/A1jkL8AFmYPwC9lOcB0KLB9oA+B77UcsBsSDr3AuSAfgL77aY3JAdEgVHTC/4OcHw1/RMq6lgu+DMAAAAASUVORK5CYII="
     },
     {
-      "id": "not-allowed-neon",
-      "name": "not-allowed (neon)",
+      "id": "ban-neon",
+      "name": "Not allowed (neon)",
       "states": [
         "not-allowed"
       ],
       "fallback": "not-allowed",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYUlEQVR4nO3RwQ0AIAhDUfff0zl0AqNASz20Cef/EsbwvOrmWv3B21FgL+ETRhaHIKrxEgIVTwGQ8RRCCmDEQwgDpABm/AvE/y8wgImQxkMABiI1aRwFgU0aj0Ja1x70wNtKIA2MRQ+26AAAAABJRU5ErkJggg=="
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAc0lEQVR4nO3VUQrAIAwDUO9/T8+h/4K0aashYqBfsvjGlLVmpY8BTXmuA7KFaRANcOobuns/gAY4dn+9+8gAqq6nHmC3jkL0AFGYPgA9lO8B0KTB8oC1Bz7UdEA1JNz7AXTA+kD2txt+ITrAKrSmPHTA65lSxmQbtKHE0wAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "ban-coral",
+      "name": "Not allowed (coral)",
+      "states": [
+        "not-allowed"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeElEQVR4nO3VUQ4AERADUPf/cZA9pP2XbEan6FZMMl+iniBKCarVpyEd5cG1HcAG0iAZYNUZDudegAyw7P2OrmMDmPU8/QBf4yjED5CF+QPQS3keAC0abA/oc+BLLQfMhqRzL0AO6Cew3256Q3JAFBg1veDvAMfXC64/qn9DSaEzAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ban-lemon",
+      "name": "Not allowed (lemon)",
+      "states": [
+        "not-allowed"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3VUQrAIAwDUI/o/dld3L8waho1i1jolxifqFhKUO2pDekoD67tADaQBskAq85wOPcCZIBl73d0HRvArOfpB/gaRyF+gCzMH4BeyvMAaNFge0CfA19qOWA2JJ17AXJAP4H9dtMbkgOiwKjpBX8HOL5eG9me5/ySyqYAAAAASUVORK5CYII="
+    },
+    {
+      "id": "ban-mint",
+      "name": "Not allowed (mint)",
+      "states": [
+        "not-allowed"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3V0QnAIBADUEd0xA7WXey/UM5ctGnEg/sS4xMVSwmq3ldDOsqD63MAG0iDZIBVZzicewAywLL3O7qODWDW8/QDvI2jED9AFuYPQC/lfgC0aLA9oM+BL7UcMBuSzj0AOaCfwH676Q3JAVFg1PSCvwNsXw9ne1A7Uloq8wAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "ban-grape",
+      "name": "Not allowed (grape)",
+      "states": [
+        "not-allowed"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3VUQ4AERADUMd2pr2k/ZdsRqfoVkwyX6KeIEoJ6qmtIR3lwbUdwAbSIBlg1RkO516ADLDs/Y6uYwOY9Tz9AF/jKMQPkIX5A9BLeR4ALRpsD+hz4EstB8yGpHMvQA7oJ7DfbnpDckAUGDW94O8Ax9cLpgWWn3iHQp4AAAAASUVORK5CYII="
+    },
+    {
+      "id": "ban-sky",
+      "name": "Not allowed (sky)",
+      "states": [
+        "not-allowed"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3VUQ4AERADUOd0xL2k/ZdsRqfoVkwyX6KeIEoJqj6tIR3lwbUdwAbSIBlg1RkO516ADLDs/Y6uYwOY9Tz9AF/jKMQPkIX5A9BLeR4ALRpsD+hz4EstB8yGpHMvQA7oJ7DfbnpDckAUGDW94O8Ax9cLiHV9x2XcM44AAAAASUVORK5CYII="
+    },
+    {
+      "id": "ban-blush",
+      "name": "Not allowed (blush)",
+      "states": [
+        "not-allowed"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3VUQ4AERADUGd3sL2a/ZdsRqfoVkwyX6KeIEoJqtWnIR3lwbUdwAbSIBlg1RkO516ADLDs/Y6uYwOY9Tz9AF/jKMQPkIX5A9BLeR4ALRpsD+hz4EstB8yGpHMvQA7oJ7DfbnpDckAUGDW94O8Ax9cL/Y2vd2hVvOYAAAAASUVORK5CYII="
+    },
+    {
+      "id": "ban-peach",
+      "name": "Not allowed (peach)",
+      "states": [
+        "not-allowed"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3VUQ4AERADUCd2sL2k/ZdsRqfoVkwyX6KeIEoJqj21IR3lwbUdwAbSIBlg1RkO516ADLDs/Y6uYwOY9Tz9AF/jKMQPkIX5A9BLeR4ALRpsD+hz4EstB8yGpHMvQA7oJ7DfbnpDckAUGDW94O8Ax9cLxheOVwR1XuQAAAAASUVORK5CYII="
+    },
+    {
+      "id": "ban-cocoa",
+      "name": "Not allowed (cocoa)",
+      "states": [
+        "not-allowed"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3V0QnAIBADUOd0iE7Sne2/UM5ctGnEg/sS4xMVSwnqvmpDOsqD63MAG0iDZIBVZzicewAywLL3O7qODWDW8/QDvI2jED9AFuYPQC/lfgC0aLA9oM+BL7UcMBuSzj0AOaCfwH676Q3JAVFg1PSCvwNsXw9l8uzMdr2L+gAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "ban-mintDark",
+      "name": "Not allowed (mintDark)",
+      "states": [
+        "not-allowed"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3V0QnAIBADUMdxpk7S7e2/UM5ctGnEg/sS4xMVSwmq3ldDOsqD63MAG0iDZIBVZzicewAywLL3O7qODWDW8/QDvI2jED9AFuYPQC/lfgC0aLA9oM+BL7UcMBuSzj0AOaCfwH676Q3JAVFg1PSCvwNsXw+BMqJEwch3CwAAAABJRU5ErkJggg=="
     },
     {
       "id": "crosshair-dark",
-      "name": "crosshair (dark)",
+      "name": "Crosshair (dark)",
       "states": [
+        "help",
         "crosshair"
       ],
       "fallback": "crosshair",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAUUlEQVR4nO2SQQoAIAgEfYD0/98WQfcFFSyaAW+2jqHZy7iPuQsBBBBAoE0AwM4hloSoUu9SmREB1RNdKvxz6bCMRNtwaOeKA0QAAQT+FqhgAUOWYUqsMcdIAAAAAElFTkSuQmCC"
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQUlEQVR4nO3SsQkAMAhFQQeQ7L9t0qbWgBDuga1c8SOKZa59X/VPOQAAAIBxgP6pO6b2GAHGAVK18fEBAAAAvAIcnuyAMW6muXcAAAAASUVORK5CYII="
     },
     {
       "id": "crosshair-light",
-      "name": "crosshair (light)",
+      "name": "Crosshair (light)",
       "states": [
+        "help",
         "crosshair"
       ],
       "fallback": "crosshair",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAUUlEQVR4nO2SQQoAIAgE/f9rPXQvgu4LKlg0A95sHUOzl3EfcxcCCCCAQJsAgJ1DLAlRpd6lMiMCqie6VPjn0mEZibbh0M4VB4gAAgj8LVDBAn+0RR+IAgwhAAAAAElFTkSuQmCC"
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQUlEQVR4nO3SMQoAMAgEQf//Wov0SZtaA0KYBVuZ4iKKZa59X/VPOQAAAIBxgP6pO6b2GAHGAVK18fEBAAAAvAIcjm+sYFUGxuwAAAAASUVORK5CYII="
     },
     {
       "id": "crosshair-neon",
-      "name": "crosshair (neon)",
+      "name": "Crosshair (neon)",
       "states": [
+        "help",
         "crosshair"
       ],
       "fallback": "crosshair",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAATElEQVR4nGNgGNLg6f//YDzqgFEHjDpg1AGjYBQMKKBKIoSlZnyYkD6KzCTHAYTUkOspskNuwMBoQTSywaBIgKMOGHXAqANGtgOoAACOffVgsKRjoQAAAABJRU5ErkJggg=="
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAPklEQVR4nO3SMQoAIAwEwfz/n74j1raJGJBZuH6Ki6i2Mo89DwAAAGAcoH/qnql9RoBxgFRt/HwAAAAAlwAbWlFDYHS2lUcAAAAASUVORK5CYII="
     },
     {
-      "id": "grab-dark",
-      "name": "grab (dark)",
+      "id": "crosshair-coral",
+      "name": "Crosshair (coral)",
       "states": [
-        "grab"
+        "help",
+        "crosshair"
+      ],
+      "fallback": "crosshair",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQklEQVR4nO3SsQkAMAhFQfdvMkiGNG1qDQjhHtjKFT+iWK6d91X/lAMAAAAYB+ifumNqjxFgHCBVGx8fAAAAwCvAAeTcaJC+PC2ZAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "crosshair-lemon",
+      "name": "Crosshair (lemon)",
+      "states": [
+        "help",
+        "crosshair"
+      ],
+      "fallback": "crosshair",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQUlEQVR4nO3SsQkAMAhFQUfM/mQX06bWgBDuga1c8SOK5V55X/VPOQAAAIBxgP6pO6b2GAHGAVK18fEBAAAAvAIcer1icEvdeAAAAAAASUVORK5CYII="
+    },
+    {
+      "id": "crosshair-mint",
+      "name": "Crosshair (mint)",
+      "states": [
+        "help",
+        "crosshair"
+      ],
+      "fallback": "crosshair",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQ0lEQVR4nO3SsQkAIAxFwYzoiA7mLtpaJ0JA7kHacMWPSDbW3Pdl/6QDAAAAaAfon6pjKo8RoB0gZWsfHwAAAMArwAGspjjgjaCM1AAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "crosshair-grape",
+      "name": "Crosshair (grape)",
+      "states": [
+        "help",
+        "crosshair"
+      ],
+      "fallback": "crosshair",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQUlEQVR4nO3SsQkAMAhFQcfOTFnStKk1IIR7YCtX/Ihie2XeV/1TDgAAAGAcoH/qjqk9RoBxgFRtfHwAAAAArwAHoLFeEB6RfTkAAAAASUVORK5CYII="
+    },
+    {
+      "id": "crosshair-sky",
+      "name": "Crosshair (sky)",
+      "states": [
+        "help",
+        "crosshair"
+      ],
+      "fallback": "crosshair",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQUlEQVR4nO3SsQkAMAhFQefMiFnStKk1IIR7YCtX/Ihia2feV/1TDgAAAGAcoH/qjqk9RoBxgFRtfHwAAAAArwAHROtQ8B+IGJoAAAAASUVORK5CYII="
+    },
+    {
+      "id": "crosshair-blush",
+      "name": "Crosshair (blush)",
+      "states": [
+        "help",
+        "crosshair"
+      ],
+      "fallback": "crosshair",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQUlEQVR4nO3SsQkAMAhFQWfPYFnNtKk1IIR7YCtX/IhiuXbeV/1TDgAAAGAcoH/qjqk9RoBxgFRtfHwAAAAArwAHGyZrMKgthZkAAAAASUVORK5CYII="
+    },
+    {
+      "id": "crosshair-peach",
+      "name": "Crosshair (peach)",
+      "states": [
+        "help",
+        "crosshair"
+      ],
+      "fallback": "crosshair",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQUlEQVR4nO3SsQkAMAhFQSfOYFnStKk1IIR7YCtX/IhiuVfeV/1TDgAAAGAcoH/qjqk9RoBxgFRtfHwAAAAArwAHnRRZsCL+aHoAAAAASUVORK5CYII="
+    },
+    {
+      "id": "crosshair-cocoa",
+      "name": "Crosshair (cocoa)",
+      "states": [
+        "help",
+        "crosshair"
+      ],
+      "fallback": "crosshair",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQ0lEQVR4nO3SsQkAIAxFwczpEE7iztpaJ0JA7kHacMWPSLbm2Pdl/6QDAAAAaAfon6pjKo8RoB0gZWsfHwAAAMArwAECbgRgPmI7GgAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "crosshair-mintDark",
+      "name": "Crosshair (mintDark)",
+      "states": [
+        "help",
+        "crosshair"
+      ],
+      "fallback": "crosshair",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQ0lEQVR4nO3SsQkAIAxFwYzjTE7i9tpaJ0JA7kHacMWPSDbW3Pdl/6QDAAAAaAfon6pjKo8RoB0gZWsfHwAAAMArwAEsTdzxn4dK6QAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "dot-dark",
+      "name": "Dot (drag) (dark)",
+      "states": [
+        "grab",
+        "move"
       ],
       "fallback": "grab",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAWElEQVR4nO3O2wkAIAxDUQco7r+tTiDSNn0oCeT7njE4jnt9InOlB28vjYchNHE4whKHITxxCIKAUgAi3gJhjhPQAuBFuOMeBCxuQcDjGkRY/ARKDXLcd9uUHCGhNJ6jQgAAAABJRU5ErkJggg=="
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nO3O2wkAMAhDUQeQ7r9tO0GxwSclAX+9R8SY6trIWf/glQPQYDioDRAdhiFtgOywCSGAAAIIIIAAAtoBVZBreAwgC/IcHgPwgtzBcQDu+x0n+gFOW/ZZkwAAAABJRU5ErkJggg=="
     },
     {
-      "id": "grab-light",
-      "name": "grab (light)",
+      "id": "dot-light",
+      "name": "Dot (drag) (light)",
       "states": [
-        "grab"
+        "grab",
+        "move"
       ],
       "fallback": "grab",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAWUlEQVR4nO3Ouw0AIAxDQfafNgU9TIBQEucDsiXX78bgOO71icyVHry9NB6G0MThCEschvDEIQgCSgGIeAuEOU5AC4AX4Y57ELC4BQGPaxBh8RMoNchx320DDjnHtSbZrVwAAAAASUVORK5CYII="
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVklEQVR4nO3OuwkAMAxDQe8/rYv0yQTBEf4SJHDrdyLGVNdGzvoHrxyABsNBbYDoMAxpA2SHTQgBBBBAAAEEENAOqIJcw2MAWZDn8BiAF+QOjgNw3+8AC10Kd8eM9OoAAAAASUVORK5CYII="
     },
     {
-      "id": "grab-neon",
-      "name": "grab (neon)",
+      "id": "dot-neon",
+      "name": "Dot (drag) (neon)",
       "states": [
-        "grab"
+        "grab",
+        "move"
       ],
       "fallback": "grab",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAT0lEQVR4nO3O0QkAIAxDwe6/p3PUCURsUqOQB/nORTjnvm9k3j/cTXrehjg5pyMq5zQEck5BGCAFMM6fQEAZIAegCFrS8wqiLen5CuScA5p899p2E6GcXQAAAABJRU5ErkJggg=="
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAATklEQVR4nO3O0QkAMAgDUfffs3PYEUQaDZQ7yHdeRNXJbE3eOqB7KAfZAOrjNsQGmD4uIQAAAAAAAAAAO2ALUmYHTEHa2QGvIHl2AP3eBfEplEpFn3ugAAAAAElFTkSuQmCC"
     },
     {
-      "id": "help-dark",
-      "name": "help (dark)",
+      "id": "dot-coral",
+      "name": "Dot (drag) (coral)",
+      "states": [
+        "grab",
+        "move"
+      ],
+      "fallback": "grab",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVklEQVR4nO3OywkAMAhEQfu/pJAUaSoIZvFL2AWvvhExpmsrctY/eOUANBgOagNEh2FIGyA7bEIIIIAAAggggIB2QBXkGh4DyII8h8cAvCB3cByA+34HGyVzeUY/psUAAAAASUVORK5CYII="
+    },
+    {
+      "id": "dot-lemon",
+      "name": "Dot (drag) (lemon)",
+      "states": [
+        "grab",
+        "move"
+      ],
+      "fallback": "grab",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nO3O2wkAMAhDUUfs/nQXO0GxwSclAX+9R8SY7qXIWf/glQPQYDioDRAdhiFtgOywCSGAAAIIIIAAAtoBVZBreAwgC/IcHgPwgtzBcQDu+x1ok065oCAfzAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "dot-mint",
+      "name": "Dot (drag) (mint)",
+      "states": [
+        "grab",
+        "move"
+      ],
+      "fallback": "grab",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAV0lEQVR4nO3O2wkAIAxD0Y7oiA7mLjqB1NAnkkB/e4+IsrHmRk77By8dgAbdQWUA7zAMKQNEh1UIAQQQQAABBBBQDsiCXMNtAFGQ53AbgBVkDrYDcN/vABWUVUrOXozyAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "dot-grape",
+      "name": "Dot (drag) (grape)",
+      "states": [
+        "grab",
+        "move"
+      ],
+      "fallback": "grab",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nO3O2wkAMAhDUcfuTF3STlBs8ElJwF/vETG2lypy1j945QA0GA5qA0SHYUgbIDtsQggggAACCCCAgHZAFeQaHgPIgjyHxwC8IHdwHID7fge4RTR56zDO1AAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "dot-sky",
+      "name": "Dot (drag) (sky)",
+      "states": [
+        "grab",
+        "move"
+      ],
+      "fallback": "grab",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nO3O2wkAMAhDUefsiF3STlBs8ElJwF/vETG2tipy1j945QA0GA5qA0SHYUgbIDtsQggggAACCCCAgHZAFeQaHgPIgjyHxwC8IHdwHID7fgfVU+WqOWTwrwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "dot-blush",
+      "name": "Dot (drag) (blush)",
+      "states": [
+        "grab",
+        "move"
+      ],
+      "fallback": "grab",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nO3O2wkAMAhDUWfvYF3NTlBs8ElJwF/vETGmayty1j945QA0GA5qA0SHYUgbIDtsQggggAACCCCAgHZAFeQaHgPIgjyHxwC8IHdwHID7fgdTBoM513WzagAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "dot-peach",
+      "name": "Dot (drag) (peach)",
+      "states": [
+        "grab",
+        "move"
+      ],
+      "fallback": "grab",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nO3O2wkAMAhDUSfuYF3STlBs8ElJwF/vETGmeyly1j945QA0GA5qA0SHYUgbIDtsQggggAACCCCAgHZAFeQaHgPIgjyHxwC8IHdwHID7fgcOkRo5nmnHDQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "dot-cocoa",
+      "name": "Dot (drag) (cocoa)",
+      "states": [
+        "grab",
+        "move"
+      ],
+      "fallback": "grab",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAV0lEQVR4nO3O2wkAIAxD0c7pEE7izjqB1NAnkkB/e4+IsjXHRk77By8dgAbdQWUA7zAMKQNEh1UIAQQQQAABBBBQDsiCXMNtAFGQ53AbgBVkDrYDcN/vACdXGjvSdo3tAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "dot-mintDark",
+      "name": "Dot (drag) (mintDark)",
+      "states": [
+        "grab",
+        "move"
+      ],
+      "fallback": "grab",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAV0lEQVR4nO3O2wkAIAxD0Y7jTE7i9jqB1NAnkkB/e4+IsrHmRk77By8dgAbdQWUA7zAMKQNEh1UIAQQQQAABBBBQDsiCXMNtAFGQ53AbgBVkDrYDcN/vAO4QLexqAHgtAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "question-dark",
+      "name": "Question (dark)",
       "states": [
         "help"
       ],
       "fallback": "help",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQElEQVR4nO3TwQkAMAjAQAcQ99+2nUHQhkICvr2HRpj9UmadzghYg3SxApClAp4sx18Q/3kBAnCA4eE3IMBsqgureYcPzeP6CQAAAABJRU5ErkJggg=="
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3S4QkAIAiE0QaQ9t+2RlBEvYjvoL/ek1zLidk+kefNSWccEC1sA8kAVRuk58gAXccUngtADqiOrFgOYHM2HysGAOAZAJF/AQAAcsA3uVr5yXEzH8AKAAAAAElFTkSuQmCC"
     },
     {
-      "id": "help-light",
-      "name": "help (light)",
+      "id": "question-light",
+      "name": "Question (light)",
       "states": [
         "help"
       ],
       "fallback": "help",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQElEQVR4nO3TMQoAMAjAQP//Wgf39g2CNhQScPYGjTD7pcw6nRGwBuliBSBLBTxZjr8g/vMCBOAAw8NvQIDZVBc1cMNSjYRvIgAAAABJRU5ErkJggg=="
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nO3SQQoAIAhE0e5/Whft6wiKqBPxB9o6T3ItJ2b7RJ43J51xQLSwDSQDVG2QniMDdB1TeC4AOaA6smI5gM3ZfKwYAIBnAET+BQAAyAHf5ALYVKEv7COi/AAAAABJRU5ErkJggg=="
     },
     {
-      "id": "help-neon",
-      "name": "help (neon)",
+      "id": "question-neon",
+      "name": "Question (neon)",
       "states": [
         "help"
       ],
       "fallback": "help",
       "hotspot": {
-        "x": 16,
-        "y": 16
+        "x": 8,
+        "y": 8
       },
       "size": 32,
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAP0lEQVR4nO3TwQkAMAgEQfvvM3WYGoQkR2AWfDsPrZK+aXWPBuAaZIoFiCwFeLI8/oLxnwcAiAMUL34DANKhNstRVLKMbal8AAAAAElFTkSuQmCC"
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAUElEQVR4nO3SUQoAIAgEUe9/z85RR0hCHYhZ6FffkhG3rL1Try3jgOzCNhAGqGrwPAcDdB1Teq4AHFAdbDEOsLnNxyNAAA4w+BcIEIADfskByaX8II6bDm0AAAAASUVORK5CYII="
+    },
+    {
+      "id": "question-coral",
+      "name": "Question (coral)",
+      "states": [
+        "help"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nO3SwQ0AIAhDUfe/OIhD4ggQAtSY38QrfUTWcmL7WOR5c9IZB0QL20AyQNUG6TkyQNcxhecCkAOqIyuWA9iczceKAQB4BkDkXwAAgBzwTS7VfzafrHLfFQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "question-lemon",
+      "name": "Question (lemon)",
+      "states": [
+        "help"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3S4QkAIAiE0UZsf9rFRlBEvYjvoL/ek1zLiZ1tkefNSWccEC1sA8kAVRuk58gAXccUngtADqiOrFgOYHM2HysGAOAZAJF/AQAAcsA3uXTGLP/DO4KSAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "question-mint",
+      "name": "Question (mint)",
+      "states": [
+        "help"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVklEQVR4nO3S4QkAIAiEUUdsxAZrlxohEfUivoP+ek/S7JKx5va825xw2gHewjKQDJC1QXiODFB1TO65AOSA7MiK5QA2Z/O2YgAAngEQ+RcAACAHfJMDnpbroBMwDIwAAAAASUVORK5CYII="
+    },
+    {
+      "id": "question-grape",
+      "name": "Question (grape)",
+      "states": [
+        "help"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3S4QkAIAiE0cZuppa0ERRRL+I76K/3JNdycrZZ5Hlz0hkHRAvbQDJA1QbpOTJA1zGF5wKQA6ojK5YD2JzNx4oBAHgGQORfAACAHPBNLr3hJh84/T5rAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "question-sky",
+      "name": "Question (sky)",
+      "states": [
+        "help"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3S4QkAIAiE0eZsxJa0ERRRL+I76K/3JNdyso9Z5Hlz0hkHRAvbQDJA1QbpOTJA1zGF5wKQA6ojK5YD2JzNx4oBAHgGQORfAACAHPBNLnqfEX+tFCFvAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "question-blush",
+      "name": "Question (blush)",
+      "states": [
+        "help"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3S4QkAIAiE0WZvsFazERRRL+I76K/3JNdyYvtY5Hlz0hkHRAvbQDJA1QbpOTJA1zGF5wKQA6ojK5YD2JzNx4oBAHgGQORfAACAHPBNLjFSOr+AM4JsAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "question-peach",
+      "name": "Question (peach)",
+      "states": [
+        "help"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3S4QkAIAiE0SZusJa0ERRRL+I76K/3JNdyYmdb5Hlz0hkHRAvbQDJA1QbpOTJA1zGF5wKQA6ojK5YD2JzNx4oBAHgGQORfAACAHPBNLlf6Hz/caysIAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "question-cocoa",
+      "name": "Question (cocoa)",
+      "states": [
+        "help"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVklEQVR4nO3S4QkAIAiEUedsiCZp5xohEfUivoP+ek/S7JI1x/a825xw2gHewjKQDJC1QXiODFB1TO65AOSA7MiK5QA2Z/O2YgAAngEQ+RcAACAHfJMDxu6ZIBdHAWEAAAAASUVORK5CYII="
+    },
+    {
+      "id": "question-mintDark",
+      "name": "Question (mintDark)",
+      "states": [
+        "help"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVklEQVR4nO3S4QkAIAiEUcdppiZp+xohEfUivoP+ek/S7JKx5va825xw2gHewjKQDJC1QXiODFB1TO65AOSA7MiK5QA2Z/O2YgAAngEQ+RcAACAHfJMDXWhbQJeVGiYAAAAASUVORK5CYII="
+    },
+    {
+      "id": "cat-dark",
+      "name": "Cat face (dark)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3TQQoAIQwDQB8g/v+3ehVE0pQWs6sFT9p0UCy1tj6vklzLPDlAFmQ7RxYQBYH58oCsZRb+DkC/kQwA9blz5QH0t4r+hscA3itl+x/gAXQBuyC2YL48wAsx534GYIXQeXIAFMgC4L4MwBocfu444PoaVgaqQ0i0744AAAAASUVORK5CYII="
+    },
+    {
+      "id": "cat-light",
+      "name": "Cat face (light)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3TMQpAIQwDUO9/Wgd3XQWRNKXF/K8FJ236UCy1tj6vklzLPDlAFmQ7RxYQBYH58oCsZRb+DkC/kQwA9blz5QH0t4r+hscA3itl+x/gAXQBuyC2YL48wAsx534GYIXQeXIAFMgC4L4MwBocfu444Poa9PPntdq36zcAAAAASUVORK5CYII="
+    },
+    {
+      "id": "cat-neon",
+      "name": "Cat face (neon)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAdUlEQVR4nO3TywkAIAwDUPff0zn0LCJpSovxU/CkTR+KpdTWhpVd0zw5QBZkOUcWEAWB+fKArGUWXgeg30gGgPrcufIA+ltFf8NtAO+Vsv0f8AG6gFUQWzBfHuCFmHOPAVghdJ4cAAWyALgvA7AGh5/bDni9Os5HuNfPQ9a8AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "cat-coral",
+      "name": "Cat face (coral)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeElEQVR4nO3TQQoAIQwDQP9/8SE+Uq+CSJrSYna14EmbDoql19bnVZJrmScHyIJs58gCoiAwXx6QtczC3wHoN5IBoD53rjyA/lbR3/AYwHulbP8DPIAuYBfEFsyXB3gh5tzPAKwQOk8OgAJZANyXAViDw88dB1xfA80NfsroiKkSAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "cat-lemon",
+      "name": "Cat face (lemon)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3TQQoAIQwDQJ/o//EvehVE0pQWs6sFT9p0UCy91T6vklzLPDlAFmQ7RxYQBYH58oCsZRb+DkC/kQwA9blz5QH0t4r+hscA3itl+x/gAXQBuyC2YL48wAsx534GYIXQeXIAFMgC4L4MwBocfu444Poa0d1eMqCoVVQAAAAASUVORK5CYII="
+    },
+    {
+      "id": "cat-mint",
+      "name": "Cat face (mint)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3T0QnAIAwEUEfsiA7WXeyvIHK5kOBZDfiluTwUy/PW1q+SXMM8OUAWZDpHFhAFgfnygKxlFv4OQL+RDAD1uXPlAfS3iv6GywDeK2X7L+ACdAGzILZgvjzACzHnbgOwQug8OQAKZAFwXwZgDQ4/txxwfH0C0oD3k3ye7gAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "cat-grape",
+      "name": "Cat face (grape)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3TQQoAIQwDQJ/tm/ykXgWRNKXF7GrBkzYdFEurvc+rJNcyTw6QBdnOkQVEQWC+PCBrmYW/A9BvJANAfe5ceQD9raK/4TGA90rZ/gd4AF3ALogtmC8P8ELMuZ8BWCF0nhwABbIAuC8DsAaHnzsOuL4G4HxG6t0DvXAAAAAASUVORK5CYII="
+    },
+    {
+      "id": "cat-sky",
+      "name": "Cat face (sky)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3TQQoAIQwDQN/pE/2kXgWRNKXF7GrBkzYdFEttvc+rJNcyTw6QBdnOkQVEQWC+PCBrmYW/A9BvJANAfe5ceQD9raK/4TGA90rZ/gd4AF3ALogtmC8P8ELMuZ8BWCF0nhwABbIAuC8DsAaHnzsOuL4GanIBEi+X99gAAAAASUVORK5CYII="
+    },
+    {
+      "id": "cat-blush",
+      "name": "Cat face (blush)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3TQQoAIQwDQN/uw/yaXgWRNKXF7GrBkzYdFEuvrc+rJNcyTw6QBdnOkQVEQWC+PCBrmYW/A9BvJANAfe5ceQD9raK/4TGA90rZ/gd4AF3ALogtmC8P8ELMuZ8BWCF0nhwABbIAuC8DsAaHnzsOuL4G+Y2Mwpym/cIAAAAASUVORK5CYII="
+    },
+    {
+      "id": "cat-peach",
+      "name": "Cat face (peach)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3TQQoAIQwDQF/sw/ykXgWRNKXF7GrBkzYdFEtvtc+rJNcyTw6QBdnOkQVEQWC+PCBrmYW/A9BvJANAfe5ceQD9raK/4TGA90rZ/gd4AF3ALogtmC8P8ELMuZ8BWCF0nhwABbIAuC8DsAaHnzsOuL4GZC4voqzsREgAAAAASUVORK5CYII="
+    },
+    {
+      "id": "cat-cocoa",
+      "name": "Cat face (cocoa)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3T0QnAIAwEUOfsEE7Sne2vIHK5kOBZDfiluTwUy1uf1q+SXMM8OUAWZDpHFhAFgfnygKxlFv4OQL+RDAD1uXPlAfS3iv6GywDeK2X7L+ACdAGzILZgvjzACzHnbgOwQug8OQAKZAFwXwZgDQ4/txxwfH1CcGmIyjI4ugAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "cat-mintDark",
+      "name": "Cat face (mintDark)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3T0QnAIAwEUMfpTE7S7e2vIHK5kOBZDfiluTwUy/PW1q+SXMM8OUAWZDpHFhAFgfnygKxlFv4OQL+RDAD1uXPlAfS3iv6GywDeK2X7L+ACdAGzILZgvjzACzHnbgOwQug8OQAKZAFwXwZgDQ4/txxwfH0mQpfx8RxJjAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "dog-dark",
+      "name": "Dog face (dark)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3TUQ6AIAwDUA5AvP9t8ddgSLsxsIss4UewfQlaar3ac5Xg6fNffXKAKAgq1gd4IWxxHsCq5RanB0zf2XbA8vOyAO9vZn3vAA5AF4AC2YH58oARxLqfH9AXsc/zAya+PwqkB0AB1kK4LwNgg8PPfQ74/dwKM6pD5M/BqgAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "dog-light",
+      "name": "Dog face (light)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3TwQ6AIAwDUP7/azl4x6vBkHZjYBdZwkWwfQlaar3ac5Xg6fNffXKAKAgq1gd4IWxxHsCq5RanB0zf2XbA8vOyAO9vZn3vAA5AF4AC2YH58oARxLqfH9AXsc/zAya+PwqkB0AB1kK4LwNgg8PPfQ74/dyZM+e1EX/XNAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "dog-neon",
+      "name": "Dog face (neon)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAdUlEQVR4nO3TXQrAIAwDYO9/T8/hnqeMtLVqwiz44k/ywVgptbXXyp4+f+ijA2RBUDE/IAqxFusAVq2wWB4w/c22A5bfpwVEfzPvuwu4AF4ACrQOzKcHfEG85/qAvsi6rw+YHT0ACvAWwnMagDU4/d5xwN/nASy8uNfRFdBFAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "dog-coral",
+      "name": "Dog face (coral)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeklEQVR4nO3TUQ6AIAwDUO7/40E8JP4aDGk3BnaBJfwIti9BS73u+l4leNr8T58cIAqCivUBXghbnAcwa7nF6QHDd7YcMP28LMD7m1nfO4AD0AWgQHZgvjygB7Hu5we0Rezz/ICB748C6QFQgLUQ7ssA2ODwc78Dtp8HXuN+ymU2/wgAAAAASUVORK5CYII="
+    },
+    {
+      "id": "dog-lemon",
+      "name": "Dog face (lemon)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3TUQ6AIAwDUI7o/eNd8NdgSLsxsAss4UewfQla6n3V9yrB0+Z/+uQAURBUrA/wQtjiPIBZyy1ODxi+s+WA6edlAd7fzPreARyALgAFsgPz5QE9iHU/P6AtYp/nBwx8fxRID4ACrIVwXwbABoef+x2w/Tyde14ylDswMAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "dog-mint",
+      "name": "Dog face (mint)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAe0lEQVR4nO3TUQ6AIAwDUI7oET2Yd9FfAzHtxoAusoQfwfYlaDmu836vEjx1ftMnB4iCoGJ9gBfCFucBjFpucXpA951NBww/Lwvw/mbW9zZgA3QBKJAdmC8P+IJY9/MD6iL2eX5Ax/dHgfQAKMBaCPdlAGxw+LnlgN/PAw11gPfa+7aBAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "dog-grape",
+      "name": "Dog face (grape)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3TUQ6AIAwDUI7tmbwk/hoMaTcGdoEl/Ai2L0HLfdX6XiV42vxPnxwgCoKK9QFeCFucBzBrucXpAcN3thww/bwswPubWd87gAPQBaBAdmC+PKAHse7nB7RF7PP8gIHvjwLpAVCAtRDuywDY4PBzvwO2nwcej0bqvEfwswAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "dog-sky",
+      "name": "Dog face (sky)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3TUQ6AIAwDUM7pEb0k/hoMaTcGdoEl/Ai2L0HLddf6XiV42vxPnxwgCoKK9QFeCFucBzBrucXpAcN3thww/bwswPubWd87gAPQBaBAdmC+PKAHse7nB7RF7PP8gIHvjwLpAVCAtRDuywDY4PBzvwO2nwf/twES1yV7YQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "dog-blush",
+      "name": "Dog face (blush)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3TUQ6AIAwDUM7uwbwa/hoMaTcGdoEl/Ai2L0FLve76XiV42vxPnxwgCoKK9QFeCFucBzBrucXpAcN3thww/bwswPubWd87gAPQBaBAdmC+PKAHse7nB7RF7PP8gIHvjwLpAVCAtRDuywDY4PBzvwO2nwfgUIzCknHB4AAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "dog-peach",
+      "name": "Dog face (peach)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3TUQ6AIAwDUE7swbwk/hoMaTcGdoEl/Ai2L0FLva/6XiV42vxPnxwgCoKK9QFeCFucBzBrucXpAcN3thww/bwswPubWd87gAPQBaBAdmC+PKAHse7nB7RF7PP8gIHvjwLpAVCAtRDuywDY4PBzvwO2nwcUpy+it0jzbgAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "dog-cocoa",
+      "name": "Dog face (cocoa)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAe0lEQVR4nO3TUQ6AIAwDUM7pITyJd9ZfAzHtxoAusoQfwfYlaLnO436vEjx1ftMnB4iCoGJ9gBfCFucBjFpucXpA951NBww/Lwvw/mbW9zZgA3QBKJAdmC8P+IJY9/MD6iL2eX5Ax/dHgfQAKMBaCPdlAGxw+LnlgN/PA6omaYh/uaqBAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "dog-mintDark",
+      "name": "Dog face (mintDark)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAe0lEQVR4nO3TUQ6AIAwDUI7jmTyJt9dfAzHtxoAusoQfwfYlaDmu836vEjx1ftMnB4iCoGJ9gBfCFucBjFpucXpA951NBww/Lwvw/mbW9zZgA3QBKJAdmC8P+IJY9/MD6iL2eX5Ax/dHgfQAKMBaCPdlAGxw+LnlgN/PA5PKl/EJLgt3AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "shark-dark",
+      "name": "Shark (dark)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYklEQVR4nO3TQQoAIAgEQB8g/f+3dffSCtKqudAhKRywRCYTE9W1PasPwNs4HEYDRDd2A78D0EdAA9Af4XMA/RvSAHDjtgD6CNIAYEg5gPd+PYCt3/ZoPS8ABUadqweYtM8BEL8up3+hHR0AAAAASUVORK5CYII="
+    },
+    {
+      "id": "shark-light",
+      "name": "Shark (light)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYklEQVR4nO3TsQoAIAgEUP//ax3aa3fpBOnUPGhICh9YIpOJierantUH4G0cDqMBohu7gd8B6COgAeiP8DmA/g1pALhxWwB9BGkAMKQcwHu/HsDWb3u0nheAAqPO1QNM2ucAL49Kopk3hJoAAAAASUVORK5CYII="
+    },
+    {
+      "id": "shark-neon",
+      "name": "Shark (neon)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAXklEQVR4nO3SQQoAIAgEQP//z95Rdy+5IK1uLnRIDAfMbDLxWXtDRweADk6H0QDZg2HgdwD6CmgA+id8DghHDgBHDkBfQRlAGNIOgL7vB/D12z1arwuIArP6+gEm6jnoRoEEHjcGeAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "shark-coral",
+      "name": "Shark (coral)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYklEQVR4nO3TQQoAIAgEQP9/6SE90u5eckFaNRc6JIUDlshkYqJrK7L6ANDG4TAaILoxDPwOQB8BDUB/hM8B9G9IA7gbtwXQR5AG4IaUA6D36wFs/bb31vMCvMCoc/UAk/Y5KRYjG5xIaGsAAAAASUVORK5CYII="
+    },
+    {
+      "id": "shark-lemon",
+      "name": "Shark (lemon)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYklEQVR4nO3TQQoAIAgEQJ/Y/+kvdveSC9KqudAhKRywRCYTE91LkdUHgDYOh9EA0Y1h4HcA+ghoAPojfA6gf0MawN24LYA+gjQAN6QcAL1fD2Drt723nhfgBUadqweYtM8BcpsIa7SlRYUAAAAASUVORK5CYII="
+    },
+    {
+      "id": "shark-mint",
+      "name": "Shark (mint)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3TQQoAIAgEQJ/YE3tYf6m7l1yQVs2FDknhgCXS6aiMNTey6gDQxu4wGsC7MQz8DkAfAQ1Af4TPAfRvSAOYG5cF0EcQBmCGpAOg9/MBdP22t9bjAqxAr3P5AJ3yOfhGU0SwK5Y9AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "shark-grape",
+      "name": "Shark (grape)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYklEQVR4nO3TQQoAIAgEQJ/dm/qk3b3kgrRqLnRICgcskcnEZC9VZPUBoI3DYTRAdGMY+B2APgIagP4InwPo35AGcDduC6CPIA3ADSkHQO/XA9j6be+t5wV4gVHn6gEm7XMAqSn1TCd1ymQAAAAASUVORK5CYII="
+    },
+    {
+      "id": "shark-sky",
+      "name": "Shark (sky)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYklEQVR4nO3TQQoAIAgEQN/ZE/uk3b3kgrRqLnRICgcskcnEZG1VZPUBoI3DYTRAdGMY+B2APgIagP4InwPo35AGcDduC6CPIA3ADSkHQO/XA9j6be+t5wV4gVHn6gEm7XMAg428HCjow8wAAAAASUVORK5CYII="
+    },
+    {
+      "id": "shark-blush",
+      "name": "Shark (blush)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYklEQVR4nO3TQQoAIAgEQN/ew/qa3b3kgrRqLnRICgcskcnERNdWZPUBoI3DYTRAdGMY+B2APgIagP4InwPo35AGcDduC6CPIA3ADSkHQO/XA9j6be+t5wV4gVHn6gEm7XMAVEQui76YdVsAAAAASUVORK5CYII="
+    },
+    {
+      "id": "shark-peach",
+      "name": "Shark (peach)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYklEQVR4nO3TQQoAIAgEQF/cw/qk3b3kgrRqLnRICgcskcnERPdSZPUBoI3DYTRAdGMY+B2APgIagP4InwPo35AGcDduC6CPIA3ADSkHQO/XA9j6be+t5wV4gVHn6gEm7XMAhgPiPL2jHqIAAAAASUVORK5CYII="
+    },
+    {
+      "id": "shark-cocoa",
+      "name": "Shark (cocoa)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3TQQoAIAgEQN/ZI3pJf667l1yQVs2FDknhgCXS6aisOTay6gDQxu4wGsC7MQz8DkAfAQ1Af4TPAfRvSAOYG5cF0EcQBmCGpAOg9/MBdP22t9bjAqxAr3P5AJ3yObvTbnUMrJ8ZAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "shark-mintDark",
+      "name": "Shark (mintDark)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3TQQoAIAgEQJ/Tm3pJv6+7l1yQVs2FDknhgCXS6aiMNTey6gDQxu4wGsC7MQz8DkAfAQ1Af4TPAfRvSAOYG5cF0EcQBmCGpAOg9/MBdP22t9bjAqxAr3P5AJ3yOVXuwtbsmS9lAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "penguin-dark",
+      "name": "Penguin (dark)",
+      "states": [
+        "default",
+        "wait"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbElEQVR4nO3RQQ4AEAwEQA8Q//8tV5EIbemuaBMX1E40JWHlXGq/pP3mggHGYHcIDLAKvg6BAaTBxyF0AO3+ewDr15shtIDZ+W7f+wC3kcABtyDwURwHWO/zArSB2nf4AbsPa6EBCAAfIOq7ak2p5Vj/z04WAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "penguin-light",
+      "name": "Penguin (light)",
+      "states": [
+        "default",
+        "wait"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbElEQVR4nO3RsQ4AEAwEUP//tQY7q0iEtvROtIkFdS+akrByLrVf0n5zwQBjsDsEBlgFX4fAANLg4xA6gHb/PYD1680QWsDsfLfvfYDbSOCAWxD4KI4DrPd5AdpA7Tv8gN2HtdAABIAPEPVdNTRcVdO7GpoyAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "penguin-neon",
+      "name": "Penguin (neon)",
+      "states": [
+        "default",
+        "wait"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaUlEQVR4nO3RWQ4AEAwEUPe/p3PwTSJ00RnRJn4snRctRVq1tWGFFwwwB4dDYIBd8HUIDCANdofQAbT77wGsX2+G0AJW56fv3geEjQQOuAWBj8IdYL3PC9AGavvwA04ba6EJSAAfIOu36nGvyDUuo9W1AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "penguin-coral",
+      "name": "Penguin (coral)",
+      "states": [
+        "default",
+        "wait"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbUlEQVR4nO3RQQ4AEAwEQP+/eIhHchWJ0Ba7jTZxQe1EUxJWzaX2S9pvLhhgDH4OgQFWwdchMIA0+DiEDqDd9wewfr0ZQguYne/2+Qc8GwkccAsCH8VxgPU+L0AbqH2HH7D7sBYagADwAaK+qwbfmVUMcLOxOQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "penguin-lemon",
+      "name": "Penguin (lemon)",
+      "states": [
+        "default",
+        "wait"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbElEQVR4nO3RQQ4AEAwEQE/0//gLV5EIbbHbaBMX1E40JWHVkmu/pP3mggHG4OcQGGAVfB0CA0iDj0PoANp9fwDr15shtIDZ+W6ff8CzkcABtyDwURwHWO/zArSB2nf4AbsPa6EBCAAfIOq7arq6Pdyj2l9dAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "penguin-mint",
+      "name": "Penguin (mint)",
+      "states": [
+        "default",
+        "wait"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbUlEQVR4nO3R0Q0AEAwEUCMa0WB24VckQlvciTbxg7oXDUFYMafSLmm/uWCAPvg6BAaYBR+HwADS4O0QOoB2/z2A9evNEFrA6Hy1733AtZHAAacg8FFsB1jv8wK0gdp3+AGrD2uhDnAAH8Dru6p2gqB10f3U7gAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "penguin-grape",
+      "name": "Penguin (grape)",
+      "states": [
+        "default",
+        "wait"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbElEQVR4nO3RQQ4AEAwEQM/2Jp/kKhKhLXYbbeKC2ommJKySa+2XtN9cMMAY/BwCA6yCr0NgAGnwcQgdQLvvD2D9ejOEFjA73+3zD3g2EjjgFgQ+iuMA631egDZQ+w4/YPdhLTQAAeADRH1XDaqOLUxD2fafAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "penguin-sky",
+      "name": "Penguin (sky)",
+      "states": [
+        "default",
+        "wait"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbElEQVR4nO3RQQ4AEAwEQO/0RJ/kKhKhLXYbbeKC2ommJKxcau2XtN9cMMAY/BwCA6yCr0NgAGnwcQgdQLvvD2D9ejOEFjA73+3zD3g2EjjgFgQ+iuMA631egDZQ+w4/YPdhLTQAAeADRH1XDQG1+40cuxl9AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "penguin-blush",
+      "name": "Penguin (blush)",
+      "states": [
+        "default",
+        "wait"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbElEQVR4nO3RQQ4AEAwEQG/3MF/jKhKhLXYbbeKC2ommJKyaS+2XtN9cMMAY/BwCA6yCr0NgAGnwcQgdQLvvD2D9ejOEFjA73+3zD3g2EjjgFgQ+iuMA631egDZQ+w4/YPdhLTQAAeADRH1XDcdmXvyinalIAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "penguin-peach",
+      "name": "Penguin (peach)",
+      "states": [
+        "default",
+        "wait"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbElEQVR4nO3RQQ4AEAwEQC/2MJ/kKhKhLXYbbeKC2ommJKxacu2XtN9cMMAY/BwCA6yCr0NgAGnwcQgdQLvvD2D9ejOEFjA73+3zD3g2EjjgFgQ+iuMA631egDZQ+w4/YPdhLTQAAeADRH1XDcYfHLzeUEtbAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "penguin-cocoa",
+      "name": "Penguin (cocoa)",
+      "states": [
+        "default",
+        "wait"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbUlEQVR4nO3R0Q0AEAwEUHMawiR25lckQlvciTbxg7oXDUFYOcXSLmm/uWCAPvg6BAaYBR+HwADS4O0QOoB2/z2A9evNEFrA6Hy1733AtZHAAacg8FFsB1jv8wK0gdp3+AGrD2uhDnAAH8Dru6q8btmmm1RTHQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "penguin-mintDark",
+      "name": "Penguin (mintDark)",
+      "states": [
+        "default",
+        "wait"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbUlEQVR4nO3R0Q0AEAwEUOOYySS251ckQlvciTbxg7oXDUFYMafSLmm/uWCAPvg6BAaYBR+HwADS4O0QOoB2/z2A9evNEFrA6Hy1733AtZHAAacg8FFsB1jv8wK0gdp3+AGrD2uhDnAAH8Dru6qptESWSe+OIwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "ghost-dark",
+      "name": "Ghost (dark)",
+      "states": [
+        "wait",
+        "help"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYUlEQVR4nO3ROwoAIAwDUA9QvP9tdXNxCIHaBkzARfp50DFAIuZiHppHpxzALkwHtQGyF9OQNsDrxRAiB6j61wW0n8AAAwwwwAAZwFUI+tj60ycHQIOyIXqA9hOUA5zvswGfZNN3ETMgoAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "ghost-light",
+      "name": "Ghost (light)",
+      "states": [
+        "wait",
+        "help"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYElEQVR4nO3ROwoAIAwDUO9/2g7uurk4hEBtAybgIv086BggEXMxD82jUw5gF6aD2gDZi2lIG+D1YgiRA1T96wLaT2CAAQYYYIAM4CoEfWz96ZMDoEHZED1A+wnKAc732SYvcXAgaWb8AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ghost-neon",
+      "name": "Ghost (neon)",
+      "states": [
+        "wait",
+        "help"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAWklEQVR4nO3RwQkAIAxDUfff0znqzWsJrU3AfPAiSh90rawdAZ32xgHowHYQDdA9GIbQAK8HpxA5wNS9LoC+AgMMMMAAA2QAWdX3958cAK0MlwPQVzAOcL93ADXqINLBAlqxAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ghost-coral",
+      "name": "Ghost (coral)",
+      "states": [
+        "wait",
+        "help"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYUlEQVR4nO3ROwoAIAwDUO+/eBAPWTcXhxCobcAEXKSfBx0DJOYK5qF5dMoB7MJ0UBsgezENaQO8XgwhcoCqf11A+wkMMMAAAwyQAVyFoI+tP31yADQoG6IHaD9BOcD5Phv/N/KqSJTYVgAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "ghost-lemon",
+      "name": "Ghost (lemon)",
+      "states": [
+        "wait",
+        "help"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYUlEQVR4nO3ROwoAIAwDUI/o/fEudXNxCIHaBkzARfp50DFAYs1gHppHpxzALkwHtQGyF9OQNsDrxRAiB6j61wW0n8AAAwwwwAAZwFUI+tj60ycHQIOyIXqA9hOUA5zvswGT9NAaAM/OIwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "ghost-mint",
+      "name": "Ghost (mint)",
+      "states": [
+        "wait",
+        "help"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYklEQVR4nO3RywkAIAwDUEd0RAdzF7158RACtQ2YgBfp50FbA+lzLOaheXTSAezCcFAZIHoxDSkDvF4MIXKArH9dQPkJDDDAAAMMkAFchaCPrT99cgA0KBqiByg/QTrA+T4bPzLlg8J8yuoAAAAASUVORK5CYII="
+    },
+    {
+      "id": "ghost-grape",
+      "name": "Ghost (grape)",
+      "states": [
+        "wait",
+        "help"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYElEQVR4nO3ROwoAIAwDUI/tmbxk3VwcQqC2ARNwkX4edAyQNSOYh+bRKQewC9NBbYDsxTSkDfB6MYTIAar+dQHtJzDAAAMMMEAGcBWCPrb+9MkB0KBsiB6g/QTlAOf7bLcSt2pKwVukAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ghost-sky",
+      "name": "Ghost (sky)",
+      "states": [
+        "wait",
+        "help"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYElEQVR4nO3ROwoAIAwDUM/pEb1k3VwcQqC2ARNwkX4edAyQuSKYh+bRKQewC9NBbYDsxTSkDfB6MYTIAar+dQHtJzDAAAMMMEAGcBWCPrb+9MkB0KBsiB6g/QTlAOf7bOD1bVo37db4AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ghost-blush",
+      "name": "Ghost (blush)",
+      "states": [
+        "wait",
+        "help"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYElEQVR4nO3ROwoAIAwDUM/uwbxa3VwcQqC2ARNwkX4edAyQmCuYh+bRKQewC9NBbYDsxTSkDfB6MYTIAar+dQHtJzDAAAMMMEAGcBWCPrb+9MkB0KBsiB6g/QTlAOf7bDoOAYmV7tbSAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ghost-peach",
+      "name": "Ghost (peach)",
+      "states": [
+        "wait",
+        "help"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYElEQVR4nO3ROwoAIAwDUE/swbxk3VwcQqC2ARNwkX4edAyQWDOYh+bRKQewC9NBbYDsxTSkDfB6MYTIAar+dQHtJzDAAAMMMEAGcBWCPrb+9MkB0KBsiB6g/QTlAOf7bJQrnrooWqk3AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "ghost-cocoa",
+      "name": "Ghost (cocoa)",
+      "states": [
+        "wait",
+        "help"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYklEQVR4nO3RywkAIAwDUOd0CCdxZ7158RACtQ2YgBfp50FbA5mjL+aheXTSAezCcFAZIHoxDSkDvF4MIXKArH9dQPkJDDDAAAMMkAFchaCPrT99cgA0KBqiByg/QTrA+T4bPfm9NKdYiQkAAAAASUVORK5CYII="
+    },
+    {
+      "id": "ghost-mintDark",
+      "name": "Ghost (mintDark)",
+      "states": [
+        "wait",
+        "help"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYklEQVR4nO3RywkAIAwDUMdxJidxe7158RACtQ2YgBfp50FbA+lzLOaheXTSAezCcFAZIHoxDSkDvF4MIXKArH9dQPkJDDDAAAMMkAFchaCPrT99cgA0KBqiByg/QTrA+T4bFWDe9T+KT/kAAAAASUVORK5CYII="
+    },
+    {
+      "id": "alien-dark",
+      "name": "Alien (dark)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3SMQ4AIAgDQB5g/P9vdTUuoEIopk2YVHqDIlta62Md73M1BBAAB3gdAuoAvIuPIQSkAaKLVQg8QLv/uo+AfID1ofvnIwAOAANJB0RBzMUwACvkenEZwPeZwSychwGZBM8AAAAASUVORK5CYII="
+    },
+    {
+      "id": "alien-light",
+      "name": "Alien (light)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3SMQ4AIAgDQP7/Wgd3XY0LqBCKaRMmld6gyJbW+ljH+1wNAQTAAV6HgDoA7+JjCAFpgOhiFQIP0O6/7iMgH2B96P75CIADwEDSAVEQczEMwAq5XlwG8H0mAAu50cZujowAAAAASUVORK5CYII="
+    },
+    {
+      "id": "alien-neon",
+      "name": "Alien (neon)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAXElEQVR4nO3Suw0AIAgEUPbf0zmw1gYIkENzl1DJ5xWK3FmqR1W/myGAgHGAbBHwDqD6cBhCAAzQfdiEjAdY/dl9BOAB3sHyz0fAOMAYCBzQBQkHDvBC2gMH/J4N9NSWM9hSNz8AAAAASUVORK5CYII="
+    },
+    {
+      "id": "alien-coral",
+      "name": "Alien (coral)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYElEQVR4nO3SMQ4AIAgDQP6/+BAfqatxARVCMW3CpNIbFNkyWh/reJ+rIYAAOMDrEFAH4F18DCEgDRBdrELgAdr9130E5AOsD90/HwFwABhIOiAKYi6GAVgh14vLAL7PBN4iWCrSr/o4AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "alien-lemon",
+      "name": "Alien (lemon)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3SMQ4AIAgDQJ7o/+NfdDUuoEIopk2YVHqDIltGb2Md73M1BBAAB3gdAuoAvIuPIQSkAaKLVQg8QLv/uo+AfID1ofvnIwAOAANJB0RBzMUwACvkenEZwPeZrGk4Ou4+ytwAAAAASUVORK5CYII="
+    },
+    {
+      "id": "alien-mint",
+      "name": "Alien (mint)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYUlEQVR4nO3SMQ4AIAgDQJ7oE32Yf9HVuIAKoZo2YVLpDYosKa32ebzP1RBAABzgdgh4B+BdvA0hIA0QXaxC4AHa/dt9BOQDrA/dPx8BcAAYSDogCmIuhgFYIceLnwF8nwHvf19zkgM6DQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "alien-grape",
+      "name": "Alien (grape)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3SMQ4AIAgDQJ7tm/ykrsYFVAjFtAmTSm9QZEtvY6zjfa6GAALgAK9DQB2Ad/ExhIA0QHSxCoEHaPdf9xGQD7A+dP98BMABYCDpgCiIuRgGYIVcLy4D+D4Tx+AhahBf+ccAAAAASUVORK5CYII="
+    },
+    {
+      "id": "alien-sky",
+      "name": "Alien (sky)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3SMQ4AIAgDQN7pE/2krsYFVAjFtAmTSm9QZEvrY6zjfa6GAALgAK9DQB2Ad/ExhIA0QHSxCoEHaPdf9xGQD7A+dP98BMABYCDpgCiIuRgGYIVcLy4D+D4TV47c664YF94AAAAASUVORK5CYII="
+    },
+    {
+      "id": "alien-blush",
+      "name": "Alien (blush)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3SMQ4AIAgDQN7uw/yarsYFVAjFtAmTSm9QZMtofazjfa6GAALgAK9DQB2Ad/ExhIA0QHSxCoEHaPdf9xGQD7A+dP98BMABYCDpgCiIuRgGYIVcLy4D+D4T1/Fl2ueSMnwAAAAASUVORK5CYII="
+    },
+    {
+      "id": "alien-peach",
+      "name": "Alien (peach)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3SMQ4AIAgDQF7sw/ykrsYFVAjFtAmTSm9QZMvobazjfa6GAALgAK9DQB2Ad/ExhIA0QHSxCoEHaPdf9xGQD7A+dP98BMABYCDpgCiIuRgGYIVcLy4D+D4TQXIKmrEKpLQAAAAASUVORK5CYII="
+    },
+    {
+      "id": "alien-cocoa",
+      "name": "Alien (cocoa)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYUlEQVR4nO3SMQ4AIAgDQN7pI3yJf9bVuIAKoZo2YVLpDYosabX0ebzP1RBAABzgdgh4B+BdvA0hIA0QXaxC4AHa/dt9BOQDrA/dPx8BcAAYSDogCmIuhgFYIceLnwF8nwEw9E2kKfSHDAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "alien-mintDark",
+      "name": "Alien (mintDark)",
+      "states": [
+        "default",
+        "pointer"
+      ],
+      "fallback": "default",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYUlEQVR4nO3SMQ4AIAgDQJ7jm3yJv9fVuIAKoZo2YVLpDYosKa32ebzP1RBAABzgdgh4B+BdvA0hIA0QXaxC4AHa/dt9BOQDrA/dPx8BcAAYSDogCmIuhgFYIceLnwF8nwEfXoBFL3mKmgAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "whale-dark",
+      "name": "Whale (dark)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nGNgGAWjAA3w8PD9pyYeOg6gtsUkO2TAHEBriwk6aMQ5YMCjgG4OIDLzjTpg1AHD2AFEO2TUAcPGAejm4eIPfQcQModoiweNA0bBKBjxAACmy0WLeCNr+AAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "whale-light",
+      "name": "Whale (light)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3TsQoAIAhFUf//ax3aaxdCA8vUd6GhRQ9ERAiJmMf0PHkA3ouPIWGA24tVUDtA+BM8Axg/HwAAFAaYIQCUAch5u3t+gDbHvPgbAELtW94+lx6MRp2nAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "whale-neon",
+      "name": "Whale (neon)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAUUlEQVR4nO3RQQoAIAhEUe9/z85heyFUsEydDy7a6IOIEJIt5tCpA4g+7IakAW4fVkHjAOlf8AxgDgAA2gLMEADaAOS+07s+QNtjPvwNAKHpbQuNusC09jQxAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "whale-coral",
+      "name": "Whale (coral)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nGNgGAWjAA3871/9n5p46DiA2haT7JABcwCtLSbooBHngAGPAro5gMjMN+qAUQcMYwcQ7ZBRBwwbB6Cbh4s/9B1AyByiLR40DhgFo2DEAwCr5mN7JM6NxgAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "whale-lemon",
+      "name": "Whale (lemon)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nGNgGAWjAA38vxPwn5p46DiA2haT7JABcwCtLSbooBHngAGPAro5gMjMN+qAUQcMYwcQ7ZBRBwwbB6Cbh4s/9B1AyByiLR40DhgFo2DEAwDNA0ezd8s82AAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "whale-mint",
+      "name": "Whale (mint)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nGNgGAWjAA0E3Fnwn5p46DiA2haT7JABcwCtLSbooBHngAGPAro5gMjMN+qAUQcMYwcQ7ZBRBwwbB6Cbh4s/9B1AyByiLR40DhgFo2DEAwBqBYsgIPdYSAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "whale-grape",
+      "name": "Whale (grape)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3TQQoAIAhEUY/dmbqk7YXQwDJ1PrRoow8iIoREczB7njwA78XHkDDA7cUqqB0g/AmeAYyfDwAACgPMEADKAOS83T0/QJtjXvwNAKH2LV+gM9v53obKAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "whale-sky",
+      "name": "Whale (sky)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3TQQoAIAhEUc/ZEbuk7YXQwDJ1PrRoow8iIoREYzJ7njwA78XHkDDA7cUqqB0g/AmeAYyfDwAACgPMEADKAOS83T0/QJtjXvwNAKH2LYTD+ERYWHd4AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "whale-blush",
+      "name": "Whale (blush)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3TQQoAIAhEUc/ewbqa7YXQwDJ1PrRoow8iIoREPCZ7njwA78XHkDDA7cUqqB0g/AmeAYyfDwAACgPMEADKAOS83T0/QJtjXvwNAKH2LcVlb2OJq2ovAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "whale-peach",
+      "name": "Whale (peach)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3TQQoAIAhEUU/cwbqk7YXQwDJ1PrRoow8iIoREPAd7njwA78XHkDDA7cUqqB0g/AmeAYyfDwAACgPMEADKAOS83T0/QJtjXvwNAKH2Lb7CIAP0/ovxAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "whale-cocoa",
+      "name": "Whale (cocoa)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nGNgGAWjAA305EX9pyYeOg6gtsUkO2TAHEBriwk6aMQ5YMCjgG4OIDLzjTpg1AHD2AFEO2TUAcPGAejm4eIPfQcQModoiweNA0bBKBjxAAB7xZzxDSN4rQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "whale-mintDark",
+      "name": "Whale (mintDark)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nGNgGAWjAA1oVET9pyYeOg6gtsUkO2TAHEBriwk6aMQ5YMCjgG4OIDLzjTpg1AHD2AFEO2TUAcPGAejm4eIPfQcQModoiweNA0bBKBjxAAABHOpKpBpMrAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "heart-dark",
+      "name": "Heart (dark)",
+      "states": [
+        "pointer",
+        "grab",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbklEQVR4nO3TQQoAIAgEQB8Q/f+3dQ0jLCtbUsFTsjuXiNiklEu7/H33XpxnAB4kBa/e4wKkoN0NgAgKgDtABwlAAJ4D3H7HDmAFGRbDAG5BpothAKcg6mIYgBZyrBgGMAu5VgwDGEHMimEA30wFvjq8k3jPMnUAAAAASUVORK5CYII="
+    },
+    {
+      "id": "heart-light",
+      "name": "Heart (light)",
+      "states": [
+        "pointer",
+        "grab",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbklEQVR4nO3TsQoAIAgEUP//axvaaw0jLCs7UsEpuXtLRGxSyqVd/r57L84zAA+SglfvcQFS0O4GQAQFwB2ggwQgAM8Bbr9jB7CCDIthALcg08UwgFMQdTEMQAs5VgwDmIVcK4YBjCBmxTCAb6YCIp4k9L5ko6wAAAAASUVORK5CYII="
+    },
+    {
+      "id": "heart-neon",
+      "name": "Heart (neon)",
+      "states": [
+        "pointer",
+        "grab",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZUlEQVR4nO3TsQ0AIAhEUfbf0zm0FmMQQc8IP6Ej+BqJeKXWbqS0++4H3QD8kHRYu/8uQDpknQSIoASEAwyQBCQADgj7HafBHn4GcAqiDg7wgpiDA3Yh7sEBq5DjwQEzyPXggF9qbOnnB+7t/gkAAAAASUVORK5CYII="
+    },
+    {
+      "id": "heart-coral",
+      "name": "Heart (coral)",
+      "states": [
+        "pointer",
+        "grab",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbklEQVR4nO3TMQ4AIAgDQP6/+BAfqavBGBQVGoWESdLeIhGbknJpl7/v3ovjBuBBUvDqPS5ACtrdAIigAHwH6CABCIA74Nvv2AGsIMNiGMAtyHQxDOAURF0MA9BCjhXDAGYh14phACOIWTEM4JmpzfKySoiiEjEAAAAASUVORK5CYII="
+    },
+    {
+      "id": "heart-lemon",
+      "name": "Heart (lemon)",
+      "states": [
+        "pointer",
+        "grab",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbklEQVR4nO3TQQoAIAgEQJ/Y/+kvdQ0jLCtdSsFTsjuXiNiUnEq7/H33Xhw3AA+SglfvcQFS0O4GQAQF4DtABwlAANwB337HDmAFGRbDAG5BpothAKcg6mIYgBZyrBgGMAu5VgwDGEHMimEAz0wFqqGQ0j3yW+8AAAAASUVORK5CYII="
+    },
+    {
+      "id": "heart-mint",
+      "name": "Heart (mint)",
+      "states": [
+        "pointer",
+        "grab",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAcElEQVR4nO3Tyw0AIAgDUEd0RAdzF70aDMEPaKOQcJK072IIZGJOpV36vnsvzjUADZKCZ+9xAVLQ7jpABDngO0AHcYADrgO+/Y4d4BSELYYBWEGGi2EAWpDlYhjAKkStGAYwCjErhgFwkGPFMIBnpgI5Oq2nDNUaOAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "heart-grape",
+      "name": "Heart (grape)",
+      "states": [
+        "pointer",
+        "grab",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbklEQVR4nO3TQQoAIAgEQJ/dm/pkXcMIy0qXUvCU7M4lIjY5ldIuf9+9F8cNwIOk4NV7XIAUtLsBEEEB+A7QQQIQAHfAt9+xA1hBhsUwgFuQ6WIYwCmIuhgGoIUcK4YBzEKuFcMARhCzYhjAM1MBY7Z46mxeGX4AAAAASUVORK5CYII="
+    },
+    {
+      "id": "heart-sky",
+      "name": "Heart (sky)",
+      "states": [
+        "pointer",
+        "grab",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbklEQVR4nO3TQQoAIAgEQN/ZE/tkXcMIy0qXUvCU7M4lIjYpl9Iuf9+9F8cNwIOk4NV7XIAUtLsBEEEB+A7QQQIQAHfAt9+xA1hBhsUwgFuQ6WIYwCmIuhgGoIUcK4YBzEKuFcMARhCzYhjAM1MBGL8xMqKA2aQAAAAASUVORK5CYII="
+    },
+    {
+      "id": "heart-blush",
+      "name": "Heart (blush)",
+      "states": [
+        "pointer",
+        "grab",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbklEQVR4nO3TQQoAIAgEQN/ew/paXcMIy0qXUvCU7M4lIjYl5dIuf9+9F8cNwIOk4NV7XIAUtLsBEEEB+A7QQQIQAHfAt9+xA1hBhsUwgFuQ6WIYwCmIuhgGoIUcK4YBzEKuFcMARhCzYhjAM1MBVhTAoiGzKWgAAAAASUVORK5CYII="
+    },
+    {
+      "id": "heart-peach",
+      "name": "Heart (peach)",
+      "states": [
+        "pointer",
+        "grab",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbklEQVR4nO3TQQoAIAgEQF/cw/pkXcMIy0qXUvCU7M4lIjYlp9Iuf9+9F8cNwIOk4NV7XIAUtLsBEEEB+A7QQQIQAHfAt9+xA1hBhsUwgFuQ6WIYwCmIuhgGoIUcK4YBzEKuFcMARhCzYhjAM1MBsG9hApnfnWYAAAAASUVORK5CYII="
+    },
+    {
+      "id": "heart-cocoa",
+      "name": "Heart (cocoa)",
+      "states": [
+        "pointer",
+        "grab",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAcElEQVR4nO3Tyw0AIAgDUOd0CCdxZ70aDMEPaKOQcJK072IIZHKKpV36vnsvzjUADZKCZ+9xAVLQ7jpABDngO0AHcYADrgO+/Y4d4BSELYYBWEGGi2EAWpDlYhjAKkStGAYwCjErhgFwkGPFMIBnpgJBU464cbg3/QAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "heart-mintDark",
+      "name": "Heart (mintDark)",
+      "states": [
+        "pointer",
+        "grab",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAcElEQVR4nO3Tyw0AIAgDUMdxJidxe70aDMEPaKOQcJK072IIZGJOpV36vnsvzjUADZKCZ+9xAVLQ7jpABDngO0AHcYADrgO+/Y4d4BSELYYBWEGGi2EAWpDlYhjAKkStGAYwCjErhgFwkGPFMIBnpgKvHreB2WaqhwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "star-dark",
+      "name": "Star (dark)",
+      "states": [
+        "pointer",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZklEQVR4nO2UOwoAIAxDPUDx/rfVVVwq/aQF88DFIXlYdQwjInOdy5pjhgJlAncxXAQuoBWmC6ULeAvcYuUCqBOBzTzsMr4Ghhe3EdCEtP1w2gnAissE4M+ujYA1MP0DggkQQsh3bNFqSbBlYg+jAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "star-light",
+      "name": "Star (light)",
+      "states": [
+        "pointer",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZklEQVR4nO2UOwoAIAxDvf9pO7jrKi6VftKCeeDikDysOoYRkbnOZc0xQ4EygbsYLgIX0ArThdIFvAVusXIB1InAZh52GV8Dw4vbCGhC2n447QRgxWUC8GfXRsAamP4BwQQIIeQ7NuvtTZ2hZ+vhAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "star-neon",
+      "name": "Star (neon)",
+      "states": [
+        "pointer",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3UuQ0AIAwDwOy/J3OEGpqgPE4kbImGAp/4RLxZqseAh4A2wF0Mh8ABVmE5qBwQLQjD2gGoHYGdedplfF0wvXgMwAJZ8+kZB4AVtwHgz24MwLtg+QcEAzAMw/yWDcavP46HBRcJAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "star-coral",
+      "name": "Star (coral)",
+      "states": [
+        "pointer",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO2UOwoAIAxDvf/iQTxkXcWl0k9aMA9cHJKHVccwInPJuaw5ZihQJnAXw0XgAlphulC6gLfALVYugDoR2MzDLuNrYHhxGwFNSNsPp50ArLhMAP7s2ghYA9M/IJgAIYR8xwZNVp8u3TrGrwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "star-lemon",
+      "name": "Star (lemon)",
+      "states": [
+        "pointer",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZklEQVR4nO2UOwoAIAxDPaL3x7vUVVwq/aQF88DFIXlYdQwjsqacy5pjhgJlAncxXAQuoBWmC6ULeAvcYuUCqBOBzTzsMr4Ghhe3EdCEtP1w2gnAissE4M+ujYA1MP0DggkQQsh3bBumj27eIxGAAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "star-mint",
+      "name": "Star (mint)",
+      "states": [
+        "pointer",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaElEQVR4nO2USw4AEAxEHdERHcxd2IpNpZ9pE/MSG4uZF0VrSvoc61zaHDUUSBO4i+EicAGpMFwoXMBaYBZLF0CdCGzmbpfxNdC9uIyAJCTtu1NOAFacJgB/dmUEtIHhHxBMgBBCvmMDPcEkjiPdxLwAAAAASUVORK5CYII="
+    },
+    {
+      "id": "star-grape",
+      "name": "Star (grape)",
+      "states": [
+        "pointer",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZklEQVR4nO2UOwoAIAxDPbZn8pJ1FZdKP2nBPHBxSB5WHcPImiLnsuaYoUCZwF0MF4ELaIXpQukC3gK3WLkA6kRgMw+7jK+B4cVtBDQhbT+cdgKw4jIB+LNrI2ANTP+AYAKEEPIdG0FKhC6614W2AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "star-sky",
+      "name": "Star (sky)",
+      "states": [
+        "pointer",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZklEQVR4nO2UOwoAIAxDPadH9JJ1FZdKP2nBPHBxSB5WHcPIXCLnsuaYoUCZwF0MF4ELaIXpQukC3gK3WLkA6kRgMw+7jK+B4cVtBDQhbT+cdgKw4jIB+LNrI2ANTP+AYAKEEPIdG8XjYm5xJ8TyAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "star-blush",
+      "name": "Star (blush)",
+      "states": [
+        "pointer",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZklEQVR4nO2UOwoAIAxDPbsH82p1FZdKP2nBPHBxSB5WHcOIzCXnsuaYoUCZwF0MF4ELaIXpQukC3gK3WLkA6kRgMw+7jK+B4cVtBDQhbT+cdgKw4jIB+LNrI2ANTP+AYAKEEPIdGwtxpe54kzRfAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "star-peach",
+      "name": "Star (peach)",
+      "states": [
+        "pointer",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZklEQVR4nO2UOwoAIAxDPbEH85J1FZdKP2nBPHBxSB5WHcOIrCnnsuaYoUCZwF0MF4ELaIXpQukC3gK3WLkA6kRgMw+7jK+B4cVtBDQhbT+cdgKw4jIB+LNrI2ANTP+AYAKEEPIdG45MeO6sWMR7AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "star-cocoa",
+      "name": "Star (cocoa)",
+      "states": [
+        "pointer",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaElEQVR4nO2USw4AEAxEndMhnMSd2YpNpZ9pE/MSG4uZF0VrSubo61zaHDUUSBO4i+EicAGpMFwoXMBaYBZLF0CdCGzmbpfxNdC9uIyAJCTtu1NOAFacJgB/dmUEtIHhHxBMgBBCvmMDSqGdfzRHCcwAAAAASUVORK5CYII="
+    },
+    {
+      "id": "star-mintDark",
+      "name": "Star (mintDark)",
+      "states": [
+        "pointer",
+        "copy"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaElEQVR4nO2USw4AEAxEHceZnMTt2YpNpZ9pE/MSG4uZF0VrSvoc61zaHDUUSBO4i+EicAGpMFwoXMBaYBZLF0CdCGzmbpfxNdC9uIyAJCTtu1NOAFacJgB/dmUEtIHhHxBMgBBCvmMDdgo4PxdYCKEAAAAASUVORK5CYII="
+    },
+    {
+      "id": "paw-dark",
+      "name": "Paw print (dark)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaElEQVR4nO3TQQ4AEAwEQA8Q//8tcXCRCNXSJbtJb9XOoUKYJMaUa1n1ieMGaAP72u17BzAaeA0CD5C+fw/ArB7h7rHiAqwXiyFugNOLpxACCHAHuH9DGMApyPJiGIAWpF4IB2CY71MAWH8KB/YxLqMAAAAASUVORK5CYII="
+    },
+    {
+      "id": "paw-light",
+      "name": "Paw print (light)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO3TsQ4AEAwEUP//tQY7MVgkQrX0yF3Srdo3VAiTxJhyLas+cdwAbWBfu33vAEYDr0HgAdL37wGY1SPcPVZcgPViMcQNcHrxFEIAAe4A928IAzgFWV4MA9CC1AvhAAzzfQpSrNAzXJRyKAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "paw-neon",
+      "name": "Paw print (neon)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZElEQVR4nO3TQQoAIAgEQP//z95REHQJojRrLXbBm+kcTGSWlHMtrz51YIA2sC9r3zuA0cBrkPAA7fv3AMzqEVqPNS7Ae7EaAgOcXjyFEEAAHAD/hmEApyDqwAG7IPfAAQzzewpCLCSkXJWghwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "paw-coral",
+      "name": "Paw print (coral)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaElEQVR4nO3TsQ4AEAwEUP+/+BAfSQwWiVAtPXKXdKv2DRXCJDmmXMuqTxw3QBvY127fO4DRwGsQeID0/XsAZvUId48VF2C9WAxxA5xePIUQQIA7wP0bwgBOQZYXwwC0IPVCOADDfJ8ChZq8DPEqN6UAAAAASUVORK5CYII="
+    },
+    {
+      "id": "paw-lemon",
+      "name": "Paw print (lemon)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaElEQVR4nO3TQQ4AEAwEQE/0//gLcXCRCNXSJbtJb9XOoUKYJKeYa1n1ieMGaAP72u17BzAaeA0CD5C+fw/ArB7h7rHiAqwXiyFugNOLpxACCHAHuH9DGMApyPJiGIAWpF4IB2CY71MADa+jHN94g+8AAAAASUVORK5CYII="
+    },
+    {
+      "id": "paw-mint",
+      "name": "Paw print (mint)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaUlEQVR4nO3TQQ4AEAwEQE/0RA/zF+LgIhFK6ZLdpLdq51DODeJjSKW0+sQxA9SBba32vQPoDbwGgQdI378HYGaPcPVYcQHai8UQM8DpxUMIAQSYA8y/IQzgFGR6MQxgF7S9EA7AMN8nA3HS+dWkzmciAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "paw-grape",
+      "name": "Paw print (grape)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO3TQQ4AEAwEQM/2Jp8kDi4SoVq6ZDfprdo5VAiTpJhzLas+cdwAbWBfu33vAEYDr0HgAdL37wGY1SPcPVZcgPViMcQNcHrxFEIAAe4A928IAzgFWV4MA9CC1AvhAAzzfQpQYpFMoxoDQwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "paw-sky",
+      "name": "Paw print (sky)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO3TQQ4AEAwEQO/0RJ8kDi4SoVq6ZDfprdo5VAiTxJRzLas+cdwAbWBfu33vAEYDr0HgAdL37wGY1SPcPVZcgPViMcQNcHrxFEIAAe4A928IAzgFWV4MA9CC1AvhAAzzfQr3plvcjU4gWQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "paw-blush",
+      "name": "Paw print (blush)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO3TQQ4AEAwEQG/3MF8jDi4SoVq6ZDfprdo5VAiT5JhyLas+cdwAbWBfu33vAEYDr0HgAdL37wGY1SPcPVZcgPViMcQNcHrxFEIAAe4A928IAzgFWV4MA9CC1AvhAAzzfQolzsa807IFjgAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "paw-peach",
+      "name": "Paw print (peach)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO3TQQ4AEAwEQC/2MJ8kDi4SoVq6ZDfprdo5VAiT5BRzLas+cdwAbWBfu33vAEYDr0HgAdL37wGY1SPcPVZcgPViMcQNcHrxFEIAAe4A928IAzgFWV4MA9CC1AvhAAzzfQr8En98R6aoOQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "paw-cocoa",
+      "name": "Paw print (cocoa)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaUlEQVR4nO3TQQ4AEAwEQO/0CC/xZ+LgIhFK6ZLdpLdq51DODRKDT6W0+sQxA9SBba32vQPoDbwGgQdI378HYGaPcPVYcQHai8UQM8DpxUMIAQSYA8y/IQzgFGR6MQxgF7S9EA7AMN8nAzDMJBUCx27jAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "paw-mintDark",
+      "name": "Paw print (mintDark)",
+      "states": [
+        "pointer",
+        "grab"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaUlEQVR4nO3TQQ4AEAwEQM/xJi/xe+LgIhFK6ZLdpLdq51DODeJjSKW0+sQxA9SBba32vQPoDbwGgQdI378HYGaPcPVYcQHai8UQM8DpxUMIAQSYA8y/IQzgFGR6MQxgF7S9EA7AMN8nAyAlg7bSJeSvAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "bee-dark",
+      "name": "Bee (dark)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeElEQVR4nO3VSwoAIAgE0A4Q3f+2tY0g1FJHKaFNv3lQUSnCqrX1uUnXXxcMsAa7Q2AAKtgcAgNIg9UhMAC1Ibf/GBIW4HYUYQG7ce66PABqQ/NnGAZwClELDgPgQsyC4QAqyP0OwABa8z4gD0B6ucz/AnfAr2dqACeWXADvnDtfAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "bee-light",
+      "name": "Bee (light)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeElEQVR4nO3VSwoAIAgE0O5/2hbtaxtBqKWOUkKbfvOgolKEVWvrc5Ouvy4YYA12h8AAVLA5BAaQBqtDYABqQ27/MSQswO0owgJ249x1eQDUhubPMAzgFKIWHAbAhZgFwwFUkPsdgAG05n1AHoD0cpn/Be6AX8/UANKcis0806kNAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "bee-neon",
+      "name": "Bee (neon)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAc0lEQVR4nO3VSw5AEQwF0O5/n9bBmET6Sdtbn5uY4OkRXhBp03qfWnpggLVwOgQG4AqHQ2AAbWF3CAzALSjtN0PKAtKOoixgNy797hwAt2D4b1gGYIW4Bw6QQsJTZufa8XsAXvM+4ByA9nKFvwXpgJ9XMgCsvm2+CopGXAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "bee-coral",
+      "name": "Bee (coral)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeElEQVR4nO3VSwoAIAgE0O6/6SAd0rYRhFrqGCW06TcPKipFWVQbjU27/rhggDk4HAIDcMHuEBhAG2wOgQG4DaX925C0gLCjSAtYjUvX3QPgNnR/hmkAuxCz4DQAKcQtGA7ggsLvAAxgNe8D7gFoL5f7XxAO+PVMde3g0q4Poc68AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "bee-lemon",
+      "name": "Bee (lemon)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeElEQVR4nO3VSwoAIAgE0I7Y/ekuto0g1FLHKKFNv3lQUSnKolZpbNr1xwUDzMHhEBiAC3aHwADaYHMIDMBtKO3fhqQFhB1FWsBqXLruHgC3ofszTAPYhZgFpwFIIW7BcAAXFH4HYACreR9wD0B7udz/gnDAr2eqA9PRwg5nluBWAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "bee-mint",
+      "name": "Bee (mint)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3VSw4AEAwEUEd0RAdzF7Yikba0nQpNbPzmJYiUhJVraWOTrj8uGGAOdofAAFSwOQQGkAarQ2AAakNu/zYkLMDtKMICVuPcdfcAqA3Nn2EYwC5ELTgMgAsxC4YDqCD3OwADaM37gHsA0stl/he4A349Ux2WolE+o7A95AAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "bee-grape",
+      "name": "Bee (grape)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3VSwoAIAgE0I7dmbqkbSMItdQxSmjTbx5UVIqyWiUam3b9ccEAc3A4BAbggt0hMIA22BwCA3AbSvu3IWkBYUeRFrAal667B8Bt6P4M0wB2IWbBaQBSiFswHMAFhd8BGMBq3gfcA9BeLve/IBzw65nqPzW2Lg02u4UAAAAASUVORK5CYII="
+    },
+    {
+      "id": "bee-sky",
+      "name": "Bee (sky)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3VSwoAIAgE0M7ZEbukbSMItdQxSmjTbx5UVIqyaiMam3b9ccEAc3A4BAbggt0hMIA22BwCA3AbSvu3IWkBYUeRFrAal667B8Bt6P4M0wB2IWbBaQBSiFswHMAFhd8BGMBq3gfcA9BeLve/IBzw65nqwLCSjp0k2MgAAAAASUVORK5CYII="
+    },
+    {
+      "id": "bee-blush",
+      "name": "Bee (blush)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3VSwoAIAgE0M7ewbqabSMItdQxSmjTbx5UVIqyqDYam3b9ccEAc3A4BAbggt0hMIA22BwCA3AbSvu3IWkBYUeRFrAal667B8Bt6P4M0wB2IWbBaQBSiFswHMAFhd8BGMBq3gfcA9BeLve/IBzw65nqENrZzlojp9cAAAAASUVORK5CYII="
+    },
+    {
+      "id": "bee-peach",
+      "name": "Bee (peach)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3VSwoAIAgE0E7cwbqkbSMItdQxSmjTbx5UVIqyqFUam3b9ccEAc3A4BAbggt0hMIA22BwCA3AbSvu3IWkBYUeRFrAal667B8Bt6P4M0wB2IWbBaQBSiFswHMAFhd8BGMBq3gfcA9BeLve/IBzw65nq8IiqTu8svsAAAAAASUVORK5CYII="
+    },
+    {
+      "id": "bee-cocoa",
+      "name": "Bee (cocoa)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3VSw4AEAwEUOd0CCdxZ7Yikba0nQpNbPzmJYiUhFVLbmOTrj8uGGAOdofAAFSwOQQGkAarQ2AAakNu/zYkLMDtKMICVuPcdfcAqA3Nn2EYwC5ELTgMgAsxC4YDqCD3OwADaM37gHsA0stl/he4A349Ux2zKsKv8cADvwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "bee-mintDark",
+      "name": "Bee (mintDark)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAeUlEQVR4nO3VSw4AEAwEUMdxJidxe7Yikba0nQpNbPzmJYiUhJVraWOTrj8uGGAOdofAAFSwOQQGkAarQ2AAakNu/zYkLMDtKMICVuPcdfcAqA3Nn2EYwC5ELTgMgAsxC4YDqCD3OwADaM37gHsA0stl/he4A349Ux3d+VfPoEwUgAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "skull-dark",
+      "name": "Skull (dark)",
+      "states": [
+        "not-allowed",
+        "wait"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAb0lEQVR4nO3RUQrAIAwDUA8gu/9tt/9BSUPqqiMBv9TmoWOAzHndzELz6HwOYAvLQW2A6mIa0gZYXQxB2wKiffSC2bkGGHAOoCphzzGA6Jx63wAD+gHZgvdAFHpeOyB7Uf0KWb4coILkwu0Azu/zAMKNfHvI+5cAAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "skull-light",
+      "name": "Skull (light)",
+      "states": [
+        "not-allowed",
+        "wait"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAb0lEQVR4nO3RwQrAIAwDUP//az3svt0HJQ2pq44EPKnNQ8cAmfO6mYXm0fkcwBaWg9oA1cU0pA2wuhiCtgVE++gFs3MNMOAcQFXCnmMA0Tn1vgEG9AOyBe+BKPS8dkD2ovoVsnw5QAXJhdsBnN/nARSCTr2/yux8AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "skull-neon",
+      "name": "Skull (neon)",
+      "states": [
+        "not-allowed",
+        "wait"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaElEQVR4nO3R0QkAIQwDUPff8+bwJihtaDQqCfilNQ8dI8s3J7To2Q5AC+kgGYBdDENkgNXFKehYQLSfvWD1XgMMuAfASthzDSA61503wAA9oFqABr5PDqgOdr+iLV8O6ILokQOc1/MDV6lFXwnokiYAAAAASUVORK5CYII="
+    },
+    {
+      "id": "skull-coral",
+      "name": "Skull (coral)",
+      "states": [
+        "not-allowed",
+        "wait"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAb0lEQVR4nO3RUQrAIAwDUO//s4PskO5/UNKQuupIwC+1eegYIPO6J7PQPDqfA9jCclAboLqYhrQBVhdD0LaAaB+9YHauAQacA6hK2HMMIDqn3jfAgH5AtuA9EIWe1w7IXlS/QpYvB6gguXA7gPP7PO8o/ftXgBDAAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "skull-lemon",
+      "name": "Skull (lemon)",
+      "states": [
+        "not-allowed",
+        "wait"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAb0lEQVR4nO3RUQrAIAwDUI+4+7O7uP9BSUPqqiMBv9TmoWOAzPuazELz6HwOYAvLQW2A6mIa0gZYXQxB2wKiffSC2bkGGHAOoCphzzGA6Jx63wAD+gHZgvdAFHpeOyB7Uf0KWb4coILkwu0Azu/zAEVo35OYilvEAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "skull-mint",
+      "name": "Skull (mint)",
+      "states": [
+        "not-allowed",
+        "wait"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAcUlEQVR4nO3RUQrAIAwDUI+4I+5gu8v2PyhpSF11JOCX2jx0DJDjOm9moXl0PgewheWgNkB1MQ1pA8wuhqBlAdE+esHsXAMM2AdQlbBnG0B0Tr1vgAH9gGzBeyAKPa8dkL2ofoUsnw5QQXLhcgDn93kAXd4RP5z0f1cAAAAASUVORK5CYII="
+    },
+    {
+      "id": "skull-grape",
+      "name": "Skull (grape)",
+      "states": [
+        "not-allowed",
+        "wait"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbklEQVR4nO3RUQrAIAwDUI+9M+2S7n9Q0pC66kjAL7V56Bgg9zUns9A8Op8D2MJyUBugupiGtAFWF0PQtoBoH71gdq4BBpwDqErYcwwgOqfeN8CAfkC24D0QhZ7XDsheVL9Cli8HqCC5cDuA8/s8Ch/J2xRSRV8AAAAASUVORK5CYII="
+    },
+    {
+      "id": "skull-sky",
+      "name": "Skull (sky)",
+      "states": [
+        "not-allowed",
+        "wait"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbklEQVR4nO3RUQrAIAwDUM+5I+6S7n9Q0pC66kjAL7V56Bgg1z0ns9A8Op8D2MJyUBugupiGtAFWF0PQtoBoH71gdq4BBpwDqErYcwwgOqfeN8CAfkC24D0QhZ7XDsheVL9Cli8HqCC5cDuA8/s8SN+IsyoDkWwAAAAASUVORK5CYII="
+    },
+    {
+      "id": "skull-blush",
+      "name": "Skull (blush)",
+      "states": [
+        "not-allowed",
+        "wait"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbklEQVR4nO3RUQrAIAwDUM++g+1q7n9Q0pC66kjAL7V56Bgg87ons9A8Op8D2MJyUBugupiGtAFWF0PQtoBoH71gdq4BBpwDqErYcwwgOqfeN8CAfkC24D0QhZ7XDsheVL9Cli8HqCC5cDuA8/s8Y2cLEnmCGWwAAAAASUVORK5CYII="
+    },
+    {
+      "id": "skull-peach",
+      "name": "Skull (peach)",
+      "states": [
+        "not-allowed",
+        "wait"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbklEQVR4nO3RUQrAIAwDUE+8g+2S7n9Q0pC66kjAL7V56Bgg874ms9A8Op8D2MJyUBugupiGtAFWF0PQtoBoH71gdq4BBpwDqErYcwwgOqfeN8CAfkC24D0QhZ7XDsheVL9Cli8HqCC5cDuA8/s89zu0I3nCQvgAAAAASUVORK5CYII="
+    },
+    {
+      "id": "skull-cocoa",
+      "name": "Skull (cocoa)",
+      "states": [
+        "not-allowed",
+        "wait"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAcUlEQVR4nO3RUQrAIAwDUM+5Q+wku/P2PyhpSF11JOCX2jx0DJDrPG5moXl0PgewheWgNkB1MQ1pA8wuhqBlAdE+esHsXAMM2AdQlbBnG0B0Tr1vgAH9gGzBeyAKPa8dkL2ofoUsnw5QQXLhcgDn93kAKoEMkF0W3S4AAAAASUVORK5CYII="
+    },
+    {
+      "id": "skull-mintDark",
+      "name": "Skull (mintDark)",
+      "states": [
+        "not-allowed",
+        "wait"
+      ],
+      "fallback": "not-allowed",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAcUlEQVR4nO3RUQrAIAwDUI+zM+0ku/32PyhpSF11JOCX2jx0DJDjOm9moXl0PgewheWgNkB1MQ1pA8wuhqBlAdE+esHsXAMM2AdQlbBnG0B0Tr1vgAH9gGzBeyAKPa8dkL2ofoUsnw5QQXLhcgDn93kAFu9JCZUDZ50AAAAASUVORK5CYII="
+    },
+    {
+      "id": "bone-dark",
+      "name": "Bone (dark)",
+      "states": [
+        "help",
+        "pointer"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaElEQVR4nO3USwoAIAgE0A4Q3f+2tY0gyE85Qwru1HkQVErWUrW2PvfrfTzA6SHtHg9gd1A6zw+QNh/AC6IOhgFoIW7BCYABnEKuBYcDwp8gATQ/oDskDGANNkPgAdZ5XsCtPTzAdzUAo6m3kMLydrYAAAAASUVORK5CYII="
+    },
+    {
+      "id": "bone-light",
+      "name": "Bone (light)",
+      "states": [
+        "help",
+        "pointer"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaElEQVR4nO3USwoAIAgE0O5/2hbtaxtBkJ9yhhTcqfMgqJSspWptfe7X+3iA00PaPR7A7qB0nh8gbT6AF0QdDAPQQtyCEwADOIVcCw4HhD9BAmh+QHdIGMAabIbAA6zzvIBbe3iA72oA6fW8zD64gRcAAAAASUVORK5CYII="
+    },
+    {
+      "id": "bone-neon",
+      "name": "Bone (neon)",
+      "states": [
+        "help",
+        "pointer"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3USwoAIAgFwO5/z85h64LAb2r6wJ3aBNEYnTMTYKvX8/EA2EXcuTyA20Jqf34AtfIBtCDiuAO4EPU0wB2AhZgn7M3/fwN1Ae5fsRtAerAYEh4g7c8LsJqLB6iWBez+VL1iQYZpAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "bone-coral",
+      "name": "Bone (coral)",
+      "states": [
+        "help",
+        "pointer"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaElEQVR4nO3UQQoAIAgEwP5/6SE90q4RBKWWu6TgTd2BoFKyppLaZOzX+3iA3UPaPR7A6uDpPD/gtPkAXhB1MAxAC3ELTgAMYBdyLTgcEP4ECaD5Ad0hYQBrsBkCD7DO8wJu7eEBvqsOky7UPaenOZ8AAAAASUVORK5CYII="
+    },
+    {
+      "id": "bone-lemon",
+      "name": "Bone (lemon)",
+      "states": [
+        "help",
+        "pointer"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO3UQQoAIAgEwJ7Y/+kvdo0gKLXcJQVv6g4ElZI1lbQqY7/exwPsHtLu8QBWB0/n+QGnzQfwgqiDYQBaiFtwAmAAu5BrweGA8CdIAM0P6A4JA1iDzRB4gHWeF3BrDw/wXXV4Q789rMe1DgAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "bone-mint",
+      "name": "Bone (mint)",
+      "states": [
+        "help",
+        "pointer"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaUlEQVR4nO3U0QkAIAgE0EZsxAZrl/qNICi1vCMF/9R7EJRS1FS5ljb26308wO4h6R4PYHXwdJ4fcNp8ACuIOBgGIIWYBQcABrALuRbsDnB/ggDQ/IDmEDeANlgNgQdo53kBt/bwAN9VB//pML0XBX9LAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "bone-grape",
+      "name": "Bone (grape)",
+      "states": [
+        "help",
+        "pointer"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO3UQQoAIAgEwJ7dm/qkXSMISi13ScGbugNBpWRN1arI2K/38QC7h7R7PIDVwdN5fsBp8wG8IOpgGIAW4hacABjALuRacDgg/AkSQPMDukPCANZgMwQeYJ3nBdzawwN8Vx2h+7A9uBk4FAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "bone-sky",
+      "name": "Bone (sky)",
+      "states": [
+        "help",
+        "pointer"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO3UQQoAIAgEwN7ZE/ukXSMISi13ScGbugNBpWRNVZvI2K/38QC7h7R7PIDVwdN5fsBp8wG8IOpgGIAW4hacABjALuRacDgg/AkSQPMDukPCANZgMwQeYJ3nBdzawwN8Vx05boM9ueQrKwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "bone-blush",
+      "name": "Bone (blush)",
+      "states": [
+        "help",
+        "pointer"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO3UQQoAIAgEwN7ew/qaXSMISi13ScGbugNBpWRNJbXJ2K/38QC7h7R7PIDVwdN5fsBp8wG8IOpgGIAW4hacABjALuRacDgg/AkSQPMDukPCANZgMwQeYJ3nBdzawwN8Vx1zl909I64U4AAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "bone-peach",
+      "name": "Bone (peach)",
+      "states": [
+        "help",
+        "pointer"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO3UQQoAIAgEwF7cw/qkXSMISi13ScGbugNBpWRNJa3K2K/38QC7h7R7PIDVwdN5fsBp8wG8IOpgGIAW4hacABjALuRacDgg/AkSQPMDukPCANZgMwQeYJ3nBdzawwN8Vx2q4KE9r1z0MwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "bone-cocoa",
+      "name": "Bone (cocoa)",
+      "states": [
+        "help",
+        "pointer"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaUlEQVR4nO3U0QkAIAgE0OZsiCZp5/qNICi1vCMF/9R7EJRS1FS15Db26308wO4h6R4PYHXwdJ4fcNp8ACuIOBgGIIWYBQcABrALuRbsDnB/ggDQ/IDmEDeANlgNgQdo53kBt/bwAN9VBwDTfK4YqQImAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "bone-mintDark",
+      "name": "Bone (mintDark)",
+      "states": [
+        "help",
+        "pointer"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaUlEQVR4nO3U0QkAIAgE0MZppiZp+/qNICi1vCMF/9R7EJRS1FS5ljb26308wO4h6R4PYHXwdJ4fcNp8ACuIOBgGIIWYBQcABrALuRbsDnB/ggDQ/IDmEDeANlgNgQdo53kBt/bwAN9VB5kd9Z9s0kH2AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "bubble-dark",
+      "name": "Bubble (dark)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3OSwoAIAxDQQ8g3v+2uhVBtD9TJIEuy5tShKu19fmk/+bBAGv4OQQGOIXDITCANOwOgQGsYTOEAAIIgAO8IOpwGoAW4hZOA7iFhIXTAHaQZ+E0AI7jvtsArxtuULWY0pAAAAAASUVORK5CYII="
+    },
+    {
+      "id": "bubble-light",
+      "name": "Bubble (light)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3OOwoAIAxEQe9/Wgt7bUUQzc8Nsgspw5tShKu19fmk/+bBAGv4OQQGOIXDITCANOwOgQGsYTOEAAIIgAO8IOpwGoAW4hZOA7iFhIXTAHaQZ+E0AI7jvtsAH4rH/YTJxB4AAAAASUVORK5CYII="
+    },
+    {
+      "id": "bubble-neon",
+      "name": "Bubble (neon)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAV0lEQVR4nO3OwQkAIAwEQfvv0zr0rSAaE7Mgt3Dvm1Ks1daGpYcB5uN0CAbYHT+HYADrcTgEA3iP3RABBBAAB0RB3OGAW0h4OOAU8jwcsIKkhwOUUr/VAc3mm+4yNIeSAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "bubble-coral",
+      "name": "Bubble (coral)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3OSwoAIAxDQe+/8SAeUrciiPZniiTQZXlTinC9tj6f9N88GGANP4fAAKdwOAQGkIbdITCANWyGEEAAAXCAF0QdTgPQQtzCaQC3kLBwGsAO8iycBsBx3HcbCOEGPRBvGt0AAAAASUVORK5CYII="
+    },
+    {
+      "id": "bubble-lemon",
+      "name": "Bubble (lemon)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3OSwoAIAxDQY/o/fEuuhVBtD9TJIEuy5tShOut9vmk/+bBAGv4OQQGOIXDITCANOwOgQGsYTOEAAIIgAO8IOpwGoAW4hZOA7iFhIXTAHaQZ+E0AI7jvtsAfYL0rkAR5b4AAAAASUVORK5CYII="
+    },
+    {
+      "id": "bubble-mint",
+      "name": "Bubble (mint)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYUlEQVR4nO3OwQkAIAxDUUd0RAdzF72KIFrbmiIJ9Fj+S0m4XEsbT/qvHgwwh59DYIBd2B0CA0jD5hAYQBtWQwgggAA4wApyHQ4DuIWYhcMATiFu4TCAFeRZOAyA47jv1gE/9H3upLnCYAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "bubble-grape",
+      "name": "Bubble (grape)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3OSwoAIAxDQY/tmbykbkUQ7c8USaDL8qYU4VrtfT7pv3kwwBp+DoEBTuFwCAwgDbtDYABr2AwhgAAC4AAviDqcBqCFuIXTAG4hYeE0gB3kWTgNgOO47zYAzMLoLmjDhvUAAAAASUVORK5CYII="
+    },
+    {
+      "id": "bubble-sky",
+      "name": "Bubble (sky)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3OSwoAIAxDQc/pEb2kbkUQ7c8USaDL8qYU4WrrfT7pv3kwwBp+DoEBTuFwCAwgDbtDYABr2AwhgAAC4AAviDqcBqCFuIXTAG4hYeE0gB3kWTgNgOO47zYAJc3Cro6av14AAAAASUVORK5CYII="
+    },
+    {
+      "id": "bubble-blush",
+      "name": "Bubble (blush)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3OSwoAIAxDQc/uwbyabkUQ7c8USaDL8qYU4XptfT7pv3kwwBp+DoEBTuFwCAwgDbtDYABr2AwhgAAC4AAviDqcBqCFuIXTAG4hYeE0gB3kWTgNgOO47zYAy0YNvUGEzCMAAAAASUVORK5CYII="
+    },
+    {
+      "id": "bubble-peach",
+      "name": "Bubble (peach)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAX0lEQVR4nO3OSwoAIAxDQU/swbykbkUQ7c8USaDL8qYU4XqrfT7pv3kwwBp+DoEBTuFwCAwgDbtDYABr2AwhgAAC4AAviDqcBqCFuIXTAG4hYeE0gB3kWTgNgOO47zYAgK/brj7mfNgAAAAASUVORK5CYII="
+    },
+    {
+      "id": "bubble-cocoa",
+      "name": "Bubble (cocoa)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYUlEQVR4nO3OwQkAIAxDUed0CCdxZ72KIFrbmiIJ9Fj+S0m4WnIbT/qvHgwwh59DYIBd2B0CA0jD5hAYQBtWQwgggAA4wApyHQ4DuIWYhcMATiFu4TCAFeRZOAyA47jv1gHWkeffdEaXdwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "bubble-mintDark",
+      "name": "Bubble (mintDark)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYUlEQVR4nO3OwQkAIAxDUcdxJidxe72KIFrbmiIJ9Fj+S0m4XEsbT/qvHgwwh59DYIBd2B0CA0jD5hAYQBtWQwgggAA4wApyHQ4DuIWYhcMATiFu4TCAFeRZOAyA47jv1gGQo3dfBuvkPgAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "fish-dark",
+      "name": "Fish (dark)",
+      "states": [
+        "pointer",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nO3P2w0AIAhDUQYg7r+triAPU8DehO8eRBi7THVty80BWIfTITBAdDgMgQGyh/sA+Pl/nxNQDgIHlIHAAa8g/QBZEPdwGYAXkjZcBsDGdgCEuAoHYWYsegAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "fish-light",
+      "name": "Fish (light)",
+      "states": [
+        "pointer",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nO3Puw0AMAhDQfafliJ9skL4RAbiJ1H7EGHsMtW1LTcHYB1Oh8AA0eEwBAbIHu4D4Of/fU5AOQgcUAYCB7yC9ANkQdzDZQBeSNpwGQAb2wEv3tAzHuh7SQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "fish-neon",
+      "name": "Fish (neon)",
+      "states": [
+        "pointer",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAUUlEQVR4nO3P0Q0AIAhDQfbf0zlwBZGaAvYlfPcwU+q05R66OYDoMBxCA2SH0xAaAD3cB6DP//tcgHIQOqAMhA54BekHQEHS0QG3EHh0gJraBn4sJKTPFPhiAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "fish-coral",
+      "name": "Fish (coral)",
+      "states": [
+        "pointer",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nO3PyxEAIAhDQfq/WIhFYgvycQKYN8M5iwhjl+naark5AOtwOgQGiA6HITBA9nAfAD//73MCykHggDIQOOAVpB8gC+IeLgPwQtKGywDY2A5ADLwMQLobAgAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "fish-lemon",
+      "name": "Fish (lemon)",
+      "states": [
+        "pointer",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVUlEQVR4nO3P2w0AIAhDUUZ0/7gLriAPU8DehO8eRBi7TPdSy80BWIfTITBAdDgMgQGyh/sA+Pl/nxNQDgIHlIHAAa8g/QBZEPdwGYAXkjZcBsDGdgANpaMck2uMCAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "fish-mint",
+      "name": "Fish (mint)",
+      "states": [
+        "pointer",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVklEQVR4nO3P2w0AIAhDUUZ0RAdzF11BHqaAvQnfPYgwdtlYc2uuD0A7HA6BAbzDbggMED1cB8DP//ucgHQQOCANBA54BakHiIKYh9MArJCw4TQA1rYDt0351Trp4ecAAAAASUVORK5CYII="
+    },
+    {
+      "id": "fish-grape",
+      "name": "Fish (grape)",
+      "states": [
+        "pointer",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3P2w0AIAhDUcZ2JpfEFeRhCtib8N2DCGOX7aVquTkA63A6BAaIDochMED2cB8AP//vcwLKQeCAMhA44BWkHyAL4h4uA/BC0obLANjYDhRPkUyG19J5AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "fish-sky",
+      "name": "Fish (sky)",
+      "states": [
+        "pointer",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3P2w0AIAhDUeZ0RJfEFeRhCtib8N2DCGOXra1quTkA63A6BAaIDochMED2cB8AP//vcwLKQeCAMhA44BWkHyAL4h4uA/BC0obLANjYDgd4W9w8Fh7NAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "fish-blush",
+      "name": "Fish (blush)",
+      "states": [
+        "pointer",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3P2w0AIAhDUWZ3MFfDFeRhCtib8N2DCGOX6dpquTkA63A6BAaIDochMED2cB8AP//vcwLKQeCAMhA44BWkHyAL4h4uA/BC0obLANjYDp3Wxryj1W3+AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "fish-peach",
+      "name": "Fish (peach)",
+      "states": [
+        "pointer",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVElEQVR4nO3P2w0AIAhDUSZ2MJfEFeRhCtib8N2DCGOX6V5quTkA63A6BAaIDochMED2cB8AP//vcwLKQeCAMhA44BWkHyAL4h4uA/BC0obLANjYDoP2f3yRIt2PAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "fish-cocoa",
+      "name": "Fish (cocoa)",
+      "states": [
+        "pointer",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVklEQVR4nO3P2w0AIAhDUeZ0CCdxZ11BHqaAvQnfPYgwdtmaY2uuD0A7HA6BAbzDbggMED1cB8DP//ucgHQQOCANBA54BakHiIKYh9MArJCw4TQA1rYDpa4kFdU3mZcAAAAASUVORK5CYII="
+    },
+    {
+      "id": "fish-mintDark",
+      "name": "Fish (mintDark)",
+      "states": [
+        "pointer",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAVklEQVR4nO3P2w0AIAhDUcZxJidxe11BHqaAvQnfPYgwdtlYc2uuD0A7HA6BAbzDbggMED1cB8DP//ucgHQQOCANBA54BakHiIKYh9MArJCw4TQA1rYDeJiDtoUmDKoAAAAASUVORK5CYII="
+    },
+    {
+      "id": "snowflake-dark",
+      "name": "Snowflake (dark)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO2UwQoAIAhD/YDo//+2rl0iNWVhG3hq6aNkIk611sda3j5uEYAAaQDWxuF+OIDWeHt+FBxg18ha7sHPAGjB0gbBAW6/AL6EaS/EHaifA/AohgFYL4b74QBa/ZMDBCBAeU0CnCmk9pDgmAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "snowflake-light",
+      "name": "Snowflake (light)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO2UMQ4AIAgD+f9rHdx1dTECQmqwTZiscFFSEada62Mtbx+3CECANABr43A/HEBrvD0/Cg6wa2Qt9+BnALRgaYPgALdfAF/CtBfiDtTPAXgUwwCsF8P9cACt/skBAhCgvCaTy+J66qaCaAAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "snowflake-neon",
+      "name": "Snowflake (neon)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZElEQVR4nO3USwoAIAgE0O5/z85h6xaB5mewZsBVFi8Kx7jNFNmqPAQQkAawHhzeDwdoG73rbmk64HSQtdyBA7Sw8sBuWv4UcIAWVp42f6AvAD6KYQDrxvB+OECbf+YAAQS8ngV/5+6rowm/2QAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "snowflake-coral",
+      "name": "Snowflake (coral)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaElEQVR4nO2UOw4AIAhDvf/iQTwkri5GPpIabBMmK7woaWtOSR+ylrePWwQgQBqAtfF1PxxAa4yeHwUH2DWylnvwMwBasLRBcIDoF8CXMO2FuAP1cwAexTAA68XrfjiAVv/kAAEIUF4TBQxFDmmwz5oAAAAASUVORK5CYII="
+    },
+    {
+      "id": "snowflake-lemon",
+      "name": "Snowflake (lemon)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaElEQVR4nO2Uyw0AIAhDHdH94y549WLkI6nBNuFkhRclbc0pGV3W8vZxiwAESAOwNr7uhwNojdHzo+AAu0bWcg9+BkALljYIDhD9AvgSpr0Qd6B+DsCjGAZgvXjdDwfQ6p8cIAABymsCol421sSjI8QAAAAASUVORK5CYII="
+    },
+    {
+      "id": "snowflake-mint",
+      "name": "Snowflake (mint)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaUlEQVR4nGNgIBME3FnwHxmTaw7ZYNQBow6gmQNINZjq6gfcAcQqpFSeIBhwB+AyiFRMtsWDxgHEOoxmFg24AyiNggFPhDQLodE0MPzLgQEvigfMAaRqpLr6AXcAsWDklAOjDhh1wLAHAHxj1ktngC18AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "snowflake-grape",
+      "name": "Snowflake (grape)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO2Uyw0AIAhDHduZXBKvXox8JDXYJpys8KKkrTk1usha3j5uEYAAaQDWxtf9cACtMXp+FBxg18ha7sHPAGjB0gbBAaJfAF/CtBfiDtTPAXgUwwCsF6/74QBa/ZMDBCBAeU2kCiyuk8FNQQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "snowflake-sky",
+      "name": "Snowflake (sky)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO2Uyw0AIAhDndMRXRKvXox8JDXYJpys8KKkrTnVh8ha3j5uEYAAaQDWxtf9cACtMXp+FBxg18ha7sHPAGjB0gbBAaJfAF/CtBfiDtTPAXgUwwCsF6/74QBa/ZMDBCBAeU1wKw42gCLcRQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "snowflake-blush",
+      "name": "Snowflake (blush)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO2Uyw0AIAhDnd3BXA2vXox8JDXYJpys8KKkrTklfcha3j5uEYAAaQDWxtf9cACtMXp+FBxg18ha7sHPAGjB0gbBAaJfAF/CtBfiDtTPAXgUwwCsF6/74QBa/ZMDBCBAeU0fEEsm/qm6dgAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "snowflake-peach",
+      "name": "Snowflake (peach)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZ0lEQVR4nO2Uyw0AIAhDndjBXBKvXox8JDXYJpys8KKkrTklo8ta3j5uEYAAaQDWxtf9cACtMXp+FBxg18ha7sHPAGjB0gbBAaJfAF/CtBfiDtTPAXgUwwCsF6/74QBa/ZMDBCBAeU2XfCKGDMLiDwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "snowflake-cocoa",
+      "name": "Snowflake (cocoa)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaUlEQVR4nGNgIBP05EX9R8bkmkM2GHXAqANo5gBSDaa6+gF3ALEKKZUnCAbcAbgMIhWTbfGgcQCxDqOZRQPuAEqjYMATIc1CaDQNDP9yYMCL4gFzAKkaqa5+wB1ALBg55cCoA0YdMOwBAHX+XGtSD79tAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "snowflake-mintDark",
+      "name": "Snowflake (mintDark)",
+      "states": [
+        "wait",
+        "progress"
+      ],
+      "fallback": "wait",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAaUlEQVR4nGNgIBNoVET9R8bkmkM2GHXAqANo5gBSDaa6+gF3ALEKKZUnCAbcAbgMIhWTbfGgcQCxDqOZRQPuAEqjYMATIc1CaDQNDP9yYMCL4gFzAKkaqa5+wB1ALBg55cCoA0YdMOwBAGiRAQNZgSHbAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "moon-dark",
+      "name": "Moon (dark)",
+      "states": [
+        "help",
+        "wait"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3TUQoAIAgD0A4g3f+2dQVnSy028Nc9EMdwxmwuz3j3wUkHeAuvQcoAp8XHkDIAuxiGPANA99BPQAekvZcAAgjQFoBCBIhOf8AtSPkpYAALEi5uA4iC6MVtAMq32Xyl5Vgv9n1qAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "moon-light",
+      "name": "Moon (light)",
+      "states": [
+        "help",
+        "wait"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZElEQVR4nO3TMQ4AIAgDQP//WgZ3/QLFCmjahJVeQhjDGbO5POPdBycd4C28BikDnBYfQ8oA7GIY8gwA3UM/AR2Q9l4CCCBAWwAKESA6/QG3IOWngAEsSLi4DSAKohe3ASjfZgOzplXTINucwgAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "moon-neon",
+      "name": "Moon (neon)",
+      "states": [
+        "help",
+        "wait"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAXElEQVR4nO3T2wkAIAxDUfff0znqCn2Ypkou+GsOiGt522auA6sd4B2EQWiA6nAZQgPcHg5DngFE73FHA7R9LwEEEGAsIAoRIHvmA1AQ+lOkow2PAWRBsOgA9WsH3pTINcLh9+AAAAAASUVORK5CYII="
+    },
+    {
+      "id": "moon-coral",
+      "name": "Moon (coral)",
+      "states": [
+        "help",
+        "wait"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZElEQVR4nO3Tyw0AIAgDUPe/OIhD6goUy0fTJlzpSwhjGLPn2pax7oOTDrAWhkHKALfF15AyALsYhjwDQPfQT0AHpL2XAAII0BaAQgTwTn9AFKT8FDCABXEXtwF4QfTiNgDl2xyNuFUM5R6LOwAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "moon-lemon",
+      "name": "Moon (lemon)",
+      "states": [
+        "help",
+        "wait"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZElEQVR4nO3T2w0AIAgDQEd0/7iLrkCxPDRtwi+9hDCGMXvNbRnrPjjpAGthGKQMcFt8DSkDsIthyDMAdA/9BHRA2nsJIIAAbQEoRADv9AdEQcpPAQNYEHdxG4AXRC9uA1C+zQEY3D3cGQo3JQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "moon-mint",
+      "name": "Moon (mint)",
+      "states": [
+        "help",
+        "wait"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZUlEQVR4nO3TwQ0AIAgDQEd0RAdzF12BQhU0bcKXXkJozZg+x7KMdR+c6wBr4TFIGiBaHIakAdjFMOQZALqHfgI64Np7CSCAAGUBKEQA79QHnIKknwIGsCDu4jIAL4heXAagfJsNx/igdapeViEAAAAASUVORK5CYII="
+    },
+    {
+      "id": "moon-grape",
+      "name": "Moon (grape)",
+      "states": [
+        "help",
+        "wait"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3T2w0AIAgDQMd2JpfUFSiWh6ZN+KWXEMYwZs29LWPdBycdYC0Mg5QBbouvIWUAdjEMeQaA7qGfgA5Iey8BBBCgLQCFCOCd/oAoSPkpYAAL4i5uA/CC6MVtAMq3OT0+LUyirXcFAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "moon-sky",
+      "name": "Moon (sky)",
+      "states": [
+        "help",
+        "wait"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3T2w0AIAgDQOd0RJfUFSiWh6ZN+KWXEMYwZq69LWPdBycdYC0Mg5QBbouvIWUAdjEMeQaA7qGfgA5Iey8BBBCgLQCFCOCd/oAoSPkpYAAL4i5uA/CC6MVtAMq3OTIP+40VIlY8AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "moon-blush",
+      "name": "Moon (blush)",
+      "states": [
+        "help",
+        "wait"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3T2w0AIAgDQGd3MFfTFSiWh6ZN+KWXEMYwZs+1LWPdBycdYC0Mg5QBbouvIWUAdjEMeQaA7qGfgA5Iey8BBBCgLQCFCOCd/oAoSPkpYAAL4i5uA/CC6MVtAMq3ObxdXvw5j/GyAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "moon-peach",
+      "name": "Moon (peach)",
+      "states": [
+        "help",
+        "wait"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4nO3T2w0AIAgDQCd2MJfUFSiWh6ZN+KWXEMYwZq+5LWPdBycdYC0Mg5QBbouvIWUAdjEMeQaA7qGfgA5Iey8BBBCgLQCFCOCd/oAoSPkpYAAL4i5uA/CC6MVtAMq3OY1dHLxtHx6HAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "moon-cocoa",
+      "name": "Moon (cocoa)",
+      "states": [
+        "help",
+        "wait"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZUlEQVR4nO3TwQ0AIAgDQOd0CCdxZ12BQhU0bcKXXkJozZg5+rKMdR+c6wBr4TFIGiBaHIakAdjFMOQZALqHfgI64Np7CSCAAGUBKEQA79QHnIKknwIGsCDu4jIAL4heXAagfJsNhLnZpq+k87YAAAAASUVORK5CYII="
+    },
+    {
+      "id": "moon-mintDark",
+      "name": "Moon (mintDark)",
+      "states": [
+        "help",
+        "wait"
+      ],
+      "fallback": "help",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAZUlEQVR4nO3TwQ0AIAgDQMdxJidxe12BQhU0bcKXXkJozZg+x7KMdR+c6wBr4TFIGiBaHIakAdjFMOQZALqHfgI64Np7CSCAAGUBKEQA79QHnIKknwIGsCDu4jIAL4heXAagfJsNSxtElhsAK3sAAAAASUVORK5CYII="
+    },
+    {
+      "id": "flower-dark",
+      "name": "Flower (dark)",
+      "states": [
+        "pointer",
+        "copy",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAdklEQVR4nO3TUQrAIAwDUA8gu/9tt98xkJKYmk4s9K80D4utkdX7db+b3UPXcsA3MOp9AGiwHHIAdgALkQUvA6AL5PM2APqU8vnygOyuD7CfIB0QfpNByeftAHQBeorpsgGmv9kB/B7AQmTBZQARKD2wHGCbegD+egDf0qjNhQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "flower-light",
+      "name": "Flower (light)",
+      "states": [
+        "pointer",
+        "copy",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAdklEQVR4nO3TwQrAIAwDUP//az3svl3HQEpiajqx0FtpHhZbI6v36343u4eu5YBvYNT7ANBgOeQA7AAWIgteBkAXyOdtAPQp5fPlAdldH2A/QTog/CaDks/bAegC9BTTZQNMf7MD+D2AhciCywAiUHpgOcA29QCmmbGb/zlPGQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "flower-neon",
+      "name": "Flower (neon)",
+      "states": [
+        "pointer",
+        "copy",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAbklEQVR4nO3TUQoAIAgD0O5/z85R3wUhs+kqGvgn+kgqxZva2lDpSQfMC616B4AupkM+QA7wQugJB6AD6P0yAPqU9P7jAdF1PkB+gnCA+U0WoffLAegA9BTbkQG2v9kHXA/wQuiRAyxQeuSAV9IBZloNjB5vuzwAAAAASUVORK5CYII="
+    },
+    {
+      "id": "flower-coral",
+      "name": "Flower (coral)",
+      "states": [
+        "pointer",
+        "copy",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAdklEQVR4nO3TUQrAIAwDUO//s4PskO53DKQkpqYTC/0rzcNia2T16+7vZvfQtRzwDYx6HwAaLIccgB3AQmTBywDoAvm8DYA+pXy+PCC76wPsJ0gHhN9kUPJ5OwBdgJ5iumyA6W92AL8HsBBZcBlABEoPLAfYph6NjaJMuUxsLQAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "flower-lemon",
+      "name": "Flower (lemon)",
+      "states": [
+        "pointer",
+        "copy",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAdklEQVR4nO3TUQrAIAwDUI+4+7O7uN8xkJKYmk4s9K80D4utkdXvq7+b3UPXcsA3MOp9AGiwHHIAdgALkQUvA6AL5PM2APqU8vnygOyuD7CfIB0QfpNByeftAHQBeorpsgGmv9kB/B7AQmTBZQARKD2wHGCbegAzzonMc3TJ+gAAAABJRU5ErkJggg=="
+    },
+    {
+      "id": "flower-mint",
+      "name": "Flower (mint)",
+      "states": [
+        "pointer",
+        "copy",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3TUQrAMAgD0B5xR9zBdpftdxSGJI2NKxX8E/OotDWyjuu8383uoWs6oA+Meh0AGiyHbIAdwEJkwdMA6AL5vA2APqV8vjwgu+sD7CdIB4Tf5KPk83YAugA9xXDZAMPfbAN+D2AhsuAygAiUHlgOsEw9pJHjfcj3SzwAAAAASUVORK5CYII="
+    },
+    {
+      "id": "flower-grape",
+      "name": "Flower (grape)",
+      "states": [
+        "pointer",
+        "copy",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAdUlEQVR4nO3TUQrAIAwDUI+9M+2S7ncMpCSmphML/SvNw2JrZN1X7+9m99C1HPANjHofABoshxyAHcBCZMHLAOgC+bwNgD6lfL48ILvrA+wnSAeE32RQ8nk7AF2AnmK6bIDpb3YAvwewEFlwGUAESg8sB9imHnGmeExH4Ws2AAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "flower-sky",
+      "name": "Flower (sky)",
+      "states": [
+        "pointer",
+        "copy",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAdUlEQVR4nO3TUQrAIAwDUM+5I+6S7ncMpCSmphML/SvNw2JrZF137+9m99C1HPANjHofABoshxyAHcBCZMHLAOgC+bwNgD6lfL48ILvrA+wnSAeE32RQ8nk7AF2AnmK6bIDpb3YAvwewEFlwGUAESg8sB9imHvR5Q8zOZC3IAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "flower-blush",
+      "name": "Flower (blush)",
+      "states": [
+        "pointer",
+        "copy",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAdUlEQVR4nO3TUQrAIAwDUM++g+1q7ncMpCSmphML/SvNw2JrZPXr7u9m99C1HPANjHofABoshxyAHcBCZMHLAOgC+bwNgD6lfL48ILvrA+wnSAeE32RQ8nk7AF2AnmK6bIDpb3YAvwewEFlwGUAESg8sB9imHmlTrMyYTJoUAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "flower-peach",
+      "name": "Flower (peach)",
+      "states": [
+        "pointer",
+        "copy",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAdUlEQVR4nO3TUQrAIAwDUE+8g+2S7ncMpCSmphML/SvNw2JrZPX76u9m99C1HPANjHofABoshxyAHcBCZMHLAOgC+bwNgD6lfL48ILvrA+wnSAeE32RQ8nk7AF2AnmK6bIDpb3YAvwewEFlwGUAESg8sB9imHgk6ZswpjnaVAAAAAElFTkSuQmCC"
+    },
+    {
+      "id": "flower-cocoa",
+      "name": "Flower (cocoa)",
+      "states": [
+        "pointer",
+        "copy",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3TUQrAMAgD0J5zh9hJduftdxSGJI2NKxX8E/OotDWyrvO4383uoWs6oA+Meh0AGiyHbIAdwEJkwdMA6AL5vA2APqV8vjwgu+sD7CdIB4Tf5KPk83YAugA9xXDZAMPfbAN+D2AhsuAygAiUHlgOsEw9w6gRfVyFMY0AAAAASUVORK5CYII="
+    },
+    {
+      "id": "flower-mintDark",
+      "name": "Flower (mintDark)",
+      "states": [
+        "pointer",
+        "copy",
+        "help"
+      ],
+      "fallback": "pointer",
+      "hotspot": {
+        "x": 8,
+        "y": 8
+      },
+      "size": 32,
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4nO3TUQrAMAgD0B5nZ9pJdvvtdxSGJI2NKxX8E/OotDWyjuu8383uoWs6oA+Meh0AGiyHbIAdwEJkwdMA6AL5vA2APqV8vjwgu+sD7CdIB4Tf5KPk83YAugA9xXDZAMPfbAN+D2AhsuAygAiUHlgOsEw9QU5z7qFyjyQAAAAASUVORK5CYII="
     }
   ],
   "themes": [
@@ -303,12 +4497,12 @@
       "name": "Mono Dark",
       "description": "Monochrome dark cursors for light UIs",
       "states": {
-        "pointer": "pointer-dark",
-        "text": "text-dark",
-        "wait": "wait-dark",
-        "not-allowed": "not-allowed-dark",
-        "grab": "grab-dark",
-        "help": "help-dark"
+        "pointer": "arrow-dark",
+        "text": "ibeam-dark",
+        "wait": "ring-dark",
+        "not-allowed": "ban-dark",
+        "grab": "dot-dark",
+        "help": "question-dark"
       }
     },
     {
@@ -316,12 +4510,12 @@
       "name": "Mono Light",
       "description": "Monochrome light cursors for dark UIs",
       "states": {
-        "pointer": "pointer-light",
-        "text": "text-light",
-        "wait": "wait-light",
-        "not-allowed": "not-allowed-light",
-        "grab": "grab-light",
-        "help": "help-light"
+        "pointer": "arrow-light",
+        "text": "ibeam-light",
+        "wait": "ring-light",
+        "not-allowed": "ban-light",
+        "grab": "dot-light",
+        "help": "question-light"
       }
     },
     {
@@ -329,12 +4523,129 @@
       "name": "Neon",
       "description": "Cyan neon cursors",
       "states": {
-        "pointer": "pointer-neon",
-        "text": "text-neon",
-        "wait": "wait-neon",
-        "not-allowed": "not-allowed-neon",
+        "pointer": "arrow-neon",
+        "text": "ibeam-neon",
+        "wait": "ring-neon",
+        "not-allowed": "ban-neon",
         "crosshair": "crosshair-neon",
-        "grab": "grab-neon"
+        "grab": "dot-neon"
+      }
+    },
+    {
+      "id": "cat-coral",
+      "name": "Coral Cat",
+      "description": "Pink pixel cat cursors",
+      "states": {
+        "pointer": "cat-coral",
+        "text": "ibeam-blush",
+        "wait": "paw-peach",
+        "not-allowed": "ban-cocoa",
+        "grab": "paw-coral",
+        "help": "heart-blush"
+      }
+    },
+    {
+      "id": "dog-lemon",
+      "name": "Lemon Dog",
+      "description": "Cheerful yellow dog cursors",
+      "states": {
+        "pointer": "dog-lemon",
+        "text": "ibeam-peach",
+        "wait": "star-lemon",
+        "not-allowed": "ban-cocoa",
+        "grab": "paw-peach",
+        "help": "bone-lemon"
+      }
+    },
+    {
+      "id": "shark-sky",
+      "name": "Sky Shark",
+      "description": "Playful shark cursors",
+      "states": {
+        "pointer": "shark-sky",
+        "text": "ibeam-neon",
+        "wait": "bubble-sky",
+        "not-allowed": "ban-grape",
+        "grab": "shark-sky",
+        "help": "fish-sky"
+      }
+    },
+    {
+      "id": "penguin-mint",
+      "name": "Mint Penguin",
+      "description": "Cool mint penguin cursors",
+      "states": {
+        "pointer": "penguin-mint",
+        "text": "ibeam-mintDark",
+        "wait": "snowflake-neon",
+        "not-allowed": "ban-grape",
+        "grab": "penguin-mint",
+        "help": "star-lemon"
+      }
+    },
+    {
+      "id": "ghost-grape",
+      "name": "Grape Ghost",
+      "description": "Spooky purple ghost cursors",
+      "states": {
+        "pointer": "ghost-grape",
+        "text": "ibeam-grape",
+        "wait": "ghost-grape",
+        "not-allowed": "skull-dark",
+        "grab": "dot-grape",
+        "help": "moon-lemon"
+      }
+    },
+    {
+      "id": "alien-neon",
+      "name": "Alien Neon",
+      "description": "Extraterrestrial neon cursors",
+      "states": {
+        "pointer": "alien-neon",
+        "text": "ibeam-neon",
+        "wait": "ring-neon",
+        "not-allowed": "ban-grape",
+        "grab": "alien-neon",
+        "help": "star-neon"
+      }
+    },
+    {
+      "id": "whale-sky",
+      "name": "Sky Whale",
+      "description": "Calm whale cursors (DSH spirit)",
+      "states": {
+        "pointer": "whale-sky",
+        "text": "ibeam-sky",
+        "wait": "bubble-neon",
+        "not-allowed": "ban-grape",
+        "grab": "whale-sky",
+        "help": "star-lemon"
+      }
+    },
+    {
+      "id": "bee-lemon",
+      "name": "Lemon Bee",
+      "description": "Busy-bee yellow cursors",
+      "states": {
+        "pointer": "bee-lemon",
+        "text": "ibeam-cocoa",
+        "wait": "bee-lemon",
+        "not-allowed": "ban-cocoa",
+        "grab": "paw-lemon",
+        "help": "flower-coral"
+      }
+    },
+    {
+      "id": "heart-blush",
+      "name": "Blush Hearts",
+      "description": "Romantic pink heart cursors",
+      "states": {
+        "pointer": "heart-blush",
+        "text": "ibeam-coral",
+        "wait": "star-blush",
+        "not-allowed": "ban-cocoa",
+        "grab": "heart-coral",
+        "help": "heart-blush"
       }
     },
     {
@@ -342,13 +4653,13 @@
       "name": "High Contrast",
       "description": "Bold shapes for accessibility",
       "states": {
-        "pointer": "pointer-dark",
-        "text": "text-dark",
-        "wait": "wait-dark",
-        "not-allowed": "not-allowed-dark",
+        "pointer": "arrow-dark",
+        "text": "ibeam-dark",
+        "wait": "ring-dark",
+        "not-allowed": "ban-dark",
         "crosshair": "crosshair-dark",
-        "grab": "grab-dark",
-        "help": "help-dark"
+        "grab": "dot-dark",
+        "help": "question-dark"
       }
     }
   ]

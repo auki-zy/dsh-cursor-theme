@@ -7,8 +7,9 @@ Customize the PC mouse cursor for every UI state inside DeepSeek Harness — eac
 ## Features
 
 - 🎯 Per-UI-state cursor overrides (default / pointer / text / wait / not-allowed / grab / …)
-- 🖼️ Built-in asset library (21 base shapes × 3 palettes) + upload PNG/CUR (≤128×128, ≤512 KB validated)
-- 🎨 One-click preset themes (Mono Dark / Mono Light / Neon / High Contrast)
+- 🖼️ Built-in asset library (25 pixel-art shapes × 12 palettes = 300 assets) + upload PNG/CUR (≤128×128, ≤512 KB validated)
+- 🎨 One-click preset themes — 13 built-in: Mono Dark/Light, Neon, Coral Cat, Lemon Dog, Sky Shark, Mint Penguin, Grape Ghost, Alien Neon, Sky Whale, Lemon Bee, Blush Hearts, High Contrast
+- 🤖 **AI theme generator**: describe an idea → generate a structured prompt → copy it or **send it straight into the current session** → paste the assistant's JSON reply back to import a ready-to-use theme (shape + color rendered via the built-in shape library)
 - 📦 Theme pack export/import as JSON (assets inlined as base64, import fully validated)
 - 🌗 Follows the DSH light/dark scheme (dark cursors on light UIs, light cursors on dark UIs)
 - 📍 Hotspot (X/Y) editor for pixel-accurate clicks

@@ -8,8 +8,8 @@ import { applyColorScheme } from '../src/client/follow.js'
 import { BUILTIN_ASSETS } from '../src/client/assets.js'
 import type { CursorThemeSettings } from '../src/client/types.js'
 
-const darkPointer = BUILTIN_ASSETS.find((a) => a.id === 'pointer-dark')!
-const lightPointer = BUILTIN_ASSETS.find((a) => a.id === 'pointer-light')!
+const darkPointer = BUILTIN_ASSETS.find((a) => a.id === 'arrow-dark')!
+const lightPointer = BUILTIN_ASSETS.find((a) => a.id === 'arrow-light')!
 
 const settings: CursorThemeSettings = {
   enabled: true,

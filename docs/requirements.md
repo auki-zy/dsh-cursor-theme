@@ -223,11 +223,12 @@ DeepSeek Harness（DSH）是长时运行、界面元素密集的 AI 工作台：
 | M0 骨架 | 工程脚手架、bundle 接入 profile、空客户端注入 | ✅ 完成 |
 | M1 注入核心 | 全局样式注入 + 状态映射 + 配置持久化 | ✅ 完成 |
 | M2 设置界面 | 状态列表、图案上传、热区、尺寸、预览、还原 | ✅ 完成（内联样式版） |
-| M3 打磨 | 素材库、主题系统、导出导入、国际化增强、无障碍 | ⏳ 待做 |
+| M3 打磨 | 素材库、主题系统、导出导入、国际化增强、无障碍 | ✅ 完成 |
+| M4 创意与 AI | 像素角色/梗图形状库（25 形状）、13 套创意主题、AI 主题提示词生成 + 会话一键发送 + JSON 导入渲染 | ✅ 完成 |
 | V1 发布 | npm 发布 + 文档 + 上架（awesome-dsh-plugin） | ⏳ 待做 |
 | V2（远期） | 系统级光标（Windows 桌面桥接） | 待评估 |
 
-> 实现记录：M2 客户端经 esbuild 打包为单文件 bundle（external 仅 react / @deepseek-ai/*，宿主 __ModuleLoader__ 注入）；设置界面注册于 `settings.section`（设置 → 插件 → 光标主题）；配置写入走 `scope.set('states', {...})` 整对象（SettingsScopeController.set 为单字段路径）。
+> 实现记录：客户端经 esbuild 打包为单文件 bundle（external 仅 react / @deepseek-ai/*，宿主 __ModuleLoader__ 注入，`jsx: automatic` 防 `React is not defined`）；设置界面注册于 `settings.plugins.tab`（对齐 deepseek-harness-desktop 官方形态）；配置写入走 `scope.set('states', {...})` 整对象（SettingsScopeController.set 为单字段路径）；AI 生成主题 = 形状库（共享像素矩阵，Node 生成器与浏览器 canvas 渲染同一数据源）+ 配色 → PNG data URL。
 
 ---
 

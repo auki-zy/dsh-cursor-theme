@@ -26,6 +26,12 @@ const result = buildSync({
   format: 'cjs',
   platform: 'browser',
   target: 'es2022',
+  // Match tsconfig's react-jsx (automatic runtime): compiles JSX to
+  // react/jsx-runtime jsx()/jsxs() calls, NOT React.createElement. The host
+  // module table provides react/jsx-runtime; it does NOT provide a global
+  // `React`, so classic transform would throw ReferenceError at render
+  // (this was the "tab visible but blank" root cause).
+  jsx: 'automatic',
   outfile: outFile,
   // Host-injected modules: resolved by the loader at runtime, never bundled.
   external: [
