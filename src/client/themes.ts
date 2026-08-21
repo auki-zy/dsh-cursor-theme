@@ -1,15 +1,16 @@
 /**
- * dsh-cursor-theme built-in theme catalog (M5 / M6).
+ * dsh-cursor-theme built-in theme catalog (M6).
  *
- * Two theme kinds:
- *  - Template themes: a palette + full 14-state → template map; applying
- *    substitutes the palette into each template and renders SVG → PNG.
- *  - Prebuilt themes: states already carry baked PNG data URLs (e.g. the
- *    scraped BlueArchive theme, MIT-licensed). Applied directly, no render.
+ * Themes come from data/assets.json, which the generator (generate-assets.mjs)
+ * builds by merging scraped third-party packs (scripts/scrape-*.mjs → 
+ * data/themes-*.json). Each scraped theme is "prebuilt": states already carry
+ * baked PNG data URLs, so applying is instant (no SVG render).
+ *
+ * The SVG template library (assets.json templates) is still used by the
+ * per-state built-in picker in the editor.
  */
 
 import assetsJson from '../../data/assets.json'
-import bluearchiveJson from '../../data/themes-bluearchive.json'
 import type { CursorStateConfig } from './types.js'
 import { renderSvgToDataUrl } from './render.js'
 
@@ -25,7 +26,8 @@ export interface BuiltinTheme {
   description: string
   /** Template themes: palette + stateId → template id map. */
   palette?: ThemePalette
-  states: Record<string, string>
+  /** stateId → template id (template themes) — kept for compatibility. */
+  states?: Record<string, string>
   /** Prebuilt themes: stateId → ready-to-use config (baked PNG). */
   prebuilt?: Record<string, CursorStateConfig>
   /** Source attribution (required by licenses like MIT). */
@@ -42,22 +44,7 @@ export interface BuiltinTemplate {
   svg: string
 }
 
-/** The BlueArchive theme scraped from GitHub (MIT). */
-const BLUEARCHIVE: BuiltinTheme = {
-  id: 'bluearchive',
-  name: 'BlueArchive',
-  description: '二次元人气光标主题（源自 GitHub makipom/BlueArchive-Cursors，MIT 许可）',
-  states: Object.fromEntries(
-    Object.keys((bluearchiveJson as { states: Record<string, CursorStateConfig> }).states).map((s) => [s, s]),
-  ),
-  prebuilt: (bluearchiveJson as { states: Record<string, CursorStateConfig> }).states,
-  attribution: 'BlueArchive-Cursors © 2023 Maki (MIT) — github.com/makipom/BlueArchive-Cursors',
-}
-
-export const BUILTIN_THEMES: BuiltinTheme[] = [
-  ...(assetsJson as { themes: BuiltinTheme[] }).themes,
-  BLUEARCHIVE,
-]
+export const BUILTIN_THEMES: BuiltinTheme[] = (assetsJson as { themes: BuiltinTheme[] }).themes
 
 const TEMPLATES: BuiltinTemplate[] = (assetsJson as { templates: BuiltinTemplate[] }).templates
 const TEMPLATE_BY_ID = new Map(TEMPLATES.map((t) => [t.id, t]))
@@ -78,7 +65,7 @@ export function applyPalette(svg: string, palette: ThemePalette): string {
  */
 export async function resolveThemeStates(theme: BuiltinTheme): Promise<Record<string, CursorStateConfig> | null> {
   if (theme.prebuilt) return JSON.parse(JSON.stringify(theme.prebuilt)) as Record<string, CursorStateConfig>
-  if (!theme.palette) return null
+  if (!theme.palette || !theme.states) return null
   const states: Record<string, CursorStateConfig> = {}
   for (const [stateId, templateId] of Object.entries(theme.states)) {
     const tpl = TEMPLATE_BY_ID.get(templateId)
