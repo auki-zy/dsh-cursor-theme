@@ -64,6 +64,11 @@ interface ThemeService {
   getTheme(): { active?: { colorScheme?: string } } | null
 }
 
+/** Structural subset of the conversation service (dsh-client-ui-conversation). */
+interface ConversationService {
+  send(text: string): Promise<void>
+}
+
 /** Defaults when the settings service is absent or the value is empty. */
 const DEFAULT_SETTINGS: CursorThemeSettings = {
   enabled: true,
@@ -126,20 +131,23 @@ export function apply(ctx: ClientContext): void {
     })
   })
 
-  // 3) Settings UI (M2). Official surface: settings.plugins.tab. The locale
-  //    dictionaries ride the guaranteed `locale` service.
+  // 3) Settings UI (M2) + AI generator (M4). Official surface:
+  //    settings.plugins.tab. conversation is optional (nested inject).
   const t = ctx.locale.bind(NS)
   ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'dsh-cursor-theme: dictionaries')
 
   ctx.inject(['settingsScope'], (scoped) => {
     const scope = (scoped as { settingsScope: SettingsScope }).settingsScope.bind({ namespace: NS })
-    ctx.slots.inject('settings.plugins.tab', () => ctx.slots.register({
-      name: 'settings.plugins.tab',
-      id: 'cursor-theme',
-      order: 30,
-      label: () => t('nav'),
-      locale: NS,
-      inject: () => ({ scope, t }),
-    }, CursorThemeSection as unknown as (props: Record<string, unknown>) => unknown))
+    ctx.inject(['conversation'], (scopedC) => {
+      const conversation = (scopedC as { conversation: ConversationService }).conversation
+      ctx.slots.inject('settings.plugins.tab', () => ctx.slots.register({
+        name: 'settings.plugins.tab',
+        id: 'cursor-theme',
+        order: 30,
+        label: () => t('nav'),
+        locale: NS,
+        inject: () => ({ scope, t, conversation }),
+      }, CursorThemeSection as unknown as (props: Record<string, unknown>) => unknown))
+    })
   })
 }

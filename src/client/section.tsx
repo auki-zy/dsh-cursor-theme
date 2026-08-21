@@ -18,6 +18,7 @@ import { CURSOR_STATES } from './states.js'
 import { BUILTIN_ASSETS, assetsForState } from './assets.js'
 import { BUILTIN_THEMES, resolveThemeStates } from './themes.js'
 import { buildThemePack, downloadText, parseThemePack, serializeThemePack } from './pack.js'
+import { AiGenerationSection } from './ai-section.js'
 
 /** Structural slice of the settings scope used by this UI. */
 export interface CardScope {
@@ -29,11 +30,6 @@ export interface CardScope {
   subscribe(listener: () => void): () => void
   set(field: string, value: unknown): Promise<void>
   unset(field: string): Promise<void>
-}
-
-export interface CursorThemeSectionProps {
-  scope: CardScope
-  t: (key: string) => string
 }
 
 const SIZES = [16, 24, 32, 48] as const
@@ -207,7 +203,14 @@ function StateEditor({ stateId, cfg, scope, t, onClose }: {
   )
 }
 
-export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
+export interface CursorThemeSectionProps {
+  scope: CardScope
+  t: (key: string) => string
+  /** Optional conversation service for one-click prompt sending (M4). */
+  conversation?: { send(text: string): Promise<void> } | null
+}
+
+export function CursorThemeSection({ scope, t, conversation }: CursorThemeSectionProps) {
   const [editing, setEditing] = useState<string | null>(null)
   const [snap, setSnap] = useState(() => scope.getSnapshot())
   const importRef = useRef<HTMLInputElement>(null)
@@ -302,6 +305,8 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
       {importErr && <div style={{ ...hintStyle, color: '#c0392b' }}>{t('importFailed')}: {importErr}</div>}
 
       <div style={hintStyle}>{t('a11yNote')}</div>
+
+      <AiGenerationSection scope={scope} t={t} conversation={conversation ?? null} />
 
       <div style={{ marginTop: 16, fontWeight: 600, fontSize: 14 }}>{t('states')}</div>
       {CURSOR_STATES.map((def) => {

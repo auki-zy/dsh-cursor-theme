@@ -17,12 +17,32 @@
  */
 
 import { deflateSync } from 'node:zlib'
-import { writeFileSync, mkdirSync } from 'node:fs'
+import { writeFileSync, mkdirSync, readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { buildSync } from 'esbuild'
 
 const SIZE = 32
 const root = dirname(dirname(fileURLToPath(import.meta.url)))
+
+// Load the shared pixel shape table (src/client/shapes.ts) through esbuild:
+// single source of truth for built-in assets AND browser AI renderer.
+const shapesOut = buildSync({
+  entryPoints: [join(root, 'src', 'client', 'shapes.ts')],
+  bundle: true,
+  format: 'cjs',
+  platform: 'node',
+  write: false,
+})
+// esbuild CJS emits `module.exports`; eval it inside a shimmed module scope.
+const shapesModule = { exports: {} }
+new Function('module', 'exports', shapesOut.outputFiles[0].text)(shapesModule, shapesModule.exports)
+const { PIXEL_SHAPES, shapeToRgba } = shapesModule.exports
+
+/** Pixelize the shared matrix (32×32 RGBA) for PNG encoding. */
+function shapePixels(shape, color) {
+  return shapeToRgba(shape.rows, color)
+}
 
 // ---------- PNG encoding ----------
 
@@ -67,222 +87,238 @@ function encodePng(width, height, rgba) {
   ])
 }
 
-// ---------- shape rasterization (32×32 RGBA grid) ----------
+// ---------- emit: one data URL per (shape × palette) ----------
 
 function blank() {
   return new Uint8Array(SIZE * SIZE * 4)
 }
-
-function setPx(px, x, y, color) {
-  if (x < 0 || y < 0 || x >= SIZE || y >= SIZE) return
-  const i = (y * SIZE + x) * 4
-  px[i] = color[0]; px[i + 1] = color[1]; px[i + 2] = color[2]; px[i + 3] = color[3]
-}
-
-function fillRect(px, x0, y0, x1, y1, color) {
-  for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) setPx(px, x, y, color)
-}
-
-function fillCircle(px, cx, cy, r, color) {
-  for (let y = cy - r; y <= cy + r; y++) {
-    for (let x = cx - r; x <= cx + r; x++) {
-      const dx = x - cx; const dy = y - cy
-      if (dx * dx + dy * dy <= r * r) setPx(px, x, y, color)
-    }
-  }
-}
-
-function fillPoly(px, pts, color) {
-  // scanline fill for small convex-ish polygons
-  const minX = Math.max(0, Math.min(...pts.map((p) => p[0])))
-  const maxX = Math.min(SIZE - 1, Math.max(...pts.map((p) => p[0])))
-  const minY = Math.max(0, Math.min(...pts.map((p) => p[1])))
-  const maxY = Math.min(SIZE - 1, Math.max(...pts.map((p) => p[1])))
-  for (let y = minY; y <= maxY; y++) {
-    const xs = []
-    for (let i = 0; i < pts.length; i++) {
-      const a = pts[i]; const b = pts[(i + 1) % pts.length]
-      if ((a[1] <= y && b[1] > y) || (b[1] <= y && a[1] > y)) {
-        const t = (y - a[1]) / (b[1] - a[1])
-        xs.push(a[0] + t * (b[0] - a[0]))
-      }
-    }
-    xs.sort((a, b) => a - b)
-    for (let i = 0; i + 1 < xs.length; i += 2) {
-      for (let x = Math.ceil(xs[i]); x <= Math.floor(xs[i + 1]); x++) setPx(px, x, y, color)
-    }
-  }
-}
-
-// ---------- shapes ----------
-
-function arrow(color) {
-  const px = blank()
-  fillPoly(px, [[2, 2], [12, 14], [9, 14], [13, 21], [11, 22], [7, 15], [4, 18], [2, 15]], color)
-  return px
-}
-
-function ibeam(color) {
-  const px = blank()
-  fillRect(px, 10, 2, 21, 4, color)
-  fillRect(px, 10, 27, 21, 29, color)
-  fillRect(px, 14, 4, 17, 27, color)
-  return px
-}
-
-function ring(color) {
-  const px = blank()
-  fillCircle(px, 16, 16, 12, color)
-  // punch inner hole with transparent
-  for (let y = 0; y < SIZE; y++) for (let x = 0; x < SIZE; x++) {
-    const dx = x - 16; const dy = y - 16
-    if (dx * dx + dy * dy <= 5 * 5) {
-      const i = (y * SIZE + x) * 4
-      px[i + 3] = 0
-    }
-  }
-  return px
-}
-
-function notAllowed(color) {
-  const px = blank()
-  fillCircle(px, 16, 16, 12, color)
-  // diagonal slash
-  fillPoly(px, [[5, 22], [8, 25], [25, 8], [22, 5]], color)
-  return px
-}
-
-function crosshair(color) {
-  const px = blank()
-  fillRect(px, 15, 1, 16, 9, color)
-  fillRect(px, 15, 22, 16, 30, color)
-  fillRect(px, 1, 15, 9, 16, color)
-  fillRect(px, 22, 15, 30, 16, color)
-  fillCircle(px, 16, 16, 2, color)
-  return px
-}
-
-function dot(color) {
-  const px = blank()
-  fillCircle(px, 16, 16, 9, color)
-  return px
-}
-
-function question(color) {
-  const px = blank()
-  // simplified question mark from rects
-  fillRect(px, 10, 5, 21, 7, color)
-  fillRect(px, 21, 7, 23, 12, color)
-  fillRect(px, 18, 11, 22, 14, color)
-  fillRect(px, 14, 14, 18, 20, color)
-  fillRect(px, 14, 24, 18, 26, color)
-  return px
-}
-
-// ---------- palettes ----------
-
+/** Palette name → [r,g,b]. Foreground-only palettes; cursors use alpha. */
 const PALETTES = {
-  dark: [12, 12, 14, 255],      // near-black, for light UIs
-  light: [240, 240, 244, 255],  // near-white, for dark UIs
-  neon: [0, 229, 255, 255],     // cyan accent
+  dark: [12, 12, 14],
+  light: [240, 240, 244],
+  neon: [0, 229, 255],
+  coral: [255, 143, 171],
+  lemon: [255, 220, 80],
+  mint: [80, 220, 160],
+  grape: [170, 120, 255],
+  sky: [90, 170, 255],
+  blush: [255, 130, 190],
+  peach: [255, 170, 110],
+  cocoa: [140, 110, 90],
+  mintDark: [40, 120, 90],
 }
 
-const SHAPES = {
-  pointer: { draw: arrow, fallback: 'pointer', hotspot: { x: 2, y: 2 } },
-  text: { draw: ibeam, fallback: 'text', hotspot: { x: 16, y: 16 } },
-  wait: { draw: ring, fallback: 'wait', hotspot: { x: 16, y: 16 } },
-  'not-allowed': { draw: notAllowed, fallback: 'not-allowed', hotspot: { x: 16, y: 16 } },
-  crosshair: { draw: crosshair, fallback: 'crosshair', hotspot: { x: 16, y: 16 } },
-  grab: { draw: dot, fallback: 'grab', hotspot: { x: 16, y: 16 } },
-  help: { draw: question, fallback: 'help', hotspot: { x: 16, y: 16 } },
-}
-
-// ---------- emit ----------
-
-function dataUrl(name, paletteName, color) {
-  const px = SHAPES[name].draw(color)
-  const png = encodePng(SIZE, SIZE, px)
+function dataUrlFor(shape, color) {
+  const rgba = shapeToRgba(shape.rows, color)
+  const png = encodePng(SIZE, SIZE, rgba)
   return `data:image/png;base64,${png.toString('base64')}`
 }
 
+// One asset per (shape, palette). Asset id: `${shape.id}-${paletteName}`.
+// Asset states follow the shape's own `states` list so the built-in picker
+// can offer every shape for a state.
 const assets = []
-for (const [shapeName, shape] of Object.entries(SHAPES)) {
+for (const shape of PIXEL_SHAPES) {
   for (const [paletteName, color] of Object.entries(PALETTES)) {
-    const id = `${shapeName}-${paletteName}`
     assets.push({
-      id,
-      name: `${shapeName} (${paletteName})`,
-      states: [shapeName],
+      id: `${shape.id}-${paletteName}`,
+      name: `${shape.name} (${paletteName})`,
+      states: shape.states,
       fallback: shape.fallback,
       hotspot: shape.hotspot,
       size: 32,
-      image: dataUrl(shapeName, paletteName, color),
+      image: dataUrlFor(shape, color),
     })
   }
 }
+
+// ---------- built-in themes: shape + palette combos (referenced by asset id) ----------
+
+function assetOf(shapeId, paletteName) {
+  return `${shapeId}-${paletteName}`
+}
+
+const themes = [
+  {
+    id: 'mono-dark',
+    name: 'Mono Dark',
+    description: 'Monochrome dark cursors for light UIs',
+    states: {
+      pointer: assetOf('arrow', 'dark'),
+      text: assetOf('ibeam', 'dark'),
+      wait: assetOf('ring', 'dark'),
+      'not-allowed': assetOf('ban', 'dark'),
+      grab: assetOf('dot', 'dark'),
+      help: assetOf('question', 'dark'),
+    },
+  },
+  {
+    id: 'mono-light',
+    name: 'Mono Light',
+    description: 'Monochrome light cursors for dark UIs',
+    states: {
+      pointer: assetOf('arrow', 'light'),
+      text: assetOf('ibeam', 'light'),
+      wait: assetOf('ring', 'light'),
+      'not-allowed': assetOf('ban', 'light'),
+      grab: assetOf('dot', 'light'),
+      help: assetOf('question', 'light'),
+    },
+  },
+  {
+    id: 'neon',
+    name: 'Neon',
+    description: 'Cyan neon cursors',
+    states: {
+      pointer: assetOf('arrow', 'neon'),
+      text: assetOf('ibeam', 'neon'),
+      wait: assetOf('ring', 'neon'),
+      'not-allowed': assetOf('ban', 'neon'),
+      crosshair: assetOf('crosshair', 'neon'),
+      grab: assetOf('dot', 'neon'),
+    },
+  },
+  {
+    id: 'cat-coral',
+    name: 'Coral Cat',
+    description: 'Pink pixel cat cursors',
+    states: {
+      pointer: assetOf('cat', 'coral'),
+      text: assetOf('ibeam', 'blush'),
+      wait: assetOf('paw', 'peach'),
+      'not-allowed': assetOf('ban', 'cocoa'),
+      grab: assetOf('paw', 'coral'),
+      help: assetOf('heart', 'blush'),
+    },
+  },
+  {
+    id: 'dog-lemon',
+    name: 'Lemon Dog',
+    description: 'Cheerful yellow dog cursors',
+    states: {
+      pointer: assetOf('dog', 'lemon'),
+      text: assetOf('ibeam', 'peach'),
+      wait: assetOf('star', 'lemon'),
+      'not-allowed': assetOf('ban', 'cocoa'),
+      grab: assetOf('paw', 'peach'),
+      help: assetOf('bone', 'lemon'),
+    },
+  },
+  {
+    id: 'shark-sky',
+    name: 'Sky Shark',
+    description: 'Playful shark cursors',
+    states: {
+      pointer: assetOf('shark', 'sky'),
+      text: assetOf('ibeam', 'neon'),
+      wait: assetOf('bubble', 'sky'),
+      'not-allowed': assetOf('ban', 'grape'),
+      grab: assetOf('shark', 'sky'),
+      help: assetOf('fish', 'sky'),
+    },
+  },
+  {
+    id: 'penguin-mint',
+    name: 'Mint Penguin',
+    description: 'Cool mint penguin cursors',
+    states: {
+      pointer: assetOf('penguin', 'mint'),
+      text: assetOf('ibeam', 'mintDark'),
+      wait: assetOf('snowflake', 'neon'),
+      'not-allowed': assetOf('ban', 'grape'),
+      grab: assetOf('penguin', 'mint'),
+      help: assetOf('star', 'lemon'),
+    },
+  },
+  {
+    id: 'ghost-grape',
+    name: 'Grape Ghost',
+    description: 'Spooky purple ghost cursors',
+    states: {
+      pointer: assetOf('ghost', 'grape'),
+      text: assetOf('ibeam', 'grape'),
+      wait: assetOf('ghost', 'grape'),
+      'not-allowed': assetOf('skull', 'dark'),
+      grab: assetOf('dot', 'grape'),
+      help: assetOf('moon', 'lemon'),
+    },
+  },
+  {
+    id: 'alien-neon',
+    name: 'Alien Neon',
+    description: 'Extraterrestrial neon cursors',
+    states: {
+      pointer: assetOf('alien', 'neon'),
+      text: assetOf('ibeam', 'neon'),
+      wait: assetOf('ring', 'neon'),
+      'not-allowed': assetOf('ban', 'grape'),
+      grab: assetOf('alien', 'neon'),
+      help: assetOf('star', 'neon'),
+    },
+  },
+  {
+    id: 'whale-sky',
+    name: 'Sky Whale',
+    description: 'Calm whale cursors (DSH spirit)',
+    states: {
+      pointer: assetOf('whale', 'sky'),
+      text: assetOf('ibeam', 'sky'),
+      wait: assetOf('bubble', 'neon'),
+      'not-allowed': assetOf('ban', 'grape'),
+      grab: assetOf('whale', 'sky'),
+      help: assetOf('star', 'lemon'),
+    },
+  },
+  {
+    id: 'bee-lemon',
+    name: 'Lemon Bee',
+    description: 'Busy-bee yellow cursors',
+    states: {
+      pointer: assetOf('bee', 'lemon'),
+      text: assetOf('ibeam', 'cocoa'),
+      wait: assetOf('bee', 'lemon'),
+      'not-allowed': assetOf('ban', 'cocoa'),
+      grab: assetOf('paw', 'lemon'),
+      help: assetOf('flower', 'coral'),
+    },
+  },
+  {
+    id: 'heart-blush',
+    name: 'Blush Hearts',
+    description: 'Romantic pink heart cursors',
+    states: {
+      pointer: assetOf('heart', 'blush'),
+      text: assetOf('ibeam', 'coral'),
+      wait: assetOf('star', 'blush'),
+      'not-allowed': assetOf('ban', 'cocoa'),
+      grab: assetOf('heart', 'coral'),
+      help: assetOf('heart', 'blush'),
+    },
+  },
+  {
+    id: 'high-contrast',
+    name: 'High Contrast',
+    description: 'Bold shapes for accessibility',
+    states: {
+      pointer: assetOf('arrow', 'dark'),
+      text: assetOf('ibeam', 'dark'),
+      wait: assetOf('ring', 'dark'),
+      'not-allowed': assetOf('ban', 'dark'),
+      crosshair: assetOf('crosshair', 'dark'),
+      grab: assetOf('dot', 'dark'),
+      help: assetOf('question', 'dark'),
+    },
+  },
+]
 
 const out = {
   schema: 1,
   generatedAt: new Date().toISOString(),
   assets,
-  themes: [
-    {
-      id: 'mono-dark',
-      name: 'Mono Dark',
-      description: 'Monochrome dark cursors for light UIs',
-      states: {
-        pointer: 'pointer-dark',
-        text: 'text-dark',
-        wait: 'wait-dark',
-        'not-allowed': 'not-allowed-dark',
-        grab: 'grab-dark',
-        help: 'help-dark',
-      },
-    },
-    {
-      id: 'mono-light',
-      name: 'Mono Light',
-      description: 'Monochrome light cursors for dark UIs',
-      states: {
-        pointer: 'pointer-light',
-        text: 'text-light',
-        wait: 'wait-light',
-        'not-allowed': 'not-allowed-light',
-        grab: 'grab-light',
-        help: 'help-light',
-      },
-    },
-    {
-      id: 'neon',
-      name: 'Neon',
-      description: 'Cyan neon cursors',
-      states: {
-        pointer: 'pointer-neon',
-        text: 'text-neon',
-        wait: 'wait-neon',
-        'not-allowed': 'not-allowed-neon',
-        crosshair: 'crosshair-neon',
-        grab: 'grab-neon',
-      },
-    },
-    {
-      id: 'high-contrast',
-      name: 'High Contrast',
-      description: 'Bold shapes for accessibility',
-      states: {
-        pointer: 'pointer-dark',
-        text: 'text-dark',
-        wait: 'wait-dark',
-        'not-allowed': 'not-allowed-dark',
-        crosshair: 'crosshair-dark',
-        grab: 'grab-dark',
-        help: 'help-dark',
-      },
-    },
-  ],
+  themes,
 }
 
 const outPath = join(root, 'data', 'assets.json')
 mkdirSync(dirname(outPath), { recursive: true })
 writeFileSync(outPath, JSON.stringify(out, null, 2))
-console.log(`wrote ${outPath} (${assets.length} assets, ${out.themes.length} themes)`)
+console.log(`wrote ${outPath} (${assets.length} assets, ${themes.length} themes)`)
