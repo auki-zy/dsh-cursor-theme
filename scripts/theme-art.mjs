@@ -648,48 +648,6 @@ export const POP = {
   },
 }
 
-// =====================================================================
-// 13. 牛来 Niulai — rounded Q-version cow (kept from the one-off pack)
-// =====================================================================
-
-const COW_FACE = `
-  <ellipse cx="16" cy="16.5" rx="12" ry="10.5" fill="${G}" stroke="{dark}" stroke-width="1.6"/>
-  <path d="M5 12 C3 8.5 4.5 6 8 6.8 L9.5 8 C8 10 7 11.5 6.5 13.5 Z" fill="#8D6E63" stroke="{dark}" stroke-width="1.2" stroke-linejoin="round"/>
-  <path d="M27 12 C29 8.5 27.5 6 24 6.8 L22.5 8 C24 10 25 11.5 25.5 13.5 Z" fill="#8D6E63" stroke="{dark}" stroke-width="1.2" stroke-linejoin="round"/>
-  <path d="M10 6 C8.5 2.5 10.5 1 12.5 2.8 C13 3.3 12.8 4.2 12 5 Z" fill="#FFD54F" stroke="{dark}" stroke-width="1" stroke-linejoin="round"/>
-  <path d="M22 6 C23.5 2.5 21.5 1 19.5 2.8 C19 3.3 19.2 4.2 20 5 Z" fill="#FFD54F" stroke="{dark}" stroke-width="1" stroke-linejoin="round"/>
-  <path d="M14 5.5 C15 4 18 3.8 19.5 5.2 C20.5 6.1 20 7.5 18.5 7.8 C17 8 14.5 7 14 5.5 Z" fill="#8D6E63"/>
-  <circle cx="11.5" cy="15" r="2.1" fill="#3E2723"/>
-  <circle cx="20.5" cy="15" r="2.1" fill="#3E2723"/>
-  <circle cx="12.1" cy="14.3" r="0.7" fill="#FFF"/>
-  <circle cx="21.1" cy="14.3" r="0.7" fill="#FFF"/>
-  <ellipse cx="16" cy="20" rx="3.4" ry="2.6" fill="#FF9EB5" stroke="{dark}" stroke-width="1"/>
-  <circle cx="14.6" cy="20" r="0.8" fill="#D81B60"/>
-  <circle cx="17.4" cy="20" r="0.8" fill="#D81B60"/>
-  <ellipse cx="8" cy="19" rx="2.2" ry="1.4" fill="#FFB3C1" opacity="0.7"/>
-  <ellipse cx="24" cy="19" rx="2.2" ry="1.4" fill="#FFB3C1" opacity="0.7"/>`
-
-export const NIIULAI = {
-  id: 'niulai', name: '牛来 Niulai', description: '圆润奶牛 · Q 版招财',
-  palette: { primary: '#FFF6EC', accent: '#FFE8D6', dark: '#5D4037' },
-  art: {
-    'default': `<path d="M4 3.5 L19.5 13 L13.6 14.1 L16.8 21.5 L13.7 22.6 L10.6 15.4 L6 17.8 Z" fill="${G}" stroke="{dark}" stroke-width="1.4" stroke-linejoin="round"/><ellipse cx="10" cy="10" rx="2.2" ry="1.7" fill="#8D6E63" transform="rotate(-35 10 10)"/><path d="M7 4.5 C5.5 2 7.5 0.8 9.2 2.6 C9.8 3.2 9.5 4.2 8.6 4.9 Z" fill="#FFD54F" stroke="{dark}" stroke-width="1" stroke-linejoin="round"/>`,
-    'pointer': `<path d="M6.5 15.5 L6.5 9 C6.5 7.6 7.8 6.8 9 7.6 L9.4 7.9 L9.4 6 C9.4 4.6 10.7 3.8 11.9 4.6 L12.3 4.9 L12.3 3.6 C12.3 2.2 13.6 1.4 14.8 2.2 L15 2.4 L15 10.5 C18 11.5 20.5 14 21 17.5 C21.5 21.5 18.5 24.5 14.5 24.8 C11 25 7.5 21 6.5 15.5 Z" fill="${G}" stroke="{dark}" stroke-width="1.3" stroke-linejoin="round"/><ellipse cx="14.8" cy="21.5" rx="1.9" ry="1.4" fill="#FF9EB5"/>`,
-    'text': `<rect x="12" y="3" width="8" height="3.2" rx="1.6" fill="${G}" stroke="{dark}" stroke-width="1.2"/><rect x="12" y="25.8" width="8" height="3.2" rx="1.6" fill="${G}" stroke="{dark}" stroke-width="1.2"/><rect x="14.9" y="5" width="2.2" height="22" rx="1.1" fill="${G}" stroke="{dark}" stroke-width="1"/>`,
-    'wait': `<circle cx="16" cy="16" r="11.5" fill="none" stroke="{dark}" stroke-width="2.4" stroke-dasharray="14 8" stroke-linecap="round"/><g transform="translate(16 17) scale(0.52) translate(-16 -16)">${COW_FACE}</g>`,
-    'help': `<circle cx="16" cy="16.5" r="12" fill="${G}" stroke="{dark}" stroke-width="1.6"/><path d="M12.5 12 C12.5 9.5 14 8 16 8 C18.2 8 19.5 9.7 19.5 11.5 C19.5 13.6 17.8 14.6 16.3 15.4 C15.2 16 14.8 16.8 14.8 18" fill="none" stroke="{dark}" stroke-width="2.2" stroke-linecap="round"/><circle cx="14.8" cy="21.5" r="1.6" fill="{dark}"/><path d="M10 7 C8.5 4 10.5 2.5 12.5 4 L13.5 5.5 C12.5 6.5 11 7 10 7 Z" fill="#FFD54F" stroke="{dark}" stroke-width="1" stroke-linejoin="round"/><path d="M22 7 C23.5 4 21.5 2.5 19.5 4 L18.5 5.5 C19.5 6.5 21 7 22 7 Z" fill="#FFD54F" stroke="{dark}" stroke-width="1" stroke-linejoin="round"/>`,
-    'not-allowed': `<circle cx="16" cy="16" r="12" fill="none" stroke="#D32F2F" stroke-width="2.6"/><path d="M8.5 8.5 L23.5 23.5" stroke="#D32F2F" stroke-width="2.6" stroke-linecap="round"/><g transform="translate(16 17) scale(0.42) translate(-16 -16)">${COW_FACE}</g>`,
-    'grab': `<ellipse cx="16" cy="19.5" rx="9" ry="7.5" fill="${G}" stroke="{dark}" stroke-width="1.4"/><ellipse cx="8.5" cy="10" rx="2.6" ry="4" fill="${G}" stroke="{dark}" stroke-width="1.2"/><ellipse cx="13.5" cy="7.5" rx="2.6" ry="4.5" fill="${G}" stroke="{dark}" stroke-width="1.2"/><ellipse cx="19" cy="8" rx="2.6" ry="4.3" fill="${G}" stroke="{dark}" stroke-width="1.2"/><ellipse cx="23.5" cy="11" rx="2.4" ry="3.6" fill="${G}" stroke="{dark}" stroke-width="1.2"/><ellipse cx="16" cy="21.5" rx="3" ry="2.2" fill="#FF9EB5"/>`,
-    'grabbing': `<ellipse cx="16" cy="18" rx="10" ry="8.5" fill="${G}" stroke="{dark}" stroke-width="1.4"/><path d="M8.5 12.5 Q8 8 12 7.5 Q16 7 19 8.5 Q22.5 10 22.5 14 L22.5 16 L8.5 16 Z" fill="${G}" stroke="{dark}" stroke-width="1.2" stroke-linejoin="round"/><path d="M12 8.5 Q14 7.5 16 8 M18.5 8.8 Q20.5 9.5 21.5 11" stroke="{dark}" stroke-width="1" fill="none"/><ellipse cx="16" cy="20.5" rx="2.8" ry="2" fill="#FF9EB5"/>`,
-    'progress': `<g transform="translate(16 14) scale(0.55) translate(-16 -16)">${COW_FACE}</g><path d="M6 24.5 A11 11 0 0 1 26 24.5" fill="none" stroke="{dark}" stroke-width="2.6" stroke-linecap="round"/><circle cx="6" cy="24.5" r="2.1" fill="#FF9EB5" stroke="{dark}" stroke-width="1"/>`,
-    'cell': `<rect x="6" y="6" width="20" height="20" rx="5" fill="${G}" stroke="{dark}" stroke-width="1.6"/><path d="M6 16 L26 16 M16 6 L16 26" stroke="{dark}" stroke-width="1.6"/><circle cx="11" cy="11" r="1.8" fill="#8D6E63"/><circle cx="21" cy="21" r="1.8" fill="#8D6E63"/>`,
-    'copy': `<rect x="5" y="5" width="15" height="15" rx="4" fill="#F0E6D8" stroke="{dark}" stroke-width="1.3"/><rect x="12" y="12" width="15" height="15" rx="4" fill="${G}" stroke="{dark}" stroke-width="1.3"/><circle cx="19" cy="19" r="1.6" fill="#8D6E63"/>`,
-    'move': `<path d="M16 2.5 L20 9 L12 9 Z" fill="${G}" stroke="{dark}" stroke-width="1.2" stroke-linejoin="round"/><path d="M16 29.5 L20 23 L12 23 Z" fill="${G}" stroke="{dark}" stroke-width="1.2" stroke-linejoin="round"/><path d="M2.5 16 L9 12 L9 20 Z" fill="${G}" stroke="{dark}" stroke-width="1.2" stroke-linejoin="round"/><path d="M29.5 16 L23 12 L23 20 Z" fill="${G}" stroke="{dark}" stroke-width="1.2" stroke-linejoin="round"/><circle cx="16" cy="16" r="3" fill="#FF9EB5" stroke="{dark}" stroke-width="1"/>`,
-    'resize-ew': `<path d="M3 16 L10 10.5 L10 21.5 Z" fill="${G}" stroke="{dark}" stroke-width="1.2" stroke-linejoin="round"/><path d="M29 16 L22 10.5 L22 21.5 Z" fill="${G}" stroke="{dark}" stroke-width="1.2" stroke-linejoin="round"/><rect x="10" y="14.6" width="12" height="2.8" rx="1.4" fill="${G}" stroke="{dark}" stroke-width="1"/><circle cx="16" cy="16" r="1.8" fill="#FF9EB5"/>`,
-    'resize-ns': `<path d="M16 3 L10.5 10 L21.5 10 Z" fill="${G}" stroke="{dark}" stroke-width="1.2" stroke-linejoin="round"/><path d="M16 29 L10.5 22 L21.5 22 Z" fill="${G}" stroke="{dark}" stroke-width="1.2" stroke-linejoin="round"/><rect x="14.6" y="10" width="2.8" height="12" rx="1.4" fill="${G}" stroke="{dark}" stroke-width="1"/><circle cx="16" cy="16" r="1.8" fill="#FF9EB5"/>`,
-  },
-}
-
 const gloss = `<ellipse cx="20" cy="9.5" rx="5" ry="2.8" fill="#FFFFFF" opacity="0.8" transform="rotate(-30 20 9.5)"/><circle cx="10.5" cy="7" r="1.8" fill="#FFFFFF" opacity="0.9"/>`
 
 export const CANDY = {
@@ -738,4 +696,4 @@ export const NEON = {
 }
 
 /** All creative themes, in display order. */
-export const CREATIVE_THEMES = [PAW, ENERGY, NEON, EMOJI, PIXEL, WEATHER, ORIGAMI, ASTRO, CANDY, GHOST, HIVIS, POP, NIIULAI]
+export const CREATIVE_THEMES = [PAW, ENERGY, NEON, EMOJI, PIXEL, WEATHER, ORIGAMI, ASTRO, CANDY, GHOST, HIVIS, POP]
