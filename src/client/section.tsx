@@ -1,14 +1,17 @@
 /**
- * dsh-cursor-theme settings section (M2).
+ * dsh-cursor-theme settings section.
  *
- * Rendered in 设置 → 插件 → 光标主题 (settings.section slot). Reads and
+ * Rendered in 设置 → 光标主题 (top-level settings.section slot). Reads and
  * writes the `dsh-cursor-theme` settings namespace through the settings
  * scope. Every mutation writes the WHOLE `states` object (scope.set uses a
- * single scalar field path, so nested state fields are persisted as one
- * document field — see dsh-client-ui-settings SettingsScopeController.set).
+ * single scalar field path).
  *
- * Styling is inline on purpose: the client bundle build chain is tsc +
- * banner wrap (no CSS-module pipeline yet). Keeps M2 self-contained.
+ * UX per user feedback:
+ *  - Left thumbnail: the SYSTEM DEFAULT cursor for the state (real PNG
+ *    rendered from the default icon SVG) — shows what is being replaced.
+ *  - Right side of each row: the FINISHED cursor preview (custom image if
+ *    configured, else the system default).
+ *  - No separate preview area; no AI generator; no light/dark follow.
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react'
@@ -16,9 +19,10 @@ import { Button, Input, Modal, Pill } from '@deepseek-ai/dsh-client-ui-primitive
 import type { CursorStateConfig, CursorThemeSettings } from './types.js'
 import { CURSOR_STATES } from './states.js'
 import { BUILTIN_ASSETS, assetsForState } from './assets.js'
-import { BUILTIN_THEMES, resolveThemeStates } from './themes.js'
-import { buildThemePack, downloadText, parseThemePack, serializeThemePack } from './pack.js'
-import { AiGenerationSection } from './ai-section.js'
+import { BUILTIN_THEMES, applyPalette, resolveThemeStates } from './themes.js'
+import { renderSvgToDataUrl } from './render.js'
+import { downloadImagePack, parseImagePack } from './pack.js'
+import { SystemSection } from './system-section.js'
 
 /** Structural slice of the settings scope used by this UI. */
 export interface CardScope {
@@ -30,6 +34,11 @@ export interface CardScope {
   subscribe(listener: () => void): () => void
   set(field: string, value: unknown): Promise<void>
   unset(field: string): Promise<void>
+}
+
+export interface CursorThemeSectionProps {
+  scope: CardScope
+  t: (key: string) => string
 }
 
 const SIZES = [16, 24, 32, 48] as const
@@ -69,6 +78,18 @@ export function fallbackOf(stateId: string): string {
   return CURSOR_STATES.find((s) => s.id === stateId)?.fallback ?? 'auto'
 }
 
+/** Render a state's system-default icon SVG into a PNG data URL (cached). */
+const defaultIconCache = new Map<string, string>()
+async function defaultIconPng(stateId: string): Promise<string | null> {
+  const cached = defaultIconCache.get(stateId)
+  if (cached) return cached
+  const def = CURSOR_STATES.find((s) => s.id === stateId)
+  if (!def) return null
+  const png = await renderSvgToDataUrl(def.defaultIcon, 32)
+  if (png) defaultIconCache.set(stateId, png)
+  return png
+}
+
 function StateEditor({ stateId, cfg, scope, t, onClose }: {
   stateId: string
   cfg: CursorStateConfig | undefined
@@ -85,7 +106,7 @@ function StateEditor({ stateId, cfg, scope, t, onClose }: {
     const snap = scope.getSnapshot()
     const settings: CursorThemeSettings = snap.status === 'ready' && snap.value
       ? snap.value
-      : { enabled: true, followTheme: false, fallback: 'auto', defaultSize: 32, states: {} }
+      : { enabled: true, fallback: 'auto', defaultSize: 32, states: {} }
     void scope.set('states', { ...settings.states, [stateId]: next })
   }, [scope, stateId])
 
@@ -123,12 +144,22 @@ function StateEditor({ stateId, cfg, scope, t, onClose }: {
     commit({ hotspot: local.hotspot, size: local.size })
   }, [local, commit])
 
-  const previewSettings: CursorThemeSettings = { enabled: true, followTheme: false, fallback: 'auto', defaultSize: 32, states: { [stateId]: local } }
+  const previewSettings: CursorThemeSettings = { enabled: true, fallback: 'auto', defaultSize: 32, states: { [stateId]: local } }
+  // Editor always filters the built-in picker to THIS state's assets.
   const builtins = assetsForState(stateId)
+  // Neutral palette used to preview/commit a picked template.
+  const NEUTRAL = { primary: '#5a7dff', accent: '#8b5cf6', dark: '#1b2a4a' }
 
   return (
     <Modal open onClose={onClose} title={`${t('edit')}: ${stateLabel(t, stateId, stateId)}`}>
-      <div style={{ minWidth: 380 }}>
+      <div style={{
+        minWidth: 380,
+        // The built-in grid can make this modal taller than the viewport;
+        // scroll within the modal body instead of clipping.
+        maxHeight: 'calc(100vh - 220px)',
+        minHeight: 0,
+        overflowY: 'auto',
+      }}>
         <div style={modalRow}>
           <Button variant="outline" size="sm" onClick={() => fileRef.current?.click()}>{t('upload')}</Button>
           <input
@@ -142,13 +173,18 @@ function StateEditor({ stateId, cfg, scope, t, onClose }: {
 
         {builtins.length > 0 && (
           <div style={{ margin: '12px 0' }}>
-            <div style={hintStyle}>{t('builtin')}</div>
+            <div style={hintStyle}>{t('builtinFor')}: {stateLabel(t, stateId, stateId)}</div>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 6 }}>
               {builtins.map((a) => (
                 <button
                   key={a.id}
                   type="button"
-                  onClick={() => commit({ ...local, image: a.image, hotspot: a.hotspot, size: a.size })}
+                  onClick={() => {
+                    void (async () => {
+                      const image = await renderSvgToDataUrl(applyPalette(a.svg, NEUTRAL), 32)
+                      if (image) commit({ ...local, image, hotspot: a.hotspot, size: a.size })
+                    })()
+                  }}
                   title={a.name}
                   style={{
                     width: 44, height: 44, borderRadius: 8, border: '1px solid var(--dsw-alias-border-l2, #ddd)',
@@ -156,7 +192,7 @@ function StateEditor({ stateId, cfg, scope, t, onClose }: {
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                   }}
                 >
-                  <img src={a.image} alt={a.name} style={{ width: 28, height: 28, pointerEvents: 'none' }} />
+                  <img src={`data:image/svg+xml;charset=utf-8,${encodeURIComponent(applyPalette(a.svg, NEUTRAL))}`} alt={a.name} style={{ width: 28, height: 28, pointerEvents: 'none' }} />
                 </button>
               ))}
             </div>
@@ -203,30 +239,39 @@ function StateEditor({ stateId, cfg, scope, t, onClose }: {
   )
 }
 
-export interface CursorThemeSectionProps {
-  scope: CardScope
-  t: (key: string) => string
-  /** Optional conversation service for one-click prompt sending (M4). */
-  conversation?: { send(text: string): Promise<void> } | null
-}
-
-export function CursorThemeSection({ scope, t, conversation }: CursorThemeSectionProps) {
+export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
   const [editing, setEditing] = useState<string | null>(null)
   const [snap, setSnap] = useState(() => scope.getSnapshot())
   const importRef = useRef<HTMLInputElement>(null)
   const [importErr, setImportErr] = useState<string | null>(null)
+  // Pre-rendered system-default PNGs per state (shown on the left).
+  const [defaultPngs, setDefaultPngs] = useState<Record<string, string>>({})
 
   useEffect(() => scope.subscribe(() => setSnap(scope.getSnapshot())), [scope])
+
+  // Render all system-default icons once.
+  useEffect(() => {
+    let cancelled = false
+    void (async () => {
+      const out: Record<string, string> = {}
+      for (const def of CURSOR_STATES) {
+        const png = await defaultIconPng(def.id)
+        if (cancelled) return
+        if (png) out[def.id] = png
+      }
+      if (!cancelled) setDefaultPngs(out)
+    })()
+    return () => { cancelled = true }
+  }, [])
 
   if (snap.status === 'unavailable') {
     return <div style={{ padding: 12, color: '#888' }}>{t('unsupported')}</div>
   }
   const settings: CursorThemeSettings = snap.status === 'ready' && snap.value
     ? snap.value
-    : { enabled: true, followTheme: false, fallback: 'auto', defaultSize: 32, states: {} }
+    : { enabled: true, fallback: 'auto', defaultSize: 32, states: {} }
 
   const setEnabled = (v: boolean) => { void scope.set('enabled', v) }
-  const setFollowTheme = (v: boolean) => { void scope.set('followTheme', v) }
   const resetAll = () => {
     void scope.set('enabled', true)
     void scope.set('states', {})
@@ -234,32 +279,33 @@ export function CursorThemeSection({ scope, t, conversation }: CursorThemeSectio
   const applyTheme = (themeId: string) => {
     const theme = BUILTIN_THEMES.find((x) => x.id === themeId)
     if (!theme) return
-    const states = resolveThemeStates(theme)
-    if (!states) return
-    void scope.set('enabled', true)
-    void scope.set('states', states)
+    void (async () => {
+      const states = await resolveThemeStates(theme)
+      if (!states) return
+      await scope.set('enabled', true)
+      await scope.set('states', states)
+    })()
   }
   const exportPack = () => {
-    const pack = buildThemePack(settings, 'cursor-theme')
-    downloadText(`dsh-cursor-theme-${new Date().toISOString().slice(0, 10)}.json`, serializeThemePack(pack))
+    void downloadImagePack(settings, `dsh-cursor-theme-${new Date().toISOString().slice(0, 10)}.zip`)
   }
   const onImportFile = (file: File | undefined) => {
     if (!file) return
     const reader = new FileReader()
     reader.onload = () => {
-      try {
-        const pack = parseThemePack(String(reader.result))
-        void scope.set('enabled', pack.settings.enabled)
-        void scope.set('states', pack.settings.states)
-        setImportErr(null)
-      } catch (e) {
-        setImportErr(e instanceof Error ? e.message : String(e))
-      }
+      void (async () => {
+        try {
+          const result = await parseImagePack(String(reader.result))
+          await scope.set('enabled', result.enabled ?? true)
+          await scope.set('states', result.states)
+          setImportErr(null)
+        } catch (e) {
+          setImportErr(e instanceof Error ? e.message : String(e))
+        }
+      })()
     }
-    reader.readAsText(file)
+    reader.readAsDataURL(file)
   }
-
-  const configured = CURSOR_STATES.filter((s) => settings.states?.[s.id]?.image)
 
   return (
     <div style={{ padding: '4px 16px 24px', maxWidth: 640 }}>
@@ -269,13 +315,6 @@ export function CursorThemeSection({ scope, t, conversation }: CursorThemeSectio
         <span style={labelStyle}>{t('enabled')}</span>
         <Button variant={settings.enabled ? 'primary' : 'outline'} size="sm" onClick={() => setEnabled(!settings.enabled)}>
           {settings.enabled ? 'ON' : 'OFF'}
-        </Button>
-      </div>
-
-      <div style={rowStyle}>
-        <span style={labelStyle}>{t('followTheme')}</span>
-        <Button variant={settings.followTheme ? 'primary' : 'outline'} size="sm" onClick={() => setFollowTheme(!settings.followTheme)}>
-          {settings.followTheme ? 'ON' : 'OFF'}
         </Button>
       </div>
 
@@ -298,7 +337,7 @@ export function CursorThemeSection({ scope, t, conversation }: CursorThemeSectio
         <Button variant="outline" size="sm" onClick={exportPack}>{t('export')}</Button>
         <Button variant="outline" size="sm" onClick={() => importRef.current?.click()}>{t('import')}</Button>
         <input
-          ref={importRef} type="file" accept=".json,application/json" style={{ display: 'none' }}
+          ref={importRef} type="file" accept=".zip,application/zip" style={{ display: 'none' }}
           onChange={(e) => onImportFile(e.target.files?.[0])}
         />
       </div>
@@ -306,36 +345,30 @@ export function CursorThemeSection({ scope, t, conversation }: CursorThemeSectio
 
       <div style={hintStyle}>{t('a11yNote')}</div>
 
-      <AiGenerationSection scope={scope} t={t} conversation={conversation ?? null} />
+      <SystemSection scope={scope} t={t} />
 
       <div style={{ marginTop: 16, fontWeight: 600, fontSize: 14 }}>{t('states')}</div>
       {CURSOR_STATES.map((def) => {
         const cfg = settings.states?.[def.id]
+        const configured = !!cfg?.image
         return (
           <div key={def.id} style={rowStyle}>
+            {/* Left: system-default cursor (real PNG) the user is replacing. */}
             <div style={thumbStyle}>
-              <span style={{ cursor: cursorFor(def.id, settings), fontSize: 16 }}>⌖</span>
+              {defaultPngs[def.id]
+                ? <img src={defaultPngs[def.id]} alt={stateLabel(t, def.id, def.label)} style={{ width: 30, height: 30, pointerEvents: 'none' }} />
+                : <span style={{ fontSize: 10, color: 'var(--dsw-alias-label-tertiary, #999)' }}>…</span>}
             </div>
             <span style={labelStyle}>{stateLabel(t, def.id, def.label)}</span>
-            {cfg?.image && <Pill active>✓</Pill>}
+            {configured ? <Pill active>✓</Pill> : <Pill>{t('defaultBadge')}</Pill>}
+            {/* Right: the FINISHED cursor preview for this state. */}
+            <div style={{ ...thumbStyle, width: 40, height: 40, cursor: cursorFor(def.id, settings) }}>
+              {cfg?.image && <img src={cfg.image} alt="" style={{ width: 26, height: 26, pointerEvents: 'none' }} />}
+            </div>
             <Button variant="outline" size="sm" onClick={() => setEditing(def.id)}>{t('edit')}</Button>
           </div>
         )
       })}
-
-      {configured.length > 0 && (
-        <div style={{ marginTop: 20 }}>
-          <div style={{ fontWeight: 600, fontSize: 14 }}>{t('preview')}</div>
-          <div style={{ display: 'flex', gap: 8, marginTop: 8, flexWrap: 'wrap' }}>
-            {configured.map((def) => (
-              <div key={def.id} style={{ cursor: cursorFor(def.id, settings), ...previewCellStyle }}>
-                {stateLabel(t, def.id, def.id)}
-              </div>
-            ))}
-          </div>
-          <div style={hintStyle}>{t('previewHint')}</div>
-        </div>
-      )}
 
       {editing && (
         <StateEditor
@@ -348,10 +381,4 @@ export function CursorThemeSection({ scope, t, conversation }: CursorThemeSectio
       )}
     </div>
   )
-}
-
-const previewCellStyle: React.CSSProperties = {
-  width: 64, height: 56, display: 'flex', flexDirection: 'column', alignItems: 'center',
-  justifyContent: 'center', gap: 4, border: '1px solid var(--dsw-alias-border-l2, #eee)',
-  borderRadius: 8, fontSize: 11, color: 'var(--dsw-alias-label-secondary, #666)',
 }

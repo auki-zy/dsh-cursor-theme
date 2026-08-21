@@ -1,98 +1,131 @@
 /**
- * dsh-cursor-theme theme pack import/export (M3c).
+ * dsh-cursor-theme image-pack import/export (zip).
  *
- * A theme pack is a standalone JSON document embedding every image as a
- * data URL, so it can be shared across machines without the plugin's
- * built-in catalog. Import validates structure and size budget before
- * applying (requirements.md §4.8: failed import must not touch current
- * config).
+ * A theme pack is a ZIP containing one PNG per configured state plus a
+ * manifest.json: { schema, name, version, enabled, defaultSize, states:
+ * { <stateId>: { file: "pointer.png", hotspot: {x,y}, size } } }.
+ *
+ * - Export writes real image files (not base64 inside JSON) — easy to
+ *   inspect, edit, and share.
+ * - Import reads the zip, validates every entry, and produces a `states`
+ *   fragment with data URLs. Fail-closed: nothing is applied on error.
  */
 
-import type { CursorThemeSettings } from './types.js'
+import JSZip from 'jszip'
+import type { CursorStateConfig, CursorThemeSettings } from './types.js'
 
-/** Importable theme pack shape (superset of settings). */
-export interface ThemePack {
+export interface ImagePackManifest {
   schema: number
   name: string
   version: string
-  settings: CursorThemeSettings
+  enabled?: boolean
+  defaultSize?: number
+  states: Record<string, { file: string; hotspot?: { x: number; y: number }; size?: number }>
 }
 
-export const THEME_PACK_SCHEMA = 1
+export const IMAGE_PACK_SCHEMA = 1
 
-const MAX_PACK_BYTES = 2 * 1024 * 1024 // 2 MB — generous for embedded base64
 const MAX_IMAGE_BYTES = 512 * 1024
+const MAX_STATES = 32
 
-/** Build a shareable pack from the current settings. */
-export function buildThemePack(settings: CursorThemeSettings, name: string): ThemePack {
-  return {
-    schema: THEME_PACK_SCHEMA,
-    name,
+/** Extract the base64 payload of a data URL, or throw. */
+function dataUrlToBytes(dataUrl: string): Uint8Array {
+  const comma = dataUrl.indexOf(',')
+  if (!dataUrl.startsWith('data:') || comma < 0) throw new Error('State image must be a data URL')
+  const b64 = dataUrl.slice(comma + 1)
+  const bin = atob(b64)
+  const bytes = new Uint8Array(bin.length)
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i)
+  return bytes
+}
+
+/** Build and download a zip image pack from the current settings. */
+export async function downloadImagePack(settings: CursorThemeSettings, filename: string): Promise<void> {
+  if (typeof document === 'undefined') return
+  const zip = new JSZip()
+  const manifest: ImagePackManifest = {
+    schema: IMAGE_PACK_SCHEMA,
+    name: 'cursor-theme',
     version: '1.0.0',
-    settings: JSON.parse(JSON.stringify(settings)) as CursorThemeSettings,
+    enabled: settings.enabled,
+    defaultSize: settings.defaultSize,
+    states: {},
   }
-}
-
-/** Serialize a pack to a pretty JSON string. */
-export function serializeThemePack(pack: ThemePack): string {
-  return JSON.stringify(pack, null, 2)
-}
-
-/** Parse and validate a theme pack; throws a readable Error on failure. */
-export function parseThemePack(text: string): ThemePack {
-  let raw: unknown
-  try {
-    raw = JSON.parse(text)
-  } catch {
-    throw new Error('Not valid JSON')
-  }
-  if (typeof raw !== 'object' || raw === null || Array.isArray(raw)) throw new Error('Theme pack must be a JSON object')
-  const pack = raw as Partial<ThemePack>
-  if (pack.schema !== THEME_PACK_SCHEMA) throw new Error(`Unsupported theme pack schema ${String(pack.schema)}`)
-  if (typeof pack.name !== 'string' || pack.name.length === 0 || pack.name.length > 80) throw new Error('Theme pack needs a name (1-80 chars)')
-  const settings = pack.settings
-  if (typeof settings !== 'object' || settings === null || Array.isArray(settings)) throw new Error('Theme pack is missing settings')
-  const s = settings as Partial<CursorThemeSettings>
-  if (typeof s.enabled !== 'boolean') s.enabled = true
-  if (typeof s.followTheme !== 'boolean') s.followTheme = false
-  if (typeof s.fallback !== 'string' || s.fallback.length === 0) s.fallback = 'auto'
-  if (typeof s.defaultSize !== 'number' || !Number.isInteger(s.defaultSize) || s.defaultSize < 1 || s.defaultSize > 128) s.defaultSize = 32
-  if (typeof s.states !== 'object' || s.states === null || Array.isArray(s.states)) s.states = {}
-  // Validate every image is an inline data URL within budget.
-  const serialized = JSON.stringify(s.states)
-  if (serialized.length > MAX_PACK_BYTES) throw new Error('Theme pack is too large')
-  for (const [stateId, cfg] of Object.entries(s.states as Record<string, Partial<{ image?: string }>>)) {
-    if (typeof stateId !== 'string' || stateId.length === 0 || stateId.length > 64) throw new Error('Theme pack has an invalid state id')
-    if (cfg?.image !== undefined) {
-      if (typeof cfg.image !== 'string' || !cfg.image.startsWith('data:')) throw new Error(`State "${stateId}" image must be an inline data URL`)
-      // base64 payload size ≈ 3/4 of the string length after the comma
-      const comma = cfg.image.indexOf(',')
-      const payloadLen = comma >= 0 ? cfg.image.length - comma - 1 : cfg.image.length
-      if ((payloadLen * 3) / 4 > MAX_IMAGE_BYTES) throw new Error(`State "${stateId}" image is too large (max 512 KB)`)
+  const names = new Set<string>()
+  for (const [stateId, cfg] of Object.entries(settings.states)) {
+    if (!cfg?.image) continue
+    const safe = stateId.replace(/[^a-z0-9-]/gi, '_') || 'state'
+    let fileName = `${safe}.png`
+    let n = 2
+    while (names.has(fileName)) fileName = `${safe}-${n++}.png`
+    names.add(fileName)
+    zip.file(fileName, dataUrlToBytes(cfg.image))
+    manifest.states[stateId] = {
+      file: fileName,
+      ...cfg.hotspot ? { hotspot: cfg.hotspot } : {},
+      ...cfg.size ? { size: cfg.size } : {},
     }
   }
-  return {
-    schema: THEME_PACK_SCHEMA,
-    name: pack.name,
-    version: pack.version ?? '1.0.0',
-    settings: {
-      enabled: s.enabled,
-      followTheme: s.followTheme,
-      fallback: s.fallback,
-      defaultSize: s.defaultSize,
-      states: s.states as CursorThemeSettings['states'],
-    },
-  }
-}
-
-/** Trigger a browser download of the given text as a JSON file. */
-export function downloadText(filename: string, text: string): void {
-  if (typeof document === 'undefined') return
-  const blob = new Blob([text], { type: 'application/json' })
+  zip.file('manifest.json', JSON.stringify(manifest, null, 2))
+  const blob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE' })
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
   a.href = url
   a.download = filename
   a.click()
   URL.revokeObjectURL(url)
+}
+
+/**
+ * Parse a zip image pack (given as a data URL of the zip) into a settings
+ * fragment. Throws a readable Error on any problem (fail closed).
+ */
+export async function parseImagePack(dataUrl: string): Promise<{ enabled?: boolean; defaultSize?: number; states: Record<string, CursorStateConfig> }> {
+  const comma = dataUrl.indexOf(',')
+  if (!dataUrl.startsWith('data:') || comma < 0) throw new Error('Not a valid image pack file')
+  const b64 = dataUrl.slice(comma + 1)
+  const bin = atob(b64)
+  const bytes = new Uint8Array(bin.length)
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i)
+  let zip: JSZip
+  try {
+    zip = await JSZip.loadAsync(bytes)
+  } catch {
+    throw new Error('Not a valid ZIP image pack')
+  }
+  const manifestEntry = zip.file('manifest.json')
+  if (!manifestEntry) throw new Error('Image pack is missing manifest.json')
+  const manifest = JSON.parse(await manifestEntry.async('string')) as Partial<ImagePackManifest>
+  if (manifest.schema !== IMAGE_PACK_SCHEMA) throw new Error(`Unsupported image pack schema ${String(manifest.schema)}`)
+  if (typeof manifest.name !== 'string' || manifest.name.length === 0 || manifest.name.length > 80) throw new Error('Image pack needs a name')
+  if (typeof manifest.states !== 'object' || manifest.states === null || Array.isArray(manifest.states)) throw new Error('Image pack needs a states map')
+  const entries = Object.entries(manifest.states)
+  if (entries.length === 0) throw new Error('Image pack has no states')
+  if (entries.length > MAX_STATES) throw new Error('Image pack has too many states')
+  const states: Record<string, CursorStateConfig> = {}
+  for (const [stateId, meta] of entries) {
+    if (typeof meta !== 'object' || meta === null) throw new Error(`State "${stateId}" entry is invalid`)
+    const fileEntry = zip.file(meta.file)
+    if (!fileEntry) throw new Error(`Image pack is missing ${meta.file}`)
+    const fileBytes = await fileEntry.async('uint8array')
+    if (fileBytes.byteLength > MAX_IMAGE_BYTES) throw new Error(`${meta.file} is too large (max 512 KB)`)
+    const image = bytesToDataUrl(fileBytes)
+    states[stateId] = {
+      image,
+      ...meta.hotspot ? { hotspot: meta.hotspot } : {},
+      ...meta.size ? { size: meta.size } : {},
+    }
+  }
+  return {
+    ...typeof manifest.enabled === 'boolean' ? { enabled: manifest.enabled } : {},
+    ...typeof manifest.defaultSize === 'number' ? { defaultSize: manifest.defaultSize } : {},
+    states,
+  }
+}
+
+/** Encode raw bytes as a PNG data URL. */
+function bytesToDataUrl(bytes: Uint8Array): string {
+  let binary = ''
+  for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i])
+  return `data:image/png;base64,${btoa(binary)}`
 }

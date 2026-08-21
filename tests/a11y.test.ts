@@ -1,4 +1,4 @@
-/**
+﻿/**
  * M3e accessibility + i18n invariants.
  * - Every rendered cursor rule carries a fallback keyword (never `none`).
  * - zh and en dictionaries expose the same key set.
@@ -13,7 +13,6 @@ describe('accessibility invariants', () => {
     for (const def of CURSOR_STATES) {
       const settings = {
         enabled: true,
-        followTheme: false,
         fallback: 'auto',
         defaultSize: 32,
         states: { [def.id]: { image: 'data:image/png;base64,AAAA' } },
@@ -26,7 +25,6 @@ describe('accessibility invariants', () => {
   it('never emits cursor: none', () => {
     const settings = {
       enabled: true,
-      followTheme: false,
       fallback: 'auto',
       defaultSize: 32,
       states: { pointer: { image: 'data:image/png;base64,AAAA' } },

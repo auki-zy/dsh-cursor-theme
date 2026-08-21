@@ -21,8 +21,6 @@ export interface CursorStateConfig {
 export interface CursorThemeSettings {
   /** Master switch: false removes all injected cursor rules. */
   enabled: boolean
-  /** Follow the DSH light/dark scheme and swap built-in palettes. */
-  followTheme: boolean
   /** Global fallback keyword used when no image applies. */
   fallback: string
   /** Default display size for states without their own size. */
