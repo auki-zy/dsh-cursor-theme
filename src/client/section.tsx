@@ -363,8 +363,11 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
         <pre style={{
           margin: '8px 0', padding: 10, borderRadius: 8, overflow: 'auto', maxHeight: 260,
           fontSize: 11, lineHeight: 1.5, whiteSpace: 'pre-wrap', wordBreak: 'break-word',
-          background: 'var(--dsw-alias-bg-module-platform, #f5f5f5)',
-          color: 'var(--dsw-alias-text-primary, #333)',
+          // Fixed colors (not host CSS vars): the vars may be undefined or
+          // resolve to light-on-light in some hosts, making the prompt unreadable.
+          background: '#f6f8fa',
+          color: '#1f2328',
+          border: '1px solid #d0d7de',
         }}>{t('packAiPrompt')}</pre>
         <Button variant="outline" size="sm" onClick={copyAiPrompt}>
           {copied ? t('packCopied') : t('packCopy')}
