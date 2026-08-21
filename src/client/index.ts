@@ -99,7 +99,9 @@ export function apply(ctx: ClientContext): void {
     render()
   })
 
-  // 3) Settings UI — top-level settings.section (设置 → 光标主题).
+  // 3) Settings UI — top-level 设置 → 光标主题, positioned AFTER 插件
+  //    (plugins order=15; agent-presets=20), so order 25 places it at the
+  //    end of the settings nav list.
   const t = ctx.locale.bind(NS)
   ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'dsh-cursor-theme: dictionaries')
 
@@ -108,7 +110,7 @@ export function apply(ctx: ClientContext): void {
     ctx.slots.inject('settings.section', () => ctx.slots.register({
       name: 'settings.section',
       id: 'cursor-theme',
-      order: 10,
+      order: 25,
       label: () => t('nav'),
       locale: NS,
       inject: () => ({ scope, t }),

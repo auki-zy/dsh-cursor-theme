@@ -244,6 +244,7 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
   const [snap, setSnap] = useState(() => scope.getSnapshot())
   const importRef = useRef<HTMLInputElement>(null)
   const [importErr, setImportErr] = useState<string | null>(null)
+  const [copied, setCopied] = useState(false)
   // Pre-rendered system-default PNGs per state (shown on the left).
   const [defaultPngs, setDefaultPngs] = useState<Record<string, string>>({})
 
@@ -286,6 +287,12 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
       await scope.set('states', states)
     })()
   }
+  const copyAiPrompt = () => {
+    void navigator.clipboard?.writeText(t('packAiPrompt')).then(() => {
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 2000)
+    }).catch(() => setCopied(false))
+  }
   const exportPack = () => {
     void downloadImagePack(settings, `dsh-cursor-theme-${new Date().toISOString().slice(0, 10)}.zip`)
   }
@@ -324,16 +331,13 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
           <Pill
             key={th.id}
             onClick={() => applyTheme(th.id)}
-            title={th.attribution ?? th.description}
+            title={th.description}
             style={{ cursor: 'pointer' }}
           >
             {th.name}
           </Pill>
         ))}
       </div>
-      {BUILTIN_THEMES.some((th) => th.attribution) && (
-        <div style={hintStyle}>{t('themeAttribution')}</div>
-      )}
 
       <div style={{ ...rowStyle, borderBottom: 'none' }}>
         <span style={labelStyle}>{t('resetAll')}</span>
@@ -350,6 +354,22 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
         />
       </div>
       {importErr && <div style={{ ...hintStyle, color: '#c0392b' }}>{t('importFailed')}: {importErr}</div>}
+
+      <details style={{ margin: '4px 0 0', fontSize: 12 }}>
+        <summary style={{ cursor: 'pointer', userSelect: 'none', color: 'var(--dsw-alias-label-secondary, #666)' }}>
+          {t('packHintTitle')}
+        </summary>
+        <div style={hintStyle}>{t('packHint')}</div>
+        <pre style={{
+          margin: '8px 0', padding: 10, borderRadius: 8, overflow: 'auto', maxHeight: 260,
+          fontSize: 11, lineHeight: 1.5, whiteSpace: 'pre-wrap', wordBreak: 'break-word',
+          background: 'var(--dsw-alias-bg-module-platform, #f5f5f5)',
+          color: 'var(--dsw-alias-text-primary, #333)',
+        }}>{t('packAiPrompt')}</pre>
+        <Button variant="outline" size="sm" onClick={copyAiPrompt}>
+          {copied ? t('packCopied') : t('packCopy')}
+        </Button>
+      </details>
 
       <div style={hintStyle}>{t('a11yNote')}</div>
 
