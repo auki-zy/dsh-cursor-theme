@@ -1,10 +1,12 @@
 /**
- * dsh-cursor-theme built-in theme catalog (M6).
+ * dsh-cursor-theme built-in theme catalog (M7).
  *
  * Themes come from data/assets.json, which the generator (generate-assets.mjs)
- * builds by merging scraped third-party packs (scripts/scrape-*.mjs → 
- * data/themes-*.json). Each scraped theme is "prebuilt": states already carry
- * baked PNG data URLs, so applying is instant (no SVG render).
+ * builds by merging theme packs (scripts/generate-theme-packs.mjs → 
+ * data/themes-*.json). All preset themes are ORIGINAL art (own SVGs +
+ * palettes), so no third-party license management is needed. Each theme is
+ * "prebuilt": states already carry baked PNG data URLs, so applying is
+ * instant (no SVG render).
  *
  * The SVG template library (assets.json templates) is still used by the
  * per-state built-in picker in the editor.
@@ -30,8 +32,8 @@ export interface BuiltinTheme {
   states?: Record<string, string>
   /** Prebuilt themes: stateId → ready-to-use config (baked PNG). */
   prebuilt?: Record<string, CursorStateConfig>
-  /** Source attribution (required by licenses like MIT). */
-  attribution?: string
+  /** Origin marker ('original' for generated packs). */
+  source?: string
 }
 
 export interface BuiltinTemplate {

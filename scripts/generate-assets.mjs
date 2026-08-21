@@ -2,13 +2,14 @@
  * dsh-cursor-theme asset generator.
  *
  * Emits SVG shape templates (src/client/svg-assets.ts) into data/assets.json
- * and merges scraped third-party theme packs (data/themes-*.json) as preset
- * themes. PNGs for template picker entries are rendered at runtime by the
- * browser (canvas, render.ts).
+ * and merges theme packs (data/themes-*.json) as preset themes. Packs are
+ * produced by scripts/generate-theme-packs.mjs (ORIGINAL themes — no third
+ * party license needed) and optionally by scrapers. PNGs for template picker
+ * entries are rendered at runtime by the browser (canvas, render.ts).
  *
  * data/assets.json shape:
  *   { schema, generatedAt, templates: [...], themes: [{ id, name,
- *     description, prebuilt: { <stateId>: <config> }, attribution? }] }
+ *     description, prebuilt: { <stateId>: <config> }, source? }] }
  */
 
 import { writeFileSync, mkdirSync, readdirSync, readFileSync } from 'node:fs'
@@ -41,13 +42,13 @@ const json = {
     size: 32,
     svg: t.svg,
   })),
-  // Preset themes come from scraped third-party packs (scripts/scrape-*.mjs
-  // → data/themes-*.json); the template library stays for the per-state
-  // built-in picker. themes are merged below.
+  // Preset themes come from generated packs (scripts/generate-theme-packs.mjs
+  // → data/themes-*.json, schema 1, source: 'original'). The template library
+  // stays for the per-state built-in picker. themes are merged below.
   themes: [],
 }
 
-// Merge scraped theme packs (data/themes-*.json) into assets.json.
+// Merge theme packs (data/themes-*.json) into assets.json.
 const scraped = []
 for (const file of readdirSync(join(root, 'data')).filter((f) => /^themes-.*\.json$/.test(f))) {
   const pack = JSON.parse(readFileSync(join(root, 'data', file), 'utf8'))
@@ -55,9 +56,9 @@ for (const file of readdirSync(join(root, 'data')).filter((f) => /^themes-.*\.js
     scraped.push({
       id: pack.id ?? pack.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
       name: pack.name,
-      description: pack.description ?? `Scraped theme from ${pack.source ?? 'third-party'}`,
+      description: pack.description ?? `Generated theme (${pack.source ?? 'original'})`,
       prebuilt: pack.states,
-      attribution: pack.attribution,
+      source: pack.source,
     })
   }
 }
@@ -67,4 +68,4 @@ const outPath = join(root, 'data', 'assets.json')
 mkdirSync(dirname(outPath), { recursive: true })
 writeFileSync(outPath, JSON.stringify(json, null, 2))
 
-console.log(`wrote ${outPath} (${json.templates.length} templates, ${json.themes.length} scraped themes)`)
+console.log(`wrote ${outPath} (${json.templates.length} templates, ${json.themes.length} preset themes)`)

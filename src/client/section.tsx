@@ -287,6 +287,16 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
       await scope.set('states', states)
     })()
   }
+  const downloadThemeZip = (themeId: string) => {
+    const theme = BUILTIN_THEMES.find((x) => x.id === themeId)
+    if (!theme) return
+    void (async () => {
+      const states = await resolveThemeStates(theme)
+      if (!states) return
+      const settings: CursorThemeSettings = { enabled: true, fallback: 'auto', defaultSize: 32, states }
+      await downloadImagePack(settings, `${theme.id}-theme.zip`)
+    })()
+  }
   const copyAiPrompt = () => {
     void navigator.clipboard?.writeText(t('packAiPrompt')).then(() => {
       setCopied(true)
@@ -326,18 +336,34 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
       </div>
 
       <div style={{ marginTop: 12, fontWeight: 600, fontSize: 14 }}>{t('themes')}</div>
-      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 8 }}>
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 8, alignItems: 'center' }}>
         {BUILTIN_THEMES.map((th) => (
-          <Pill
-            key={th.id}
-            onClick={() => applyTheme(th.id)}
-            title={th.description}
-            style={{ cursor: 'pointer' }}
-          >
-            {th.name}
-          </Pill>
+          <span key={th.id} style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+            <Pill
+              onClick={() => applyTheme(th.id)}
+              title={th.description}
+              style={{ cursor: 'pointer' }}
+            >
+              {th.name}
+            </Pill>
+            <button
+              type="button"
+              onClick={() => downloadThemeZip(th.id)}
+              title={t('themeDownload')}
+              style={{
+                width: 22, height: 22, borderRadius: 6, cursor: 'pointer',
+                border: '1px solid var(--dsw-alias-border-l2, #ddd)',
+                background: 'var(--dsw-alias-bg-module-platform, #fafafa)',
+                color: 'var(--dsw-alias-text-secondary, #555)',
+                fontSize: 12, lineHeight: 1, display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}
+            >
+              ⤓
+            </button>
+          </span>
         ))}
       </div>
+      <div style={hintStyle}>{t('themeHint')}</div>
 
       <div style={{ ...rowStyle, borderBottom: 'none' }}>
         <span style={labelStyle}>{t('resetAll')}</span>
