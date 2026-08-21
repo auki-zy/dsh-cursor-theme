@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Client bundle integration test — executes the REAL built client.js through
  * a simulated host __ModuleLoader__ (jsdom), then renders the registered
  * settings.plugins.tab component. Reproduces the exact host load path
@@ -43,13 +43,13 @@ describe('built client bundle under host loader', () => {
       inject: (services: string[], fn: (s: unknown) => void) => { injectHandlers.set(services.join(','), fn) },
       locale: { register: () => {}, bind: () => (k: string) => k },
       slots: {
-        inject: (_slot: string, reg: () => unknown) => { const r = reg() as never; if (r && (r as { name?: string }).name === 'settings.plugins.tab') registered = r as never },
+        inject: (_slot: string, reg: () => unknown) => { const r = reg() as never; if (r && (r as { name?: string }).name === 'settings.section') registered = r as never },
         register: (options: Record<string, unknown>, component: unknown) => ({ name: options.name, options, component }),
       },
     }
 
     makeScope = () => {
-      const snap = { status: 'ready', value: { enabled: true, followTheme: false, fallback: 'auto', defaultSize: 32, states: {} }, writable: true }
+      const snap = { status: 'ready', value: { enabled: true, fallback: 'auto', defaultSize: 32, states: {} }, writable: true }
       return {
         getSnapshot: () => snap,
         subscribe: () => () => {},
@@ -114,16 +114,16 @@ describe('built client bundle under host loader', () => {
     expect(styleTag).not.toBeNull()
   })
 
-  it('registered the settings.plugins.tab entry', () => {
+  it('registered the settings.section entry', () => {
     expect(registered).not.toBeNull()
-    expect((registered?.options as Record<string, unknown>)?.name).toBe('settings.plugins.tab')
+    expect((registered?.options as Record<string, unknown>)?.name).toBe('settings.section')
     expect((registered?.options as Record<string, unknown>)?.id).toBe('cursor-theme')
   })
 
   it('registered component renders without throwing', () => {
     const comp = registered?.component as (props: Record<string, unknown>) => unknown
     expect(typeof comp).toBe('function')
-    const scope = { getSnapshot: () => ({ status: 'ready' as const, value: { enabled: true, followTheme: false, fallback: 'auto', defaultSize: 32, states: {} }, writable: true }), subscribe: () => () => {}, set: async () => {}, unset: async () => {} }
+    const scope = { getSnapshot: () => ({ status: 'ready' as const, value: { enabled: true, fallback: 'auto', defaultSize: 32, states: {} }, writable: true }), subscribe: () => () => {}, set: async () => {}, unset: async () => {} }
     // The bundle's JSX was compiled to react/jsx-runtime calls; render inside
     // React's own runtime with the scope/t props the host injects.
     expect(() => render(React.createElement(comp as never, { scope, t: (k: string) => k }))).not.toThrow()

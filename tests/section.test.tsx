@@ -1,4 +1,4 @@
-/**
+﻿/**
  * CursorThemeSection render tests (jsdom). Primitives are mocked to keep the
  * unit boundary tight (the host injects its own bundled primitives).
  */
@@ -29,7 +29,6 @@ function makeScope(settings: CursorThemeSettings | undefined, status: 'ready' | 
 
 const readySettings: CursorThemeSettings = {
   enabled: true,
-  followTheme: false,
   fallback: 'auto',
   defaultSize: 32,
   states: {},

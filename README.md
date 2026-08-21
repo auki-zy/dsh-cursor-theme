@@ -7,14 +7,13 @@ Customize the PC mouse cursor for every UI state inside DeepSeek Harness — eac
 ## Features
 
 - 🎯 Per-UI-state cursor overrides (default / pointer / text / wait / not-allowed / grab / …)
-- 🖼️ Built-in asset library (25 pixel-art shapes × 12 palettes = 300 assets) + upload PNG/CUR (≤128×128, ≤512 KB validated)
-- 🎨 One-click preset themes — 13 built-in: Mono Dark/Light, Neon, Coral Cat, Lemon Dog, Sky Shark, Mint Penguin, Grape Ghost, Alien Neon, Sky Whale, Lemon Bee, Blush Hearts, High Contrast
-- 🤖 **AI theme generator**: describe an idea → generate a structured prompt → copy it or **send it straight into the current session** → paste the assistant's JSON reply back to import a ready-to-use theme (shape + color rendered via the built-in shape library)
-- 📦 Theme pack export/import as JSON (assets inlined as base64, import fully validated)
-- 🌗 Follows the DSH light/dark scheme (dark cursors on light UIs, light cursors on dark UIs)
+- 🖼️ Built-in SVG template library (25 shapes) + upload PNG/CUR (≤128×128, ≤512 KB validated)
+- 🎨 One-click preset themes — 11 built-in, each covering ALL 14 states: Classic Dark, Coral Cat, Lemon Dog, Sky Shark, Mint Penguin, Grape Ghost, Alien Neon, Sky Whale, Blush Hearts, Honey Bee, High Contrast
+- 🪟 **Apply to system (Windows)**: one click writes the theme into the OS cursor scheme (registry + SPI_SETCURSORS) — visible in Explorer and every app. macOS: accessibility-permission guidance + .cur export (no native API, shown honestly)
+- 📦 **Image pack** export/import as ZIP (one PNG per state + manifest.json) — inspect/edit/share real image files
 - 📍 Hotspot (X/Y) editor for pixel-accurate clicks
 - 🔍 Size steps 16/24/32/48
-- 👁️ Live preview (per-state thumbnails + configured-state preview area)
+- 👁️ Per-row finished-cursor preview (right side) + system-default icon (left side) so you always know what you are replacing
 - ♿ Accessibility: every rule carries a fallback keyword — failed images degrade to the system cursor, never `none`
 - 💾 Persisted to the profile (dsh-settings); one-click restore to system default
 - 🌐 Bilingual (locale-driven zh/en)

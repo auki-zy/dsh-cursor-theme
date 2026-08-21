@@ -33,8 +33,6 @@ export interface CursorStateConfig {
 export interface CursorThemeSettings {
   /** Master switch: false removes all injected cursor rules. */
   enabled: boolean
-  /** Follow the DSH light/dark scheme and swap built-in palettes. */
-  followTheme: boolean
   /** Global fallback keyword used when no image applies. */
   fallback: string
   /** Default display size for states without their own size. */
@@ -51,7 +49,6 @@ const CursorStateConfig: z<CursorStateConfig> = z.object({
 
 export const CursorThemeSettings: z<CursorThemeSettings> = z.object({
   enabled: z.boolean().default(true),
-  followTheme: z.boolean().default(false),
   fallback: z.string().default('auto'),
   defaultSize: z.natural().min(1).max(128).default(32),
   states: z.dict(CursorStateConfig).default({}),

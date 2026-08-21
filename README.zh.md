@@ -7,14 +7,13 @@
 ## 功能
 
 - 🎯 按 UI 状态独立配置光标图案（default / pointer / text / wait / not-allowed / grab / …）
-- 🖼️ 内置素材库（25 个像素形状 × 12 色板 = 300 素材）+ 上传 PNG/CUR（≤128×128、≤512KB 校验）
-- 🎨 预设主题一键套用（13 套：Mono Dark/Light、Neon、Coral Cat、Lemon Dog、Sky Shark、Mint Penguin、Grape Ghost、Alien Neon、Sky Whale、Lemon Bee、Blush Hearts、High Contrast）
-- 🤖 **AI 生成主题**：输入主题想法 → 生成结构化提示词 → 复制或**一键发送到当前会话** → 把 AI 回复的 JSON 粘贴回来即可导入成品主题（形状+配色经内置形状库渲染）
-- 📦 主题包导出/导入 JSON（素材以 base64 内嵌，可跨机器分享；导入有完整校验）
-- 🌗 跟随 DSH 亮暗主题（浅色界面自动用深色光标，深色界面自动用浅色光标）
+- 🖼️ 内置 SVG 模板库（25 个形状）+ 上传 PNG/CUR（≤128×128、≤512KB 校验）
+- 🎨 预设主题一键套用（11 套，**每套完整覆盖全部 14 个状态**：Classic Dark、Coral Cat、Lemon Dog、Sky Shark、Mint Penguin、Grape Ghost、Alien Neon、Sky Whale、Blush Hearts、Honey Bee、High Contrast）
+- 🪟 **应用到系统（Windows）**：一键把主题写入系统光标方案（注册表 + SPI_SETCURSORS），Explorer 与所有应用立即生效；macOS 提供辅助功能权限引导 + .cur 导出（无原生 API，如实标注）
+- 📦 **图片包**导出/导入 ZIP（每状态一张 PNG + manifest.json）——可直接查看、修改、分享真实图片文件
 - 📍 热区（hotspot）X/Y 编辑，点击精确
 - 🔍 尺寸档位 16/24/32/48
-- 👁️ 实时预览（状态列表缩略图 + 已配置状态预览区）
+- 👁️ 每行右侧成品光标预览 + 左侧系统默认图标——始终清楚自己正在替换什么
 - ♿ 无障碍：每项规则必带 fallback 关键字，图案失效自动回退系统光标
 - 💾 配置持久化到 profile（dsh-settings），重启保留；一键还原系统默认
 - 🌐 中英双语（locale 机制）

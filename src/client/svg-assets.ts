@@ -1,0 +1,148 @@
+/**
+ * dsh-cursor-theme SVG shape templates (M5 rework).
+ *
+ * Each template is a 32×32 SVG using color placeholders:
+ *   {primary}  main fill/gradient color
+ *   {accent}   secondary / highlight color
+ *   {dark}     outline / shadow color
+ * A theme is a palette (primary/accent/dark) plus a state→template map;
+ * rendering substitutes the placeholders with the theme's palette, so every
+ * theme automatically covers ALL 14 states with a consistent look.
+ *
+ * Templates are hand-authored vector art (gradients, strokes, rounded
+ * shapes). The browser renders the substituted SVG to a PNG data URL via
+ * canvas (render.ts).
+ */
+
+export interface SvgTemplate {
+  id: string
+  name: string
+  /** State ids this template is designed for (usually one). */
+  states: string[]
+  /** CSS fallback keyword. */
+  fallback: string
+  /** Hotspot {x, y} in 32×32 space. */
+  hotspot: { x: number; y: number }
+  /** SVG with {primary}/{accent}/{dark} placeholders. */
+  svg: string
+}
+
+const SVG_HEADER = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">'
+
+function svg(body: string): string {
+  return `${SVG_HEADER}${body}</svg>`
+}
+
+const GRAD = (from: string, to: string) =>
+  `<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${from}"/><stop offset="1" stop-color="${to}"/></linearGradient></defs>`
+
+/** Standard gradient using the theme's primary + accent. */
+const G = GRAD('{primary}', '{accent}')
+
+export const SVG_TEMPLATES: SvgTemplate[] = [
+  // ---- functional state templates (every theme uses these) ----
+  {
+    id: 'shape-default', name: 'Default arrow', states: ['default'], fallback: 'default', hotspot: { x: 3, y: 3 },
+    svg: svg(`${G}<path d="M4 2 L20 12 L13.5 13 L17 22 L13.5 23 L10 14.5 L6 17.5 Z" fill="url(#g)" stroke="{dark}" stroke-width="1"/>`),
+  },
+  {
+    id: 'shape-pointer', name: 'Pointer hand', states: ['pointer'], fallback: 'pointer', hotspot: { x: 7, y: 5 },
+    svg: svg(`${G}<path d="M6 15 L6 8.5 C6 7 7.5 6 9 7 L9.5 7.2 L9.5 5.5 C9.5 4 11 3 12.5 4 L13 4.2 L13 3 C13 1.5 14.5 0.5 16 1.5 L16.2 1.6 L16.2 9 C16.2 9 20 11 20.5 14 C21 17 19 22 15.5 22.5 C12 23 8 21 6.5 18.5 C5 16 6 15 6 15 Z" fill="url(#g)" stroke="{dark}" stroke-width="1"/>`),
+  },
+  {
+    id: 'shape-text', name: 'Text I-beam', states: ['text'], fallback: 'text', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<rect x="12" y="2" width="8" height="3" rx="1.5" fill="url(#g)"/><rect x="12" y="27" width="8" height="3" rx="1.5" fill="url(#g)"/><rect x="14.8" y="4" width="2.4" height="24" fill="url(#g)"/>`),
+  },
+  {
+    id: 'shape-wait', name: 'Wait spinner', states: ['wait'], fallback: 'wait', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<circle cx="16" cy="16" r="11" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round" stroke-dasharray="52 17"/>`),
+  },
+  {
+    id: 'shape-help', name: 'Help question', states: ['help'], fallback: 'help', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<circle cx="16" cy="16" r="12" fill="url(#g)"/><text x="16" y="21" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700" fill="{dark}">?</text>`),
+  },
+  {
+    id: 'shape-not-allowed', name: 'Not allowed', states: ['not-allowed'], fallback: 'not-allowed', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<circle cx="16" cy="16" r="12" fill="url(#g)"/><rect x="8" y="14" width="16" height="4" rx="2" transform="rotate(45 16 16)" fill="{dark}"/>`),
+  },
+  {
+    id: 'shape-grab', name: 'Grab hand', states: ['grab', 'grabbing'], fallback: 'grab', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<circle cx="16" cy="16" r="9" fill="url(#g)"/><circle cx="16" cy="16" r="3.5" fill="{dark}"/>`),
+  },
+  {
+    id: 'shape-progress', name: 'Progress', states: ['progress'], fallback: 'progress', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<circle cx="16" cy="16" r="11" fill="none" stroke="url(#g)" stroke-width="4" stroke-dasharray="34 25" stroke-linecap="round"/><circle cx="16" cy="16" r="3" fill="url(#g)"/>`),
+  },
+  {
+    id: 'shape-cell', name: 'Cell', states: ['cell'], fallback: 'cell', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<rect x="8" y="8" width="16" height="16" rx="3" fill="url(#g)"/><path d="M8 16 L24 16 M16 8 L16 24" stroke="{dark}" stroke-width="1.6"/>`),
+  },
+  {
+    id: 'shape-copy', name: 'Copy', states: ['copy'], fallback: 'copy', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<rect x="5" y="5" width="15" height="15" rx="3" fill="url(#g)"/><rect x="12" y="12" width="15" height="15" rx="3" fill="none" stroke="url(#g)" stroke-width="3"/>`),
+  },
+  {
+    id: 'shape-move', name: 'Move', states: ['move'], fallback: 'move', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<path d="M16 3 L19.5 9.5 L12.5 9.5 Z M16 29 L19.5 22.5 L12.5 22.5 Z M3 16 L9.5 12.5 L9.5 19.5 Z M29 16 L22.5 12.5 L22.5 19.5 Z" fill="url(#g)"/><circle cx="16" cy="16" r="3" fill="{dark}"/>`),
+  },
+  {
+    id: 'shape-resize-ew', name: 'Resize EW', states: ['resize-ew'], fallback: 'ew-resize', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<path d="M3 16 L10 10.5 L10 21.5 Z M29 16 L22 10.5 L22 21.5 Z" fill="url(#g)"/><rect x="10" y="14.5" width="12" height="3" rx="1.5" fill="url(#g)"/>`),
+  },
+  {
+    id: 'shape-resize-ns', name: 'Resize NS', states: ['resize-ns'], fallback: 'ns-resize', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<path d="M16 3 L10.5 10 L21.5 10 Z M16 29 L10.5 22 L21.5 22 Z" fill="url(#g)"/><rect x="14.5" y="10" width="3" height="12" rx="1.5" fill="url(#g)"/>`),
+  },
+
+  // ---- decorative templates (themes may use these for pointer/default) ----
+  {
+    id: 'mascot-cat', name: 'Cat', states: ['default', 'pointer'], fallback: 'default', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<path d="M6 14 L8 6 L12 10 L20 10 L24 6 L26 14 Q27 22 22 26 L10 26 Q5 22 6 14 Z" fill="url(#g)"/><path d="M12 15 Q12 18 14 18 M18 15 Q18 18 16 18" stroke="{dark}" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="12" cy="16" r="1.4" fill="{dark}"/><circle cx="20" cy="16" r="1.4" fill="{dark}"/><path d="M13 21 Q16 24 19 21" stroke="{accent}" stroke-width="1.6" fill="none"/>`),
+  },
+  {
+    id: 'mascot-dog', name: 'Dog', states: ['default', 'pointer'], fallback: 'default', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<path d="M6 15 L7 7 L12 12 L20 12 L25 7 L26 15 Q27 23 20 26 L12 26 Q5 23 6 15 Z" fill="url(#g)"/><circle cx="12" cy="17" r="1.5" fill="{dark}"/><circle cx="20" cy="17" r="1.5" fill="{dark}"/><path d="M12 21 Q16 25 20 21" stroke="{dark}" stroke-width="1.6" fill="none"/>`),
+  },
+  {
+    id: 'mascot-shark', name: 'Shark', states: ['default', 'pointer'], fallback: 'default', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<path d="M4 18 Q10 10 20 12 Q26 13 28 12 L25 17 Q22 22 14 22 Q8 22 4 18 Z" fill="url(#g)"/><circle cx="20" cy="14.5" r="1.2" fill="{dark}"/>`),
+  },
+  {
+    id: 'mascot-penguin', name: 'Penguin', states: ['default', 'wait'], fallback: 'default', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<ellipse cx="16" cy="17" rx="10" ry="11" fill="url(#g)"/><ellipse cx="16" cy="19" rx="6" ry="7" fill="{dark}" opacity="0.9"/><circle cx="12.5" cy="13.5" r="1.3" fill="{dark}"/><circle cx="19.5" cy="13.5" r="1.3" fill="{dark}"/>`),
+  },
+  {
+    id: 'mascot-ghost', name: 'Ghost', states: ['default', 'wait'], fallback: 'default', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<path d="M8 14 C8 7 24 7 24 14 L24 26 L20 24 L17 26 L14 24 L11 26 L8 26 Z" fill="url(#g)"/><circle cx="12.5" cy="15" r="1.5" fill="{dark}"/><circle cx="19.5" cy="15" r="1.5" fill="{dark}"/>`),
+  },
+  {
+    id: 'mascot-alien', name: 'Alien', states: ['default', 'pointer'], fallback: 'default', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<ellipse cx="16" cy="17" rx="9" ry="10" fill="url(#g)"/><ellipse cx="12.5" cy="17" rx="2.4" ry="3" fill="{dark}"/><ellipse cx="19.5" cy="17" rx="2.4" ry="3" fill="{dark}"/><circle cx="12.5" cy="17" r="1" fill="{primary}"/><circle cx="19.5" cy="17" r="1" fill="{primary}"/>`),
+  },
+  {
+    id: 'mascot-whale', name: 'Whale', states: ['default', 'pointer'], fallback: 'default', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<path d="M5 17 Q7 11 14 11 Q22 11 27 15 L28 17 Q24 20 17 20 Q10 20 5 17 Z" fill="url(#g)"/><path d="M27 15 L30 12 L28 16" fill="url(#g)"/><circle cx="11" cy="14.5" r="1" fill="{dark}"/>`),
+  },
+  {
+    id: 'mascot-heart', name: 'Heart', states: ['default', 'pointer', 'copy'], fallback: 'default', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<path d="M16 27 C7 21 3 15 5 10 C7 5 13 5 16 9 C19 5 25 5 27 10 C29 15 25 21 16 27 Z" fill="url(#g)"/>`),
+  },
+  {
+    id: 'mascot-star', name: 'Star', states: ['default', 'pointer', 'copy'], fallback: 'default', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<path d="M16 3 L19.5 11.5 L28.5 12.3 L21.5 18.4 L23.7 27.2 L16 22.7 L8.3 27.2 L10.5 18.4 L3.5 12.3 L12.5 11.5 Z" fill="url(#g)" stroke="{dark}" stroke-width="1"/>`),
+  },
+  {
+    id: 'mascot-paw', name: 'Paw', states: ['default', 'pointer', 'grab'], fallback: 'default', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<circle cx="9" cy="10" r="3" fill="url(#g)"/><circle cx="16" cy="8" r="3" fill="url(#g)"/><circle cx="23" cy="10" r="3" fill="url(#g)"/><path d="M8 15 Q8 24 16 24 Q24 24 24 15 Q24 13 22 13.5 Q20 14 20 16 Q19.5 13 17 13 Q16 13 16 15 Q16 13 15 13 Q12.5 13 12 16 Q12 14 10 13.5 Q8 13 8 15 Z" fill="url(#g)"/>`),
+  },
+  {
+    id: 'mascot-bee', name: 'Bee', states: ['default', 'wait', 'progress'], fallback: 'default', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<ellipse cx="16" cy="17" rx="9" ry="8" fill="url(#g)"/><path d="M9 12 Q16 9 23 12 Q22 17 16 17 Q10 17 9 12 Z" fill="{dark}"/>`),
+  },
+  {
+    id: 'mascot-skull', name: 'Skull', states: ['default', 'not-allowed'], fallback: 'not-allowed', hotspot: { x: 16, y: 16 },
+    svg: svg(`${G}<ellipse cx="16" cy="15" rx="10" ry="11" fill="url(#g)"/><circle cx="11.5" cy="13" r="2.2" fill="{dark}"/><circle cx="20.5" cy="13" r="2.2" fill="{dark}"/>`),
+  },
+]
+
+export const TEMPLATE_BY_ID: ReadonlyMap<string, SvgTemplate> = new Map(SVG_TEMPLATES.map((t) => [t.id, t]))

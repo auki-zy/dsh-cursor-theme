@@ -1,11 +1,9 @@
 /**
- * dsh-cursor-theme browser shape renderer (M4).
+ * dsh-cursor-theme browser renderers (M4 / M4.5).
  *
- * Renders a PixelShape matrix + hex color into a 32×32 PNG data URL using
- * canvas — no server round-trip, so AI-generated themes (shape + color)
- * become ready-to-use cursor assets instantly. Mirrors the Node generator's
- * output (scripts/generate-assets.mjs) so built-in and generated assets are
- * pixel-identical in style.
+ *  - Pixel-shape renderer (legacy M4): 16×16 matrix + color → 32×32 PNG.
+ *  - SVG renderer (M4.5): full SVG art → PNG data URL via canvas + Image,
+ *    so preset AND AI-generated themes are real graphics, not pixel blocks.
  */
 
 import { shapeToRgba, type PixelShape } from './shapes.js'
@@ -26,9 +24,7 @@ export function parseHexColor(hex: string): [number, number, number] {
 }
 
 /**
- * Render a shape + color into a 32×32 PNG data URL.
- * @param shape - the pixel shape.
- * @param color - '#rrggbb' foreground color.
+ * Render a shape + color into a 32×32 PNG data URL (legacy pixel shapes).
  * @returns a `data:image/png;base64,...` URL, or null when canvas is absent.
  */
 export function renderShapeToDataUrl(shape: PixelShape, color: string): string | null {
@@ -45,3 +41,54 @@ export function renderShapeToDataUrl(shape: PixelShape, color: string): string |
   ctx.putImageData(imageData, 0, 0)
   return canvas.toDataURL('image/png')
 }
+
+/**
+ * Render a full SVG string into a 32×32 PNG data URL.
+ *
+ * The SVG is loaded as an image (data URL) and drawn onto a canvas at 2×
+ * then downscaled — smooth anti-aliased output for high-quality art.
+ * @param svg - standalone SVG markup (any size; drawn into 32×32).
+ * @param size - output square size in px (default 32).
+ * @returns a Promise resolving to `data:image/png;base64,...`, or null when
+ *   canvas/Image is unavailable.
+ */
+export function renderSvgToDataUrl(svg: string, size = SIZE): Promise<string | null> {
+  return new Promise((resolve) => {
+    if (typeof document === 'undefined') {
+      resolve(null)
+      return
+    }
+    const canvas = document.createElement('canvas')
+    // Render at 2× then draw down to `size` for crisp edges.
+    const hi = size * 2
+    canvas.width = hi
+    canvas.height = hi
+    const ctx = canvas.getContext('2d')
+    if (!ctx) {
+      resolve(null)
+      return
+    }
+    const encoded = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`
+    const img = new Image()
+    img.onload = () => {
+      try {
+        ctx.drawImage(img, 0, 0, hi, hi)
+        const out = document.createElement('canvas')
+        out.width = size
+        out.height = size
+        const octx = out.getContext('2d')
+        if (!octx) {
+          resolve(null)
+          return
+        }
+        octx.drawImage(canvas, 0, 0, size, size)
+        resolve(out.toDataURL('image/png'))
+      } catch {
+        resolve(null)
+      }
+    }
+    img.onerror = () => resolve(null)
+    img.src = encoded
+  })
+}
+
