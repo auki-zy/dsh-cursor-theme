@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-08-21T00:00:00Z",
+  "revision": "2026-08-21T00:00:00Z",
+  "items": [
+    {
+      "id": "auki-zy/dsh-cursor-theme",
+      "name": "dsh-cursor-theme",
+      "displayName": "Cursor Theme",
+      "summary": "Per-state mouse cursor customization for DeepSeek Harness: 14 UI states, 18 original preset themes, ZIP image pack import/export, and one-click system-level apply.",
+      "description": "Customize the PC mouse cursor for every UI state inside DeepSeek Harness (default, pointer, text, wait, not-allowed, grab, grabbing, progress, cell, copy, move, resize and more). Ships 18 original preset themes covering all 14 states, a per-state SVG template library, PNG/CUR upload, ZIP image pack import/export, hotspot editing, and one-click system-level cursor application on Windows (registry + SPI_SETCURSORS) with an experimental macOS overlay.",
+      "homepage": "https://github.com/auki-zy/dsh-cursor-theme",
+      "latestVersion": "0.1.0",
+      "license": "MIT",
+      "categories": [
+        "theme"
+      ],
+      "keywords": [
+        "cursor",
+        "mouse",
+        "cursor-theme",
+        "theme",
+        "pointer"
+      ],
+      "repository": {
+        "url": "https://github.com/auki-zy/dsh-cursor-theme"
+      },
+      "package": {
+        "registry": "npm",
+        "name": "dsh-cursor-theme"
+      },
+      "publisher": {
+        "name": "auki-zy",
+        "url": "https://github.com/auki-zy"
+      },
+      "compatibility": {
+        "apiVersion": "1.x"
+      }
+    }
+  ],
+  "page": {}
+}
