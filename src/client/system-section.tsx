@@ -3,14 +3,14 @@
  *
  * Talks to the host's webServer routes:
  *   GET  /dsh-cursor-theme/system/status
- *   POST /dsh-cursor-theme/system/apply   (body: current settings)
- *   POST /dsh-cursor-theme/system/restore
+ *   POST /dsh-cursor-theme/system/apply    (body: current settings)
+ *   POST /dsh-cursor-theme/system/restore  (Windows restore / macOS stop)
  *   POST /dsh-cursor-theme/system/mac/settings
  *
  * Windows: one click applies the current theme system-wide (registry +
- * SPI_SETCURSORS) — visible in Explorer and every app. macOS: guides the
- * user to enable accessibility permission and exports .cur files (no native
- * API — shown honestly).
+ * SPI_SETCURSORS) — visible in Explorer and every app.
+ * macOS: applies via a compiled Swift overlay (private CoreGraphics API +
+ * Accessibility), experimental; shows running state and a Stop button.
  */
 
 import { useCallback, useEffect, useState } from 'react'
@@ -27,6 +27,7 @@ export interface SystemSectionProps {
 interface StatusInfo {
   platform: string
   accessibilityGranted?: boolean
+  overlayRunning?: boolean
 }
 
 const rowStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 8, margin: '8px 0', flexWrap: 'wrap' }
@@ -49,16 +50,20 @@ export function SystemSection({ scope, t }: SystemSectionProps) {
   const [msg, setMsg] = useState<string | null>(null)
   const [err, setErr] = useState<string | null>(null)
 
-  useEffect(() => {
-    void (async () => {
-      try {
-        const r = await api('/dsh-cursor-theme/system/status')
-        setStatus({ platform: String(r.platform ?? ''), accessibilityGranted: r.accessibilityGranted as boolean | undefined })
-      } catch {
-        setStatus({ platform: 'unknown' })
-      }
-    })()
+  const refreshStatus = useCallback(async () => {
+    try {
+      const r = await api('/dsh-cursor-theme/system/status')
+      setStatus({
+        platform: String(r.platform ?? ''),
+        accessibilityGranted: r.accessibilityGranted as boolean | undefined,
+        overlayRunning: r.overlayRunning as boolean | undefined,
+      })
+    } catch {
+      setStatus({ platform: 'unknown' })
+    }
   }, [])
+
+  useEffect(() => { void refreshStatus() }, [refreshStatus])
 
   const applyToSystem = useCallback(async () => {
     const snap = scope.getSnapshot()
@@ -81,10 +86,11 @@ export function SystemSection({ scope, t }: SystemSectionProps) {
       setErr(e instanceof Error ? e.message : String(e))
     } finally {
       setBusy(false)
+      void refreshStatus()
     }
-  }, [scope, t])
+  }, [scope, t, refreshStatus])
 
-  const restoreSystem = useCallback(async () => {
+  const stopMacOverlay = useCallback(async () => {
     setBusy(true); setErr(null); setMsg(null)
     try {
       const r = await api('/dsh-cursor-theme/system/restore')
@@ -94,8 +100,9 @@ export function SystemSection({ scope, t }: SystemSectionProps) {
       setErr(e instanceof Error ? e.message : String(e))
     } finally {
       setBusy(false)
+      void refreshStatus()
     }
-  }, [t])
+  }, [t, refreshStatus])
 
   const openMacSettings = useCallback(async () => {
     await api('/dsh-cursor-theme/system/mac/settings')
@@ -103,6 +110,7 @@ export function SystemSection({ scope, t }: SystemSectionProps) {
 
   const isMac = status?.platform === 'darwin'
   const isWin = status?.platform === 'win32'
+  const macRunning = status?.overlayRunning === true
 
   return (
     <div style={panelStyle}>
@@ -113,9 +121,11 @@ export function SystemSection({ scope, t }: SystemSectionProps) {
         <Button variant="primary" size="sm" onClick={applyToSystem} disabled={busy || (!isWin && !isMac)}>
           {busy ? t('sysWorking') : t('sysApply')}
         </Button>
-        <Button variant="outline" size="sm" onClick={restoreSystem} disabled={busy || !isWin}>
-          {t('sysRestore')}
-        </Button>
+        {isMac && macRunning && (
+          <Button variant="outline" size="sm" onClick={stopMacOverlay} disabled={busy}>
+            {t('sysMacStop')}
+          </Button>
+        )}
         {isMac && (
           <Button variant="outline" size="sm" onClick={openMacSettings} disabled={busy}>
             {t('sysMacOpenSettings')}
@@ -125,9 +135,11 @@ export function SystemSection({ scope, t }: SystemSectionProps) {
 
       {isMac && (
         <div style={hintStyle}>
-          {status?.accessibilityGranted
-            ? `✓ ${t('sysMacGranted')}`
-            : t('sysMacUngranted')}
+          {macRunning
+            ? `● ${t('sysMacRunning')}`
+            : status?.accessibilityGranted
+              ? `✓ ${t('sysMacGranted')}`
+              : t('sysMacUngranted')}
         </div>
       )}
 

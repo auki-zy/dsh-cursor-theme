@@ -74,6 +74,7 @@
     "lib",
     "client",
     "data",
+    "assets",
     "cordis.patch.yml",
     "LICENSE",
     "README.md",
