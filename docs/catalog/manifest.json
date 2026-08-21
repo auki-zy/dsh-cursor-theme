@@ -1,0 +1,22 @@
+{
+  "manifestVersion": "1.0.0",
+  "providerId": "io.github.auki-zy.dsh-cursor-theme",
+  "name": "auki-zy Cursor Theme Catalog",
+  "description": "Catalog for dsh-cursor-theme — per-state mouse cursor customization for DeepSeek Harness.",
+  "homepage": "https://github.com/auki-zy/dsh-cursor-theme",
+  "attribution": {
+    "name": "auki-zy",
+    "url": "https://github.com/auki-zy"
+  },
+  "transport": {
+    "kind": "https-json",
+    "endpoint": "https://auki-zy.github.io/dsh-cursor-theme/catalog/v1/plugins.json",
+    "method": "GET"
+  },
+  "query": {
+    "supported": ["q", "category", "cursor", "limit"],
+    "defaultLimit": 50,
+    "maxLimit": 50,
+    "sorts": []
+  }
+}

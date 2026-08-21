@@ -29,7 +29,9 @@
     "build": "tsc -p tsconfig.json && npm run build:client",
     "build:client": "node scripts/build-client.mjs",
     "test": "vitest run",
-    "check": "npm run typecheck && npm run build && npm run test"
+    "check": "npm run typecheck && npm run build && npm run test",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run check"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",
