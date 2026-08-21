@@ -303,9 +303,6 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
       window.setTimeout(() => setCopied(false), 2000)
     }).catch(() => setCopied(false))
   }
-  const exportPack = () => {
-    void downloadImagePack(settings, `dsh-cursor-theme-${new Date().toISOString().slice(0, 10)}.zip`)
-  }
   const onImportFile = (file: File | undefined) => {
     if (!file) return
     const reader = new FileReader()
@@ -372,7 +369,6 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
 
       <div style={{ ...rowStyle, borderBottom: 'none' }}>
         <span style={labelStyle}>{t('exportImport')}</span>
-        <Button variant="outline" size="sm" onClick={exportPack}>{t('export')}</Button>
         <Button variant="outline" size="sm" onClick={() => importRef.current?.click()}>{t('import')}</Button>
         <input
           ref={importRef} type="file" accept=".zip,application/zip" style={{ display: 'none' }}
@@ -381,26 +377,23 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
       </div>
       {importErr && <div style={{ ...hintStyle, color: '#c0392b' }}>{t('importFailed')}: {importErr}</div>}
 
-      <details style={{ margin: '4px 0 0', fontSize: 12 }}>
-        <summary style={{ cursor: 'pointer', userSelect: 'none', color: 'var(--dsw-alias-label-secondary, #666)' }}>
-          {t('packHintTitle')}
-        </summary>
+      <div style={{ margin: '4px 0 0', fontSize: 12 }}>
+        <div style={{ fontWeight: 600, fontSize: 13, color: 'var(--dsw-alias-label-primary, #222)' }}>{t('packHintTitle')}</div>
         <div style={hintStyle}>{t('packHint')}</div>
         <pre style={{
-          margin: '8px 0', padding: 10, borderRadius: 8, overflow: 'auto', maxHeight: 260,
+          margin: '8px 0', padding: 10, borderRadius: 8, overflow: 'auto', maxHeight: 150,
           fontSize: 11, lineHeight: 1.5, whiteSpace: 'pre-wrap', wordBreak: 'break-word',
-          // Fixed colors (not host CSS vars): the vars may be undefined or
-          // resolve to light-on-light in some hosts, making the prompt unreadable.
-          background: '#f6f8fa',
-          color: '#1f2328',
-          border: '1px solid #d0d7de',
+          // Host theme variables (defined for both light & dark): bg-module-platform
+          // is the module background, label-primary the main text color. Fixed
+          // colors looked out of place; text-primary does not exist in the host.
+          background: 'var(--dsw-alias-bg-module-platform, #f5f5f5)',
+          color: 'var(--dsw-alias-label-primary, #222)',
+          border: '1px solid var(--dsw-alias-border-l2, #ddd)',
         }}>{t('packAiPrompt')}</pre>
         <Button variant="outline" size="sm" onClick={copyAiPrompt}>
           {copied ? t('packCopied') : t('packCopy')}
         </Button>
-      </details>
-
-      <div style={hintStyle}>{t('a11yNote')}</div>
+      </div>
 
       <SystemSection scope={scope} t={t} />
 
