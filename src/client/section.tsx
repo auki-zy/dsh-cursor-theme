@@ -347,15 +347,23 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
               type="button"
               onClick={() => downloadThemeZip(th.id)}
               title={t('themeDownload')}
+              aria-label={t('themeDownload')}
               style={{
-                width: 22, height: 22, borderRadius: 6, cursor: 'pointer',
+                width: 24, height: 24, borderRadius: 6, cursor: 'pointer',
                 border: '1px solid var(--dsw-alias-border-l2, #ddd)',
                 background: 'var(--dsw-alias-bg-module-platform, #fafafa)',
-                color: 'var(--dsw-alias-text-secondary, #555)',
-                fontSize: 12, lineHeight: 1, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: 'var(--dsw-alias-label-secondary, #555)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                transition: 'background 0.15s, color 0.15s',
               }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--dsw-alias-interactive-bg-hover, #ececec)' }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--dsw-alias-bg-module-platform, #fafafa)' }}
             >
-              ⤓
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M8 2.5 V10.5" />
+                <path d="M4.5 7 8 10.5 11.5 7" />
+                <path d="M2.5 13.5 H13.5" />
+              </svg>
             </button>
           </span>
         ))}
