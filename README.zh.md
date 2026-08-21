@@ -8,8 +8,8 @@
 
 - 🎯 按 UI 状态独立配置光标图案（default / pointer / text / wait / not-allowed / grab / …）
 - 🖼️ 内置 SVG 模板库（25 个形状）+ 上传 PNG/CUR（≤128×128、≤512KB 校验）
-- 🎨 预设主题一键套用（11 套，**每套完整覆盖全部 14 个状态**：Classic Dark、Coral Cat、Lemon Dog、Sky Shark、Mint Penguin、Grape Ghost、Alien Neon、Sky Whale、Blush Hearts、Honey Bee、High Contrast）
-- 🪟 **应用到系统（Windows）**：一键把主题写入系统光标方案（注册表 + SPI_SETCURSORS），Explorer 与所有应用立即生效；macOS 提供辅助功能权限引导 + .cur 导出（无原生 API，如实标注）
+- 🎨 预设主题一键套用（11 套模板主题**完整覆盖全部 14 状态** + **BlueArchive** 爬取热门主题（MIT 许可）：Classic Dark、Coral Cat、Lemon Dog、Sky Shark、Mint Penguin、Grape Ghost、Alien Neon、Sky Whale、Blush Hearts、Honey Bee、High Contrast、BlueArchive）
+- 🪟 **应用到系统（Windows）**：一键把主题写入系统光标方案（注册表 + SPI_SETCURSORS），Explorer 与所有应用立即生效；macOS 用 Swift 覆盖层应用（实验性，私有 API）+ 辅助功能权限引导
 - 📦 **图片包**导出/导入 ZIP（每状态一张 PNG + manifest.json）——可直接查看、修改、分享真实图片文件
 - 📍 热区（hotspot）X/Y 编辑，点击精确
 - 🔍 尺寸档位 16/24/32/48

@@ -321,11 +321,19 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
       <div style={{ marginTop: 12, fontWeight: 600, fontSize: 14 }}>{t('themes')}</div>
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 8 }}>
         {BUILTIN_THEMES.map((th) => (
-          <Pill key={th.id} onClick={() => applyTheme(th.id)} title={th.description} style={{ cursor: 'pointer' }}>
+          <Pill
+            key={th.id}
+            onClick={() => applyTheme(th.id)}
+            title={th.attribution ?? th.description}
+            style={{ cursor: 'pointer' }}
+          >
             {th.name}
           </Pill>
         ))}
       </div>
+      {BUILTIN_THEMES.some((th) => th.attribution) && (
+        <div style={hintStyle}>{t('themeAttribution')}</div>
+      )}
 
       <div style={{ ...rowStyle, borderBottom: 'none' }}>
         <span style={labelStyle}>{t('resetAll')}</span>
