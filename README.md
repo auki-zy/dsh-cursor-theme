@@ -2,13 +2,13 @@
 
 Customize the PC mouse cursor for every UI state inside DeepSeek Harness — each state (default, pointer, text, wait, not-allowed, …) can use its own PNG/CUR image, applied live and persisted across restarts.
 
-> Status: **M3 complete** (asset library / themes / export-import / light-dark follow). See [docs/requirements.md](docs/requirements.md) and [docs/feasibility.md](docs/feasibility.md). 中文文档：[README.zh.md](README.zh.md)
+> Status: **M7 complete** (original preset themes as ZIP packs / system apply / image packs). See [docs/requirements.md](docs/requirements.md) and [docs/feasibility.md](docs/feasibility.md). 中文文档：[README.zh.md](README.zh.md)
 
 ## Features
 
 - 🎯 Per-UI-state cursor overrides (default / pointer / text / wait / not-allowed / grab / …)
 - 🖼️ Built-in SVG template library (25 shapes) + upload PNG/CUR (≤128×128, ≤512 KB validated)
-- 🎨 One-click preset themes — 11 template themes covering ALL 14 states + **BlueArchive** (scraped popular theme, MIT-licensed): Classic Dark, Coral Cat, Lemon Dog, Sky Shark, Mint Penguin, Grape Ghost, Alien Neon, Sky Whale, Blush Hearts, Honey Bee, High Contrast, BlueArchive
+- 🎨 One-click preset themes — 6 original themes (Aurora / Honey / Mint / Sunset / Graphite / High Contrast), each covering ALL 14 states with baked PNGs; every theme is also downloadable as a ZIP image pack
 - 🪟 **Apply to system (Windows)**: one click writes the theme into the OS cursor scheme (registry + SPI_SETCURSORS) — visible in Explorer and every app. macOS: Swift overlay (experimental, private API) + Accessibility guidance
 - 📦 **Image pack** export/import as ZIP (one PNG per state + manifest.json) — inspect/edit/share real image files
 - 📍 Hotspot (X/Y) editor for pixel-accurate clicks

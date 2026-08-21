@@ -59,7 +59,7 @@ export const SVG_TEMPLATES: SvgTemplate[] = [
   },
   {
     id: 'shape-help', name: 'Help question', states: ['help'], fallback: 'help', hotspot: { x: 16, y: 16 },
-    svg: svg(`${G}<circle cx="16" cy="16" r="12" fill="url(#g)"/><text x="16" y="21" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700" fill="{dark}">?</text>`),
+    svg: svg(`${G}<circle cx="16" cy="16" r="12" fill="url(#g)"/><path d="M12.5 10.5 C12.5 7.8 14.2 6.5 16 6.5 C18 6.5 19.5 8 19.5 10 C19.5 12 18.4 13.2 16.9 14.2 C15.7 15 15.5 15.6 15.5 17" fill="none" stroke="{dark}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15.5" cy="21" r="1.9" fill="{dark}"/>`),
   },
   {
     id: 'shape-not-allowed', name: 'Not allowed', states: ['not-allowed'], fallback: 'not-allowed', hotspot: { x: 16, y: 16 },
