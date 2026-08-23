@@ -22,6 +22,12 @@ export interface SystemSectionProps {
     getSnapshot(): { status: 'loading' | 'ready' | 'unavailable'; value: CursorThemeSettings | undefined }
   }
   t: (key: string) => string
+  /**
+   * Bump to ask this section to re-query the system status. Used by the
+   * parent section after it resets settings AND restores system cursors, so
+   * the overlay/running indicator stays accurate.
+   */
+  refreshSignal?: number
 }
 
 interface StatusInfo {
@@ -36,7 +42,8 @@ const panelStyle: React.CSSProperties = {
   marginTop: 20, padding: '12px 0', borderTop: '1px solid var(--dsw-alias-border-l2, #eee)',
 }
 
-async function api(path: string, body?: unknown): Promise<{ ok: boolean; [k: string]: unknown }> {
+/** Shared system-API helper: used by this section and the parent reset flow. */
+export async function api(path: string, body?: unknown): Promise<{ ok: boolean; [k: string]: unknown }> {
   const res = await fetch(path, body === undefined
     ? undefined
     : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
@@ -44,7 +51,7 @@ async function api(path: string, body?: unknown): Promise<{ ok: boolean; [k: str
   return { ok: res.ok, ...data }
 }
 
-export function SystemSection({ scope, t }: SystemSectionProps) {
+export function SystemSection({ scope, t, refreshSignal = 0 }: SystemSectionProps) {
   const [status, setStatus] = useState<StatusInfo | null>(null)
   const [busy, setBusy] = useState(false)
   const [msg, setMsg] = useState<string | null>(null)
@@ -64,6 +71,11 @@ export function SystemSection({ scope, t }: SystemSectionProps) {
   }, [])
 
   useEffect(() => { void refreshStatus() }, [refreshStatus])
+
+  // Re-query when the parent asks (e.g. after 恢复系统默认 restored the OS).
+  useEffect(() => {
+    if (refreshSignal > 0) void refreshStatus()
+  }, [refreshSignal, refreshStatus])
 
   const applyToSystem = useCallback(async () => {
     const snap = scope.getSnapshot()

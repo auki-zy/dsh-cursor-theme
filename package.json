@@ -76,7 +76,7 @@
     "lib",
     "client",
     "data",
-    "assets",
+    "assets/mac-cursor-overlay.swift",
     "cordis.patch.yml",
     "LICENSE",
     "README.md",

@@ -1,7 +1,10 @@
 node_modules/
+.pnpm-store/
 lib/
 client/client.js
 client/client.js.map
 .build/
 *.log
 .DS_Store
+# Large original-resource backups stay local (see assets/personal/README.md)
+assets/personal/_originals/
