@@ -18,11 +18,10 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { Button, Input, Modal, Pill } from '@deepseek-ai/dsh-client-ui-primitives'
 import type { CursorStateConfig, CursorThemeSettings } from './types.js'
 import { CURSOR_STATES } from './states.js'
-import { BUILTIN_ASSETS, assetsForState } from './assets.js'
-import { BUILTIN_THEMES, applyPalette, resolveThemeStates } from './themes.js'
+import { BUILTIN_THEMES, resolveThemeStates } from './themes.js'
 import { renderSvgToDataUrl } from './render.js'
-import { downloadImagePack, parseImagePack } from './pack.js'
-import { SystemSection } from './system-section.js'
+import { downloadImagePack, parseImagePack, MAX_IMAGE_BYTES } from './pack.js'
+import { api, SystemSection } from './system-section.js'
 
 /** Structural slice of the settings scope used by this UI. */
 export interface CardScope {
@@ -100,6 +99,9 @@ function StateEditor({ stateId, cfg, scope, t, onClose }: {
   const fileRef = useRef<HTMLInputElement>(null)
   const [local, setLocal] = useState<CursorStateConfig>(cfg ?? {})
   const [err, setErr] = useState<string | null>(null)
+  // Natural size of the current image, needed to map click positions to
+  // hotspot coordinates (hotspots are relative to the raw image pixels).
+  const [imgDims, setImgDims] = useState<{ w: number; h: number } | null>(null)
 
   const commit = useCallback((next: CursorStateConfig) => {
     setLocal(next)
@@ -118,8 +120,8 @@ function StateEditor({ stateId, cfg, scope, t, onClose }: {
       setErr('Only PNG or CUR files are supported')
       return
     }
-    if (file.size > 512 * 1024) {
-      setErr('Image must be smaller than 512 KB')
+    if (file.size > MAX_IMAGE_BYTES) {
+      setErr(t('uploadTooLarge'))
       return
     }
     const reader = new FileReader()
@@ -145,22 +147,29 @@ function StateEditor({ stateId, cfg, scope, t, onClose }: {
   }, [local, commit])
 
   const previewSettings: CursorThemeSettings = { enabled: true, fallback: 'auto', defaultSize: 32, states: { [stateId]: local } }
-  // Editor always filters the built-in picker to THIS state's assets.
-  const builtins = assetsForState(stateId)
-  // Neutral palette used to preview/commit a picked template.
-  const NEUTRAL = { primary: '#5a7dff', accent: '#8b5cf6', dark: '#1b2a4a' }
 
   return (
-    <Modal open onClose={onClose} title={`${t('edit')}: ${stateLabel(t, stateId, stateId)}`}>
+    <Modal
+      open
+      onClose={onClose}
+      title={`${t('edit')}: ${stateLabel(t, stateId, stateId)}`}
+      closeLabel={t('close')}
+      className="dsh-cursor-theme-modal"
+    >
+      {/* The primitive's Modal ships without CSS (stub), so its <h2> uses
+          the browser default with a large margin that pushes the content
+          down; one scoped rule keeps the header tight without touching the
+          host's overall modal padding. */}
+      <style>{`.dsh-cursor-theme-modal h2 { margin: 0; }`}</style>
       <div style={{
         minWidth: 380,
-        // The built-in grid can make this modal taller than the viewport;
-        // scroll within the modal body instead of clipping.
+        // The modal body may be taller than the viewport; scroll within it
+        // instead of clipping.
         maxHeight: 'calc(100vh - 220px)',
         minHeight: 0,
         overflowY: 'auto',
       }}>
-        <div style={modalRow}>
+        <div style={{ ...modalRow, marginTop: 0 }}>
           <Button variant="outline" size="sm" onClick={() => fileRef.current?.click()}>{t('upload')}</Button>
           <input
             ref={fileRef} type="file" accept=".png,.cur,image/png" style={{ display: 'none' }}
@@ -171,38 +180,10 @@ function StateEditor({ stateId, cfg, scope, t, onClose }: {
         <div style={hintStyle}>{t('uploadHint')}</div>
         {err && <div style={{ ...hintStyle, color: '#c0392b' }}>{err}</div>}
 
-        {builtins.length > 0 && (
-          <div style={{ margin: '12px 0' }}>
-            <div style={hintStyle}>{t('builtinFor')}: {stateLabel(t, stateId, stateId)}</div>
-            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 6 }}>
-              {builtins.map((a) => (
-                <button
-                  key={a.id}
-                  type="button"
-                  onClick={() => {
-                    void (async () => {
-                      const image = await renderSvgToDataUrl(applyPalette(a.svg, NEUTRAL), 32)
-                      if (image) commit({ ...local, image, hotspot: a.hotspot, size: a.size })
-                    })()
-                  }}
-                  title={a.name}
-                  style={{
-                    width: 44, height: 44, borderRadius: 8, border: '1px solid var(--dsw-alias-border-l2, #ddd)',
-                    background: 'var(--dsw-alias-bg-module-platform, #fafafa)', cursor: 'pointer',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  }}
-                >
-                  <img src={`data:image/svg+xml;charset=utf-8,${encodeURIComponent(applyPalette(a.svg, NEUTRAL))}`} alt={a.name} style={{ width: 28, height: 28, pointerEvents: 'none' }} />
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
         {local.image && (
           <>
             <div style={modalRow}>
-              <span style={{ width: 90 }}>{t('hotspot')}</span>
+              <span style={{ width: 90, fontSize: 12 }}>{t('hotspot')}</span>
               <Input
                 type="number" value={String(local.hotspot?.x ?? 0)}
                 onChange={(e) => commit({ ...local, hotspot: { x: Number(e.target.value) || 0, y: local.hotspot?.y ?? 0 } })}
@@ -215,7 +196,7 @@ function StateEditor({ stateId, cfg, scope, t, onClose }: {
               />
             </div>
             <div style={modalRow}>
-              <span style={{ width: 90 }}>{t('size')}</span>
+              <span style={{ width: 90, fontSize: 12 }}>{t('size')}</span>
               {SIZES.map((s) => (
                 <Pill key={s} active={local.size === s} onClick={() => commit({ ...local, size: s })} style={{ cursor: 'pointer' }}>
                   {s}
@@ -223,15 +204,60 @@ function StateEditor({ stateId, cfg, scope, t, onClose }: {
               ))}
             </div>
             <div style={modalRow}>
-              <span style={{ width: 90 }}>{t('preview')}</span>
-              <span style={{ ...thumbStyle, cursor: cursorFor(stateId, previewSettings) }}>
-                Aa
-              </span>
-              <span style={{ ...hintStyle, margin: 0 }}>
+              <span style={{ width: 90, fontSize: 12 }}>{t('preview')}</span>
+              {/* Clickable hotspot calibrator: click the image where the
+                  click point should be; the crosshair marks the current
+                  hotspot. Hover shows the resulting cursor. */}
+              <div
+                onClick={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect()
+                  if (!imgDims || rect.width === 0 || rect.height === 0) return
+                  const x = Math.round(((e.clientX - rect.left) / rect.width) * imgDims.w)
+                  const y = Math.round(((e.clientY - rect.top) / rect.height) * imgDims.h)
+                  commit({ ...local, hotspot: { x, y } })
+                }}
+                style={{
+                  position: 'relative', width: 96, height: 96, borderRadius: 8, overflow: 'hidden',
+                  border: '1px solid var(--dsw-alias-border-l2, #ddd)',
+                  background: 'var(--dsw-alias-bg-module-platform, #f5f5f5)',
+                  cursor: cursorFor(stateId, previewSettings),
+                  flexShrink: 0,
+                }}
+              >
+                <img
+                  src={local.image}
+                  alt=""
+                  onLoad={(e) => setImgDims({ w: e.currentTarget.naturalWidth, h: e.currentTarget.naturalHeight })}
+                  style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block', pointerEvents: 'none' }}
+                />
+                {imgDims && (() => {
+                  const hx = (local.hotspot?.x ?? 0) / imgDims.w
+                  const hy = (local.hotspot?.y ?? 0) / imgDims.h
+                  return (
+                    <>
+                      <div style={{
+                        position: 'absolute', left: `${hx * 100}%`, top: 0, bottom: 0,
+                        width: 1, background: 'rgba(231,76,60,0.8)', pointerEvents: 'none',
+                      }} />
+                      <div style={{
+                        position: 'absolute', top: `${hy * 100}%`, left: 0, right: 0,
+                        height: 1, background: 'rgba(231,76,60,0.8)', pointerEvents: 'none',
+                      }} />
+                      <div style={{
+                        position: 'absolute', left: `${hx * 100}%`, top: `${hy * 100}%`,
+                        transform: 'translate(-50%,-50%)', pointerEvents: 'none',
+                        color: '#e74c3c', fontSize: 13, fontWeight: 700, lineHeight: 1,
+                        textShadow: '0 0 2px #fff, 0 0 2px #fff',
+                      }}>+</div>
+                    </>
+                  )
+                })()}
+              </div>
+              <div style={{ ...hintStyle, margin: 0, flex: 1 }}>
                 {t('fallback')}: <code>{fallbackOf(stateId)}</code>
-              </span>
+              </div>
             </div>
-            <div style={hintStyle}>{t('previewHint')}</div>
+            <div style={hintStyle}>{t('hotspotClickHint')}</div>
           </>
         )}
       </div>
@@ -244,9 +270,16 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
   const [snap, setSnap] = useState(() => scope.getSnapshot())
   const importRef = useRef<HTMLInputElement>(null)
   const [importErr, setImportErr] = useState<string | null>(null)
+  const [importMsg, setImportMsg] = useState<string | null>(null)
+  const [dragOver, setDragOver] = useState(false)
   const [copied, setCopied] = useState(false)
   // Pre-rendered system-default PNGs per state (shown on the left).
   const [defaultPngs, setDefaultPngs] = useState<Record<string, string>>({})
+  // 恢复系统默认 also reverts the OS cursor scheme: local feedback + a
+  // signal that tells SystemSection to re-query the system status.
+  const [resetBusy, setResetBusy] = useState(false)
+  const [resetHint, setResetHint] = useState<{ text: string; error: boolean } | null>(null)
+  const [sysRefresh, setSysRefresh] = useState(0)
 
   useEffect(() => scope.subscribe(() => setSnap(scope.getSnapshot())), [scope])
 
@@ -274,8 +307,25 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
 
   const setEnabled = (v: boolean) => { void scope.set('enabled', v) }
   const resetAll = () => {
+    // 1) Clear every in-app state override (DSH window back to defaults).
     void scope.set('enabled', true)
     void scope.set('states', {})
+    // 2) Also revert the OS cursor scheme (Windows registry restore /
+    //    macOS overlay stop) so "restore system default" applies to the
+    //    system too, not just inside DSH.
+    setResetHint(null)
+    setResetBusy(true)
+    void (async () => {
+      try {
+        const r = await api('/dsh-cursor-theme/system/restore')
+        setResetHint({ text: r.ok ? t('resetAllApplied') : t('resetAllFailed'), error: !r.ok })
+      } catch {
+        setResetHint({ text: t('resetAllFailed'), error: true })
+      } finally {
+        setResetBusy(false)
+        setSysRefresh((n) => n + 1)
+      }
+    })()
   }
   const applyTheme = (themeId: string) => {
     const theme = BUILTIN_THEMES.find((x) => x.id === themeId)
@@ -313,6 +363,9 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
           await scope.set('enabled', result.enabled ?? true)
           await scope.set('states', result.states)
           setImportErr(null)
+          setImportMsg(result.scaled && result.scaled.length > 0
+            ? `${t('packImported')} ${t('packScaled')}: ${result.scaled.join(', ')}`
+            : t('packImported'))
         } catch (e) {
           setImportErr(e instanceof Error ? e.message : String(e))
         }
@@ -372,18 +425,72 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
 
       <div style={{ ...rowStyle, borderBottom: 'none' }}>
         <span style={labelStyle}>{t('resetAll')}</span>
-        <Button variant="outline" size="sm" onClick={resetAll}>{t('resetAll')}</Button>
+        <Button variant="outline" size="sm" onClick={resetAll} disabled={resetBusy}>{t('resetAll')}</Button>
       </div>
+      <div style={hintStyle}>{t('resetAllHint')}</div>
+      {resetBusy && <div style={hintStyle}>{t('resetAllRestoring')}</div>}
+      {resetHint && (
+        <div style={{
+          fontSize: 12, margin: '4px 0 0',
+          color: resetHint.error
+            ? '#c0392b'
+            : 'var(--dsw-static-neutral-bluish-400, #4a7)',
+        }}>{resetHint.text}</div>
+      )}
 
-      <div style={{ ...rowStyle, borderBottom: 'none' }}>
-        <span style={labelStyle}>{t('exportImport')}</span>
-        <Button variant="outline" size="sm" onClick={() => importRef.current?.click()}>{t('import')}</Button>
+      <div style={{ marginTop: 12, fontWeight: 600, fontSize: 14 }}>{t('exportImport')}</div>
+      <div
+        role="button"
+        tabIndex={0}
+        aria-label={t('packDropHint')}
+        onClick={() => importRef.current?.click()}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            importRef.current?.click()
+          }
+        }}
+        onDragOver={(e) => { e.preventDefault(); setDragOver(true) }}
+        onDragLeave={() => setDragOver(false)}
+        onDrop={(e) => {
+          e.preventDefault()
+          setDragOver(false)
+          onImportFile(e.dataTransfer.files?.[0])
+        }}
+        style={{
+          marginTop: 8, padding: '18px 12px', borderRadius: 10, textAlign: 'center',
+          border: `1.5px dashed ${dragOver ? 'var(--dsw-alias-interactive-accent, #5a7dff)' : 'var(--dsw-alias-border-l2, #ccc)'}`,
+          background: dragOver
+            ? 'var(--dsw-alias-bg-module-platform, #eef2ff)'
+            : 'var(--dsw-alias-bg-module-platform, #fafafa)',
+          color: 'var(--dsw-alias-label-secondary, #555)',
+          cursor: 'pointer', userSelect: 'none',
+          transition: 'border-color 0.15s, background 0.15s',
+        }}
+      >
+        <svg width="22" height="22" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ display: 'block', margin: '0 auto 6px' }}>
+          <path d="M8 2.5 V10.5" />
+          <path d="M4.5 7 8 10.5 11.5 7" />
+          <path d="M2.5 13.5 H13.5" />
+        </svg>
+        <div style={{ fontSize: 13 }}>{t('packDropHint')}</div>
+        <div style={{ fontSize: 11, color: 'var(--dsw-alias-label-tertiary, #999)', marginTop: 4 }}>{t('packDropSub')}</div>
         <input
           ref={importRef} type="file" accept=".zip,application/zip" style={{ display: 'none' }}
-          onChange={(e) => onImportFile(e.target.files?.[0])}
+          onChange={(e) => {
+            onImportFile(e.target.files?.[0])
+            // Allow re-picking the SAME file after a failed/successful import.
+            e.target.value = ''
+          }}
         />
       </div>
       {importErr && <div style={{ ...hintStyle, color: '#c0392b' }}>{t('importFailed')}: {importErr}</div>}
+      {importMsg && (
+        <div style={{
+          ...hintStyle,
+          color: 'var(--dsw-static-neutral-bluish-400, #4a7)',
+        }}>{importMsg}</div>
+      )}
 
       <div style={{ margin: '4px 0 0', fontSize: 12 }}>
         <div style={{ fontWeight: 600, fontSize: 13, color: 'var(--dsw-alias-label-primary, #222)' }}>{t('packHintTitle')}</div>
@@ -403,7 +510,7 @@ export function CursorThemeSection({ scope, t }: CursorThemeSectionProps) {
         </Button>
       </div>
 
-      <SystemSection scope={scope} t={t} />
+      <SystemSection scope={scope} t={t} refreshSignal={sysRefresh} />
 
       <div style={{ marginTop: 16, fontWeight: 600, fontSize: 14 }}>{t('states')}</div>
       {CURSOR_STATES.map((def) => {

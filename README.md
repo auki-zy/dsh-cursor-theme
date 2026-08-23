@@ -13,7 +13,7 @@
   - 6 color palettes: Aurora, Honey, Mint, Sunset, Graphite, High Contrast
   - 12 creative themes: **Paw 🐾 · Energy ⚡ · Neon 🌃 · Emoji 😀 · Pixel 👾 · Weather ⛅ · Origami 📐 · Astro 🧑🚀 · Candy 🍬 · Ghost 👻 · Hi-Vis XL 🔍 (48px) · Pop 🎈**
   - One click to apply; every theme is also downloadable as a ZIP image pack
-- 🖼️ **Built-in SVG template library** (25 hand-drawn shapes) + upload your own PNG/CUR (≤128×128, ≤512 KB validated)
+- 🖼️ **Built-in SVG template library** (25 hand-drawn shapes) + upload your own PNG/CUR (≤128×128, ≤5 MB validated)
 - 📦 **Image pack import/export** — one ZIP (a PNG per state + `manifest.json`), inspect/edit/share real image files, or generate with an AI
 - 🪟 **Apply to system (Windows)** — one click writes the theme into the OS cursor scheme (registry + `SPI_SETCURSORS`), visible in Explorer and every app; macOS: experimental Swift overlay + Accessibility guidance
 - 📍 **Hotspot editor** (X/Y) for pixel-accurate clicks · 🔍 size steps 16/24/32/48

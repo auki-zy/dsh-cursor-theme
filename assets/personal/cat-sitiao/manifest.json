@@ -1,0 +1,121 @@
+{
+    "schema":  1,
+    "name":  "sleepy-white-cat",
+    "version":  "1.0.0",
+    "enabled":  true,
+    "defaultSize":  32,
+    "states":  {
+                   "default":  {
+                                   "file":  "default.png",
+                                   "hotspot":  {
+                                                   "y":  16,
+                                                   "x":  16
+                                               },
+                                   "size":  32
+                               },
+                   "pointer":  {
+                                   "file":  "pointer.png",
+                                   "hotspot":  {
+                                                   "y":  16,
+                                                   "x":  16
+                                               },
+                                   "size":  32
+                               },
+                   "text":  {
+                                "file":  "text.png",
+                                "hotspot":  {
+                                                "y":  16,
+                                                "x":  16
+                                            },
+                                "size":  32
+                            },
+                   "wait":  {
+                                "file":  "wait.png",
+                                "hotspot":  {
+                                                "y":  16,
+                                                "x":  16
+                                            },
+                                "size":  32
+                            },
+                   "help":  {
+                                "file":  "help.png",
+                                "hotspot":  {
+                                                "y":  16,
+                                                "x":  16
+                                            },
+                                "size":  32
+                            },
+                   "not-allowed":  {
+                                       "file":  "not-allowed.png",
+                                       "hotspot":  {
+                                                       "y":  16,
+                                                       "x":  16
+                                                   },
+                                       "size":  32
+                                   },
+                   "grab":  {
+                                "file":  "grab.png",
+                                "hotspot":  {
+                                                "y":  16,
+                                                "x":  16
+                                            },
+                                "size":  32
+                            },
+                   "grabbing":  {
+                                    "file":  "grabbing.png",
+                                    "hotspot":  {
+                                                    "y":  16,
+                                                    "x":  16
+                                                },
+                                    "size":  32
+                                },
+                   "progress":  {
+                                    "file":  "progress.png",
+                                    "hotspot":  {
+                                                    "y":  16,
+                                                    "x":  16
+                                                },
+                                    "size":  32
+                                },
+                   "cell":  {
+                                "file":  "cell.png",
+                                "hotspot":  {
+                                                "y":  16,
+                                                "x":  16
+                                            },
+                                "size":  32
+                            },
+                   "copy":  {
+                                "file":  "copy.png",
+                                "hotspot":  {
+                                                "y":  16,
+                                                "x":  16
+                                            },
+                                "size":  32
+                            },
+                   "move":  {
+                                "file":  "move.png",
+                                "hotspot":  {
+                                                "y":  16,
+                                                "x":  16
+                                            },
+                                "size":  32
+                            },
+                   "resize-ew":  {
+                                     "file":  "resize-ew.png",
+                                     "hotspot":  {
+                                                     "y":  16,
+                                                     "x":  16
+                                                 },
+                                     "size":  32
+                                 },
+                   "resize-ns":  {
+                                     "file":  "resize-ns.png",
+                                     "hotspot":  {
+                                                     "y":  16,
+                                                     "x":  16
+                                                 },
+                                     "size":  32
+                                 }
+               }
+}
