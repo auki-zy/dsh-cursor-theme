@@ -1,6 +1,6 @@
 {
   "name": "dsh-cursor-theme",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Customize the PC mouse cursor for every UI state inside DeepSeek Harness. 在 DSH 里自定义鼠标各种状态的图案。",
   "type": "module",
   "main": "lib/index.js",
