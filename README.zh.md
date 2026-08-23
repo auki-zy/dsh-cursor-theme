@@ -2,7 +2,7 @@
 
 > 🖱️ 为 DeepSeek Harness 自定义鼠标各种状态的图案 —— 每个 UI 状态（默认、点击、文本、等待、禁止……）都可以换成你喜欢的 PNG/CUR 光标，实时生效、跨会话保存。
 
-[English](README.md) · [需求文档](docs/requirements.md) · [可行性分析](docs/feasibility.md) · 已发布到 [npm](https://www.npmjs.com/package/dsh-cursor-theme) · 已收录于 [DSH 1024Store](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/blob/main/catalog/plugins/auki-zy--dsh-cursor-theme.json)
+[English](README.md) · [需求文档](docs/requirements.md) · [可行性分析](docs/feasibility.md) · 已发布到 [npm](https://www.npmjs.com/package/dsh-cursor-theme) · 已收录于 [DSH 1024Store](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/blob/main/catalog/plugins/auki-zy--dsh-cursor-theme.json) · 已收录于 [dshfind](https://dshfind.com) · [发布流程](docs/PUBLISHING.md)
 
 ---
 

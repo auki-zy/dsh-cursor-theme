@@ -2,7 +2,7 @@
 
 > 🖱️ Per-state mouse cursor customization for DeepSeek Harness — give every UI state (default, pointer, text, wait, not-allowed, …) its own PNG/CUR cursor, applied live and persisted across restarts.
 
-[中文文档](README.zh.md) · [Requirements](docs/requirements.md) · [Feasibility](docs/feasibility.md) · Published on [npm](https://www.npmjs.com/package/dsh-cursor-theme) · Listed on [DSH 1024Store](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/blob/main/catalog/plugins/auki-zy--dsh-cursor-theme.json)
+[中文文档](README.zh.md) · [Requirements](docs/requirements.md) · [Feasibility](docs/feasibility.md) · Published on [npm](https://www.npmjs.com/package/dsh-cursor-theme) · Listed on [DSH 1024Store](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/blob/main/catalog/plugins/auki-zy--dsh-cursor-theme.json) · Listed on [dshfind](https://dshfind.com) · [Release SOP](docs/PUBLISHING.md)
 
 ---
 
