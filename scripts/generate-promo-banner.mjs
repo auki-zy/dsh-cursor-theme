@@ -18,28 +18,19 @@ import JSZip from 'jszip'
 const root = dirname(dirname(fileURLToPath(import.meta.url)))
 const packsDir = join(root, 'data', 'theme-packs')
 
-// theme display order: id -> label (same order as assets.json)
-const THEMES = [
-  ['astro', 'Astro 太空人'], ['aurora', 'Aurora 极光'], ['candy', 'Candy 糖果'],
-  ['contrast', 'Contrast 高对比'], ['emoji', 'Emoji 表情'], ['energy', 'Energy 能量'],
-  ['ghost', 'Ghost 幽灵'], ['graphite', 'Graphite 石墨'], ['hivis', 'Hi-Vis XL 放大'],
-  ['honey', 'Honey 蜜糖'], ['mint', 'Mint 薄荷'], ['neon', 'Neon 霓虹'],
-  ['origami', 'Origami 折纸'], ['paw', 'Paw 猫爪'], ['pixel', 'Pixel 像素'],
-  ['pop', 'Pop 波普'], ['sunset', 'Sunset 晚霞'], ['weather', 'Weather 天气'],
-]
-
 const STATE_IDS = [
   'default', 'pointer', 'text', 'wait', 'help', 'not-allowed', 'grab',
   'grabbing', 'progress', 'cell', 'copy', 'move', 'resize-ew', 'resize-ns',
 ]
 
 const COLS = 4
-const ROWS = Math.ceil((THEMES.length + 1) / COLS) // 5 (+1 personal cell)
 const CELL_W = 400
 const CELL_H = 190
 const HEADER_H = 90
 const W = COLS * CELL_W // 1600
-const H = HEADER_H + ROWS * CELL_H // 1040
+// theme count known below (read from assets.json); ROWS derived there.
+let ROWS = 5
+let H = HEADER_H + ROWS * CELL_H
 
 // dark background, rounded cells, soft grid
 const BG = '#0f172a'
@@ -56,6 +47,19 @@ async function loadStatePngs(id) {
   for (const stateId of STATE_IDS) {
     const meta = manifest.states[stateId]
     if (meta?.file) out[stateId] = await zip.file(meta.file).async('uint8array')
+  }
+  return out
+}
+
+/** Load state data URLs directly from assets.json prebuilt themes (no zip). */
+function loadStateDataUrls(id) {
+  const { themes } = JSON.parse(readFileSync(join(root, 'data', 'assets.json'), 'utf8'))
+  const theme = themes.find((t) => t.id === id)
+  if (!theme?.prebuilt) return {}
+  const out = {}
+  for (const stateId of STATE_IDS) {
+    const cfg = theme.prebuilt[stateId]
+    if (cfg?.image) out[stateId] = cfg.image
   }
   return out
 }
@@ -100,19 +104,32 @@ function personalCell(x, y) {
 }
 
 const cells = []
-for (let i = 0; i < THEMES.length; i++) {
-  const [id, label] = THEMES[i]
+// Build the theme list dynamically from assets.json so personal themes
+// imported via import-personal-themes.mjs show up automatically.
+const { themes } = JSON.parse(readFileSync(join(root, 'data', 'assets.json'), 'utf8'))
+const themeList = themes.map((t) => [t.id, t.name])
+ROWS = Math.ceil((themeList.length + 1) / COLS)
+H = HEADER_H + ROWS * CELL_H
+
+for (let i = 0; i < themeList.length; i++) {
+  const [id, label] = themeList[i]
   const col = i % COLS
   const row = Math.floor(i / COLS)
   const x = col * CELL_W
   const y = HEADER_H + row * CELL_H
-  const statePngs = await loadStatePngs(id)
+  // personal themes have no zip in theme-packs; use baked data URLs
+  let statePngs
+  try {
+    statePngs = await loadStatePngs(id)
+  } catch {
+    statePngs = loadStateDataUrls(id)
+  }
   cells.push(themeCell(id, label, statePngs, x, y))
 }
-// personal cell (bottom-left, after 18 themes → index 18)
+// personal cell (after all themes)
 {
-  const col = THEMES.length % COLS
-  const row = Math.floor(THEMES.length / COLS)
+  const col = themeList.length % COLS
+  const row = Math.floor(themeList.length / COLS)
   cells.push(personalCell(col * CELL_W, HEADER_H + row * CELL_H))
 }
 
@@ -121,7 +138,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
   <rect x="0" y="0" width="${W}" height="${HEADER_H}" fill="#0b1220"/>
   <rect x="0" y="${HEADER_H - 2}" width="${W}" height="2" fill="${ACCENT}"/>
   <text x="40" y="42" font-family="sans-serif" font-size="34" font-weight="800" fill="${TEXT}">dsh-cursor-theme</text>
-  <text x="40" y="72" font-family="sans-serif" font-size="20" fill="${SUBTEXT}">18 original themes · 14 mouse states each · fork your own</text>
+  <text x="40" y="72" font-family="sans-serif" font-size="20" fill="${SUBTEXT}">${themeList.length} themes · 14 mouse states each · fork your own</text>
   <text x="${W - 40}" y="46" text-anchor="end" font-family="sans-serif" font-size="20" font-weight="700" fill="${ACCENT}">github.com/auki-zy/dsh-cursor-theme</text>
   ${cells.join('\n')}
 </svg>`
