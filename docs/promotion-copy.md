@@ -7,6 +7,8 @@
 > - Release: https://github.com/auki-zy/dsh-cursor-theme/releases/tag/v0.1.0
 > - 安装: `dsh plugin --profile desktop add dsh-cursor-theme`
 > - 宣传拼图: `data/theme-packs/promo-banner.png`（1600×1040）
+>
+> 🖼️ **宣传图说明（最新版）**：每套主题展示**全部 14 种鼠标状态**的图标拼图（4×4 网格），共 18 套主题 + 一个虚线 **Personal（你的主题）** 格子。发布时把这张图作为主图，视觉冲击力远大于单张 default 图——让人一眼看到"一套主题 = 14 个状态全覆盖"。
 
 ---
 
