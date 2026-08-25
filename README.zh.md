@@ -2,7 +2,15 @@
 
 > 🖱️ 为 DeepSeek Harness 自定义鼠标各种状态的图案 —— 每个 UI 状态（默认、点击、文本、等待、禁止……）都可以换成你喜欢的 PNG/CUR 光标，实时生效、跨会话保存。
 
-[English](README.md) · [需求文档](docs/requirements.md) · [可行性分析](docs/feasibility.md) · 已发布到 [npm](https://www.npmjs.com/package/dsh-cursor-theme) · 已收录于 [DSH 1024Store](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/blob/main/catalog/plugins/auki-zy--dsh-cursor-theme.json)
+[English](README.md) · [需求文档](docs/requirements.md) · [可行性分析](docs/feasibility.md) · 已发布到 [npm](https://www.npmjs.com/package/dsh-cursor-theme) · 已收录于 [DSH 1024Store](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/blob/main/catalog/plugins/auki-zy--dsh-cursor-theme.json) · 已收录于 [dshfind](https://dshfind.com) · [发布流程](docs/PUBLISHING.md)
+
+---
+
+<p align="center">
+  <img src="data/theme-packs/promo-banner.png" alt="dsh-cursor-theme — 19 套主题 × 14 状态" width="100%" />
+</p>
+
+> 上面每个格子展示一套主题的**全部 14 种鼠标状态**。除预设主题外，你导入的 **personal 主题** 也会出现在这里——见下方「个人主题」章节。
 
 ---
 
@@ -44,6 +52,22 @@ dsh plugin --profile web add dsh-cursor-theme
 | 导入 ZIP 图片包 | 图片包 → 导入（例如 AI 生成的图片包） |
 | 应用到整个系统（Windows） | 应用到系统 → 一键生效 |
 | 全部还原 | 恢复系统默认 |
+
+## 🎨 个人主题（Personal）—— Fork 自己的主题
+
+宣传图上带 **Personal** 徽章、虚线边框、排在最后的那个格子，就是你自己的主题（示例：cat-sitiao）。两种方式让你的主题永久化：
+
+**方式 A —— ZIP 图片包（无需写代码）**
+1. 在 DSH 中：设置 → 光标主题 → **导入**任意 ZIP 图片包（每状态 PNG + `manifest.json`——可先导出一套内置主题作为模板，或用内置 AI 提示词生成一套）
+2. 把 ZIP 存在自己的笔记/仓库里，随处可重新导入
+
+**方式 B —— Fork 仓库（推荐给贡献者）**
+1. **Fork** 本仓库（Fork 就是你的独立副本，自行管理）
+2. 在 `scripts/theme-art.mjs` 里添加你的主题条目（复制一个现有的改配色/图案即可），或把自己的图片包放到 `data/themes-personal.json`（格式 `{ "schema": 1, "name": "...", "states": { ... } }`）
+3. 运行 `node scripts/generate-theme-packs.mjs && node scripts/generate-assets.mjs` 烘焙
+4. 在 设置 → 光标主题 中应用，或发布你的 Fork / 提 PR 分享
+
+> 你的 Fork 完全属于你——自由定制配色与图标，不用担心上游改动影响（Fork 相互独立）。
 
 ## 🛠️ 开发
 
