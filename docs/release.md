@@ -57,7 +57,7 @@ npm publish --access public
 dsh plugin --profile web add dsh-cursor-theme@^0.1.0
 ```
 
-> ⚠️ 本机 pnpm 的默认 registry 不是 npmjs.org，`npm publish` 需要 npmjs.org 凭据。
+> ⚠️ 本机 pnpm 的默认 registry 不是 npmjs.org，`npm publish` 需要显式指定 registry 与凭据。
 > 若当前终端未登录 npmjs：先执行 `npm login`（或 `pnpm login --registry https://registry.npmjs.org`），
 > 再按 `npm publish --registry https://registry.npmjs.org --access public` 发布。
 
